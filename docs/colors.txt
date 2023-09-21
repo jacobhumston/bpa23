@@ -1,0 +1,6 @@
+Background - 238, 238, 238 (rgb) 
+Secondary Background - 34, 40, 49 (rgb) -- Menu Bar
+Tertiary Background - 57, 62, 70 (rgb)
+Accent - 214, 90, 49 (rgb)
+Secondary Accent - 217, 43, 57 (rgb)
+Text - 0, 0, 0 (rgb)

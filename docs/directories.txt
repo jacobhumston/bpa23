@@ -1,6 +1,8 @@
+.vscode - VSCode workspace settings and such.
 assets - Assets (images/etc) need for the site.
     images - Images directory.
     videos - Videos directory.
+    fonts - Fonts directory.
 css - Style sheets.
 docs - Information files. (*.txt)
 includes - HTML files which may be included in multiple files. (Via include library. -> javascript/lib/include.js)
