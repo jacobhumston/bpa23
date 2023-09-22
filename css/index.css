@@ -32,6 +32,18 @@ textarea
     font-family: var(--font), Arial, Helvetica, sans-serif;
 }
 
+a
+{
+    color: var(--accent);
+    transition: color .5s;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: var(--secondaryAccent);
+}
+
 /* index.html */
 
 
@@ -55,10 +67,15 @@ textarea
     font-size: 20px;
     margin-top: 14px;
     margin-left: 10px;
-    transition: color .5s;
+    transition-duration: .5s;
+    transition-property: color, border-width;
 }
 
 #menuBar a:hover
 {
     color: var(--secondaryAccent);
+    border-bottom-width: 9px;
+    padding-bottom: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--secondaryAccent);
 }
