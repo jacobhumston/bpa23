@@ -1,5 +1,8 @@
+// Libraries.
+const libs = {};
+
 // Library which helps with the insertion of HTML documents.
-const includeLib = {
+libs.include = {
     /**
      * Include a html file in the body.
      * @param {Document} document

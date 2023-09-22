@@ -7,7 +7,6 @@ css - Style sheets.
 docs - Information files. (*.txt)
 includes - HTML files which may be included in multiple files. (Via include library. -> javascript/lib/include.js)
 javascript - Javascript files.
-    libs - Library (javascript) files which may be used in multiple scripts.
 
 (OTHER)
 .prettierrc.json - Plugin configuration.

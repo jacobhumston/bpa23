@@ -13,5 +13,5 @@ function changeTitle(document, title, name) {
 
 window.addEventListener('load', function () {
     changeTitle(document, document.title, 'Game Day Grill');
-    includeLib.includeBody(document, 'includes/menuBar.html', 'start');
+    libs.include.includeBody(document, 'includes/menuBar.html', 'start');
 });
