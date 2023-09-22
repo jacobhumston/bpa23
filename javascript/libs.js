@@ -1,5 +1,6 @@
 // Libraries.
 const libs = {};
+const storage = new Storage();
 
 // Library which helps with the insertion of HTML documents.
 libs.include = {
@@ -17,4 +18,11 @@ libs.include = {
             document.body.insertAdjacentHTML(finalPlace, await response.text());
         });
     },
+};
+
+// Library to add and remove items from the shopping cart.
+libs.carts = {
+    items: storage.getItem('cartData') ?? {},
+    add: function () {},
+    remove: function () {},
 };
