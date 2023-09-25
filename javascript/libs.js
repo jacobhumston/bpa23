@@ -1,6 +1,6 @@
 // Libraries.
 const libs = {};
-const storage = new Storage();
+const storage = localStorage;
 
 // Library which helps with the insertion of HTML documents.
 libs.include = {

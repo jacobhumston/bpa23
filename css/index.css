@@ -2,7 +2,19 @@
 @font-face
 {
     font-family: Heebo;
-    src: url('/assets/fonts/Heebo/Heebo-VariableFont_wght.ttf');
+    src: url('../assets/fonts/Heebo.ttf');
+}
+
+@font-face
+{
+    font-family: BebasNeue;
+    src: url('../assets/fonts/BebasNeue.ttf');
+}
+
+@font-face
+{
+    font-family: SofiaSansExtraCondensed;
+    src: url('../assets/fonts/SofiaSansExtraCondensed.ttf');
 }
 
 :root
@@ -13,7 +25,8 @@
     --accent: rgb(214, 90, 49);
     --secondaryAccent: rgb(217, 43, 57);
     --text: rgb(0, 0, 0);
-    --font: Heebo;
+    --header-font: BebasNeue;
+    --font: SofiaSansExtraCondensed;
 }
 
 body
@@ -30,6 +43,12 @@ input,
 textarea
 {
     font-family: var(--font), Arial, Helvetica, sans-serif;
+    letter-spacing: .1rem;
+}
+
+h
+{
+    font-family: var(--font);
 }
 
 a
@@ -46,7 +65,43 @@ a:hover
 
 /* index.html */
 
+#frontPicture
+{
+    background-color: var(--tertiaryAccent);
+}
 
+#mainImage
+{
+    display: inline;
+    margin-left: 30%;
+    width: 40%;
+    margin-bottom: -7px;
+}
+
+#mainText
+{
+    color: var(--accent);
+    text-align: right;
+    margin-right: 2%;
+    margin-bottom: 0px;
+}
+
+#underMainText
+{
+    color: black;
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+    margin-right: 2%;
+    margin-top: 0px;
+
+}
+
+#frontPageText
+{
+    margin-left: 2%;
+    margin-right: 2%;
+}
 
 /* includes/menuBar.html */
 #menuBar
@@ -64,18 +119,38 @@ a:hover
     color: var(--accent);
     font-weight: bold;
     text-decoration: none;
-    font-size: 20px;
-    margin-top: 14px;
+    font-size: 22px;
+    margin-top: 11px;
     margin-left: 10px;
-    transition-duration: .5s;
+    transition-duration: .2s;
     transition-property: color, border-width;
 }
 
-#menuBar a:hover
+#menuBar a svg
+{
+    display: inline;
+    height: 29px;
+    width: 29px;
+    transition-duration: .2s;
+    transition-property: color;
+}
+
+#menuBar .normal:hover
 {
     color: var(--secondaryAccent);
-    border-bottom-width: 9px;
-    padding-bottom: 4px;
+    border-bottom-width: 7px;
+    padding-bottom: 3px;
     border-bottom-style: solid;
     border-bottom-color: var(--secondaryAccent);
+}
+
+#menuBar .icon
+{
+    float: right;
+    margin-right: 10px;
+}
+
+#menuBar .icon:hover
+{
+    color: var(--secondaryAccent);
 }
