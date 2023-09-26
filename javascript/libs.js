@@ -21,8 +21,53 @@ libs.include = {
 };
 
 // Library to add and remove items from the shopping cart.
-libs.carts = {
-    items: storage.getItem('cartData') ?? {},
-    add: function () {},
-    remove: function () {},
+libs.cart = {
+    /** @type {string[]} IDs of the items. */
+    items: [],
+
+    /**
+     * Save all items in cart.
+     */
+    save: function () {
+        storage.setItem('cartData', JSON.stringify(this.items));
+    },
+
+    /**
+     * Add an item to the cart.
+     * @param {string} id The ID of the item to add.
+     */
+    add: function (id) {
+        this.items.push(id);
+        this.save();
+    },
+
+    /**
+     * Remove an item from the cart.
+     * @param {number} id The ID of the item to remove.
+     */
+    remove: function (id) {
+        let removed = false;
+        this.items.forEach((value, index) => {
+            if (value !== null && removed == false) {
+                if (value === id) {
+                    removed = true;
+                    this.items.splice(index);
+                }
+            }
+        });
+        if (removed === false) throw 'Item not found.';
+        this.save();
+    },
+
+    /**
+     * Clear all items from the cart.
+     */
+    clear: function () {
+        this.items = [];
+        this.save();
+    },
 };
+
+if (storage.getItem('cartData') !== null) {
+    libs.cart.items = JSON.parse(storage.getItem('cartData'));
+}
