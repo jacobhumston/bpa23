@@ -116,7 +116,7 @@ a:hover
 
 }
 
-#frontPagePhotos
+.frontPagePhotos  a
 {
 
     width: 290px;
@@ -124,7 +124,8 @@ a:hover
     padding: 2%;
     object-fit: cover;
     float: left;
-    overflow-x: show;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
 
 
