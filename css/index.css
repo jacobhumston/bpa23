@@ -52,11 +52,6 @@ h
     /* font-size: larger; */
 }
 
-p
-{
-    /* font-size: large; */
-}
-
 a
 {
     color: var(--accent);
@@ -109,24 +104,25 @@ a:hover
     margin-right: 2%;
 }
 
+img.frontPagePhotos:hover
+{
+    transform: scale(1.1);
+}
+
 #frontPageGallery
 {
     margin-left: 1%;
-
-
 }
 
-.frontPagePhotos  a
+.frontPagePhotos
 {
-
     width: 290px;
     height: 150px;
     padding: 2%;
     object-fit: cover;
     float: left;
-    overflow-x: scroll;
-    white-space: nowrap;
 }
+
 
 
 /* includes/menuBar.html */
