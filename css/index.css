@@ -104,25 +104,57 @@ a:hover
     margin-right: 2%;
 }
 
+img.frontPagePhotos
+{
+    transition-duration: .5s;
+    transition-property: transform, border-radius;
+}
+
 img.frontPagePhotos:hover
 {
     transform: scale(1.1);
+    border-radius: 10px;
 }
 
+
+/*
 #frontPageGallery
 {
     margin-left: 1%;
 }
 
+#frontPageGallery div
+{
+    display: inline;
+}
+
+#frontPageGallery div p
+{
+    display: inline;
+}
+*/
+
 .frontPagePhotos
 {
     width: 290px;
     height: 150px;
-    padding: 2%;
-    object-fit: cover;
-    float: left;
 }
 
+
+#frontPageGallery
+{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
+#frontPageGallery a
+{
+    margin: 32px;
+}
 
 
 /* includes/menuBar.html */
