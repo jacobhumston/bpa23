@@ -1,0 +1,53 @@
+/* includes/menuBar.html */
+#menuBar
+{
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: var(--secondaryBackground);
+    color: var(--accent);
+}
+
+#menuBar a
+{
+    font: var(--header-font);
+    display: inline-block;
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 22px;
+    margin-top: 13px;
+    margin-left: 10px;
+    transition-duration: .2s;
+    transition-property: color, border-width;
+}
+
+#menuBar a svg
+{
+    display: inline;
+    height: 29px;
+    width: 29px;
+    transition-duration: .2s;
+    transition-property: color;
+}
+
+#menuBar .menuBarNormal:hover,
+#menuBar .menuBarNormalCurrent
+{
+    color: var(--secondaryAccent);
+    border-bottom-width: 7px;
+    padding-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--secondaryAccent);
+}
+
+#menuBar .menuBarIcon
+{
+    float: right;
+    margin-right: 10px;
+}
+
+#menuBar .menuBarIcon:hover
+{
+    color: var(--secondaryAccent);
+}

@@ -1,71 +1,3 @@
-/* all */
-@font-face
-{
-    font-family: Heebo;
-    src: url('../assets/fonts/Heebo.ttf');
-}
-
-@font-face
-{
-    font-family: BebasNeue;
-    src: url('../assets/fonts/BebasNeue.ttf');
-}
-
-@font-face
-{
-    font-family: SofiaSansExtraCondensed;
-    src: url('../assets/fonts/SofiaSansExtraCondensed.ttf');
-}
-
-:root
-{
-    --background: rgb(238, 238, 238);
-    --secondaryBackground: rgb(34, 40, 49);
-    --tertiaryAccent: rgb(57, 62, 79);
-    --accent: rgb(214, 90, 49);
-    --secondaryAccent: rgb(217, 43, 57);
-    --text: rgb(0, 0, 0);
-    --header-font: BebasNeue;
-    --font: SofiaSansExtraCondensed;
-}
-
-body
-{
-    background-color: var(--background);
-    color: var(--text);
-    padding: 0;
-    margin: 0;
-}
-
-body,
-button,
-input,
-textarea
-{
-    font-family: var(--font), Arial, Helvetica, sans-serif;
-    letter-spacing: .1rem;
-}
-
-h
-{
-    font-family: var(--header-font);
-    /* font-size: larger; */
-}
-
-a
-{
-    color: var(--accent);
-    transition: color .5s;
-    text-decoration: none;
-}
-
-a:hover
-{
-    color: var(--secondaryAccent);
-}
-
-/* index.html */
-
 #frontPicture
 {
     background-color: var(--tertiaryAccent);
@@ -74,19 +6,20 @@ a:hover
 #mainImage
 {
     display: inline;
-    margin-left: 30%;
-    width: 40%;
+    width: 100%;
+    height: 700px;
     margin-bottom: -7px;
 }
 
 #mainText
 {
     color: var(--accent);
-    text-align: right;
+    text-align: center;
     margin-right: 2%;
     margin-bottom: 0px;
+    margin-top: 50px;
 }
-
+/*
 #underMainText
 {
     color: black;
@@ -96,7 +29,7 @@ a:hover
     margin-right: 2%;
     margin-top: 0px;
 
-}
+} */
 
 #frontPageText
 {
@@ -106,6 +39,7 @@ a:hover
 
 img.frontPagePhotos
 {
+    margin-top: 20px;
     transition-duration: .5s;
     transition-property: transform, border-radius;
 }
@@ -116,6 +50,50 @@ img.frontPagePhotos:hover
     border-radius: 10px;
 }
 
+.frontPagePhotosMainText
+{
+    color: var(--accent);
+    font-size: 20px;
+    line-height:3px;
+    
+}
+
+.frontPagePhotosSubText
+{
+    line-height: 2px;
+    font-size: 15px;
+}
+
+.quoteImage
+{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 1430px;
+    height: 500px;
+}
+
+#winnerPhoto
+{
+    width: 600px;
+    height: 350px;
+    margin-left: 30px;
+}
+
+#winnerText
+{
+    vertical-align: top;
+    font-size: 50px;
+    margin-top: 100px;
+    margin-left: 120px;
+    display: inline-block;
+}
+
+.footerBox
+{
+    margin-top: 100px;
+    background-color: var(--secondaryBackground);
+    height: 250px;
+}
 
 /*
 #frontPageGallery
@@ -154,59 +132,4 @@ img.frontPagePhotos:hover
 #frontPageGallery a
 {
     margin: 32px;
-}
-
-
-/* includes/menuBar.html */
-#menuBar
-{
-    display: block;
-    width: 100%;
-    height: 50px;
-    background-color: var(--secondaryBackground);
-    color: var(--accent);
-}
-
-#menuBar a
-{
-    font: var(--header-font);
-    display: inline-block;
-    color: var(--accent);
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 22px;
-    margin-top: 13px;
-    margin-left: 10px;
-    transition-duration: .2s;
-    transition-property: color, border-width;
-}
-
-#menuBar a svg
-{
-    display: inline;
-    height: 29px;
-    width: 29px;
-    transition-duration: .2s;
-    transition-property: color;
-}
-
-#menuBar .menuBarNormal:hover,
-#menuBar .menuBarNormalCurrent
-{
-    color: var(--secondaryAccent);
-    border-bottom-width: 7px;
-    padding-bottom: 3px;
-    border-bottom-style: solid;
-    border-bottom-color: var(--secondaryAccent);
-}
-
-#menuBar .menuBarIcon
-{
-    float: right;
-    margin-right: 10px;
-}
-
-#menuBar .menuBarIcon:hover
-{
-    color: var(--secondaryAccent);
 }

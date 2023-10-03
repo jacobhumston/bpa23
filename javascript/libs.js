@@ -18,6 +18,21 @@ libs.include = {
             document.body.insertAdjacentHTML(finalPlace, await response.text());
         });
     },
+    /**
+     * Include a css file in the head.
+     * @param {Document} document
+     * @param {string} url
+     * @param {"start"|"end"} place
+     */
+    includeHeadCSS: function (document, url, place) {
+        let finalPlace = place;
+        if (place === 'start') finalPlace = 'afterbegin';
+        if (place === 'end') finalPlace = 'beforeend';
+        const rel = document.createElement('link');
+        rel.rel = 'stylesheet';
+        rel.href = url;
+        document.head.insertAdjacentElement(finalPlace, rel);
+    },
 };
 
 // Library to add and remove items from the shopping cart.
