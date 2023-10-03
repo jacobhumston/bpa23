@@ -47,8 +47,3 @@ window.addEventListener('load', function () {
     libs.include.includeHeadCSS(document, 'css/menuBar.css', 'end');
     waitForElement('menuBar').then(updateMenuBar);
 });
-
-import { wait, log,  } from 'https://cdn.jsdelivr.net/gh/jacobhumston/lib@master/web/core.js';
-wait(1000).then(function () {
-    log('Success', 'waited');
-});
