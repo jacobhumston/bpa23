@@ -6,6 +6,7 @@
     height: 50px;
     background-color: var(--secondaryBackground);
     color: var(--accent);
+    font-family: var(--header-font);
 }
 
 #menuBar a

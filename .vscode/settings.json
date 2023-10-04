@@ -1,3 +1,6 @@
 {
-    "css.format.braceStyle": "expand"
+    "css.format.braceStyle": "expand",
+    "cSpell.words": [
+        "Gabarito"
+    ]
 }

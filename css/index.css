@@ -1,24 +1,47 @@
 #frontPicture
 {
     background-color: var(--tertiaryAccent);
+    block-size: auto;
+    position: relative;
+    overflow: hidden;
 }
 
 #mainImage
 {
-    display: inline;
+    display: block;
     width: 100%;
-    height: 700px;
+    height: auto;
+    max-height: 600px;
+    max-width: 1050px;
     margin-bottom: -7px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#mainImageBackground
+{
+    background-image: url('../assets/images/placeholders/burger2.png');
+    background-size: cover;
+    filter: blur(15px);
+    overflow: hidden;
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 #mainText
 {
     color: var(--accent);
     text-align: center;
-    margin-right: 2%;
     margin-bottom: 0px;
     margin-top: 50px;
 }
+
 /*
 #underMainText
 {
@@ -54,8 +77,8 @@ img.frontPagePhotos:hover
 {
     color: var(--accent);
     font-size: 20px;
-    line-height:3px;
-    
+    line-height: 3px;
+
 }
 
 .frontPagePhotosSubText
@@ -69,16 +92,23 @@ img.frontPagePhotos:hover
 {
     margin-top: 50px;
     margin-bottom: 20px;
-    width: 1430px;
+    width: 100%;
     height: 500px;
 }
 
 #winnerPhoto
 {
-    width: 450px;
+    width: 470px;
     height: 300px;
     margin-left: 230px;
     border-radius: 10px;
+}
+
+#winnerText,
+#dinnerText
+{
+    font-family: var(--header-font);
+    font-weight: bold;
 }
 
 #winnerText
@@ -88,14 +118,19 @@ img.frontPagePhotos:hover
     margin-top: 110px;
     margin-left: 110px;
     display: inline-block;
+    color: var(--accent);
+}
+
+.dinnerPhotoDiv
+{
+    display: flex;
+    -ms-flex-item-align: end;
 }
 
 #dinnerPhoto
 {
-    width: 450px;
+    width: 470px;
     height: 300px;
-    margin-left: 730px;
-    border-radius: 10px;
 }
 
 #dinnerText
@@ -105,6 +140,7 @@ img.frontPagePhotos:hover
     margin-top: -200px;
     margin-left: 400px;
     display: inline-block;
+    color: var(--accent);
 }
 
 .e

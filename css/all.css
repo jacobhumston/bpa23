@@ -16,6 +16,11 @@
     src: url('../assets/fonts/SofiaSansExtraCondensed.ttf');
 }
 
+@font-face {
+    font-family: Gabarito;
+    src: url('../assets/fonts/Gabarito.ttf');
+}
+
 :root
 {
     --background: rgb(238, 238, 238);
@@ -24,8 +29,8 @@
     --accent: rgb(214, 90, 49);
     --secondaryAccent: rgb(217, 43, 57);
     --text: rgb(0, 0, 0);
-    --header-font: BebasNeue;
-    --font: SofiaSansExtraCondensed;
+    --header-font: SofiaSansExtraCondensed;
+    --font: Gabarito;
 }
 
 body
@@ -42,10 +47,10 @@ input,
 textarea
 {
     font-family: var(--font), Arial, Helvetica, sans-serif;
-    letter-spacing: .1rem;
+    letter-spacing: .05rem;
 }
 
-h
+h1
 {
     font-family: var(--header-font);
     /* font-size: larger; */
