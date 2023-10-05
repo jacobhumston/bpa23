@@ -170,6 +170,14 @@ img.frontPagePhotos:hover
     height: 250px;
 }
 
+.footerLogo
+{
+    width: 150px;
+    float: right;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
 /*
 #frontPageGallery
 {
