@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Burger",
+        "id": "b1",
+        "image": "./assets/images/burgermain.png",
+        "price": 2.99
+    },
+    {
+        "name": "Cheese Burger",
+        "id": "12",
+        "image": "./assets/images/burgermain.png",
+        "price": 99.99
+    },
+    {
+        "name": "CHEESE",
+        "id": "64",
+        "image": "./assets/images/burgermain.png",
+        "price": 0.99
+    },
+    {
+        "name": "Nvm...",
+        "id": "26",
+        "image": "./assets/images/burgermain.png",
+        "price": 0
+    },
+    {
+        "name": "Bigger Burger",
+        "id": "a3",
+        "image": "./assets/images/burgermain.png",
+        "price": 1000.99
+    },
+    {
+        "name": "Fries",
+        "id": "v4",
+        "image": "./assets/images/burgermain.png",
+        "price": 2.99
+    },
+    {
+        "name": "Car",
+        "id": "98",
+        "image": "./assets/images/burgermain.png",
+        "price": 2.99
+    },
+    {
+        "name": "Anything Burger",
+        "id": "37",
+        "image": "./assets/images/burgermain.png",
+        "price": 2.26780
+    },
+    {
+        "name": "Developer Role",
+        "id": "54",
+        "image": "./assets/images/burgermain.png",
+        "price": 9999999.02
+    }
+]

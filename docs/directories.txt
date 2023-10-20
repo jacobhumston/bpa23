@@ -7,8 +7,11 @@ css - Style sheets.
 docs - Information files. (*.txt)
 includes - HTML files which may be included in multiple files. (Via include library. -> javascript/lib/include.js)
 javascript - Javascript files.
+node_modules - Utility node modules.
+data - Data files, such as JSON.
 
 (OTHER)
 .prettierrc.json - Plugin configuration.
 .README.md - README file.
 *.html - Page file.
+package.json - Node configuration.

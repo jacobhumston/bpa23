@@ -44,6 +44,8 @@ function updateMenuBar() {
 window.addEventListener('load', function () {
     changeTitle(document, document.title, 'Game Day Grill');
     libs.include.includeBody(document, 'includes/menuBar.html', 'start');
+    libs.include.includeBody(document, 'includes/footer.html', 'end');
     libs.include.includeHeadCSS(document, 'css/menuBar.css', 'end');
+    libs.include.includeHeadCSS(document, 'css/footer.css', 'end');
     waitForElement('menuBar').then(updateMenuBar);
 });

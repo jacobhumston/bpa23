@@ -1,0 +1,11 @@
+#mainText {
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+
+
+.basic-text {
+    padding-left: 2%;
+}
