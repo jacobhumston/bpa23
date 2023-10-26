@@ -104,7 +104,7 @@ img.frontPagePhotos:hover {
 }
 
 #winnerPhotoDiv {
-    margin-left: 220px;
+    margin-left: 30px;
     max-width: 470px;
 }
 
@@ -134,7 +134,7 @@ img.frontPagePhotos:hover {
     position: relative;
     display: inline;
     max-width: 470px;
-    margin-right: 220px;
+    margin-right: 400px;
 }
 
 #dinnerPhoto {

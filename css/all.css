@@ -59,3 +59,18 @@ a {
 a:hover {
     color: var(--secondaryAccent);
 }
+
+#mainText {
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+
+
+.basic-text {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 2%;
+    text-indent: 4%;
+}
