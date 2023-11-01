@@ -1,0 +1,20 @@
+.contact-box 
+{
+    color: var(--text);
+    position: fixed;
+    top: 30%;
+    right: 0;
+    margin-right: 10px;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 360px;
+    padding: 15px;
+    background-color: var(--accent);
+    border-radius: 10px;
+}
+
+h2
+{
+font-family: var(--header-font);
+font-weight: 800;
+}
