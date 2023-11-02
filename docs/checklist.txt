@@ -1,6 +1,6 @@
 COMPLETED? (✅❌) | TASK --------------<|LINE LIMIT|>
 
 ❌ add meta tags to images/web page
-❌ task2
+❌ favicon
 ❌ task3
 ✅ task4
