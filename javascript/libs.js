@@ -18,7 +18,7 @@ libs.include = {
             document.body.insertAdjacentHTML(finalPlace, await response.text());
         });
     },
-    
+
     /**
      * Include a css file in the head.
      * @param {Document} document

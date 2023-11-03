@@ -1,5 +1,4 @@
-.contact-box 
-{
+.contact-box {
     color: var(--text);
     position: fixed;
     top: 30%;
@@ -13,14 +12,11 @@
     border-radius: 10px;
 }
 
-h2
-{
-font-family: var(--header-font);
-font-weight: 801;
+h2 {
+    font-family: var(--header-font);
+    font-weight: 801;
 }
 
-#calendarImg
-{
+#calendarImg {
     width: 800px;
-    
 }

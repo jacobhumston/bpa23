@@ -1,8 +1,10 @@
 {
     "dependencies": {
+        "express": "^4.18.2",
         "prettier": "^3.0.3"
     },
     "scripts": {
-        "format": "prettier ./ --write"
+        "format": "prettier ./ --write",
+        "server": "node node-server.js"
     }
 }
