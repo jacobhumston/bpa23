@@ -21,6 +21,7 @@
 :root {
     --background: rgb(238, 238, 238);
     --backgroundPop: rgb(210, 210, 210);
+    --backgroundPop2: rgb(216, 215, 215);
     --secondaryBackground: rgb(34, 40, 49);
     --tertiaryAccent: rgb(57, 62, 79);
     --accent: rgb(214, 90, 49);
@@ -28,6 +29,7 @@
     --text: rgb(0, 0, 0);
     --header-font: SofiaSansExtraCondensed;
     --font: Gabarito;
+    --moneyAccent: rgb(77, 173, 74);
 }
 
 html,

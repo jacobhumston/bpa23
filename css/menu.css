@@ -1,12 +1,56 @@
 #items {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 20px;
-    height: 100%;
-    margin-top: 50px;
+    margin-top: 80px;
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 300px;
+    height: 208px;
+    background-color: var(--backgroundPop2);
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.item img,
+.item p,
+.item button {
+    margin: 0px;
+}
+
+.item p
+{
+    margin-bottom: 5px;
+    color: var(--secondaryBackground);
+    font-size: large;
+}
+
+.item p b
+{
+    color: var(--accent);
+    font-size: larger;
+}
+
+.item img {
+    width: 300px;
+    height: 140px;
+    border-radius: 10px;
+}
+
+.item button {
+    width: 300px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--secondaryAccent);
+    color: var(--background);
+    font-size: large;
 }
