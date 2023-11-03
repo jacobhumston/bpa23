@@ -30,6 +30,16 @@
     --font: Gabarito;
 }
 
+html,
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+html {
+    background-color: var(--secondaryBackground);
+}
+
 body {
     background-color: var(--background);
     color: var(--text);
@@ -72,4 +82,21 @@ a:hover {
     padding-right: 30%;
     padding-top: 2%;
     text-indent: 4%;
+}
+
+#loadingDiv {
+    background-color: var(--secondaryBackground);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+#loadingDiv img {
+    width: 25%;
+    height: auto;
+    margin-left: 37.5%;
+    margin-top: 10%;
 }

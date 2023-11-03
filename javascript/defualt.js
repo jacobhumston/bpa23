@@ -41,6 +41,77 @@ function updateMenuBar() {
     }
 }
 
+/**
+ * Insert loading divider.
+ */
+function insertLoadingDivider(tween, tweenCallback) {
+    const divider = document.createElement('div');
+    divider.id = 'loadingDiv';
+    const img = document.createElement('img');
+    img.src = './assets/images/logo.png';
+    divider.insertAdjacentElement('afterbegin', img);
+    document.documentElement.insertAdjacentElement('beforeEnd', divider);
+    document.documentElement.style.overflowY = 'hidden';
+    document.documentElement.style.overflowX = 'hidden';
+    if (tween === true) {
+        divider.style.opacity = 0;
+        const interval = setInterval(() => {
+            divider.style.opacity = parseFloat(divider.style.opacity) + 0.005;
+            if (parseFloat(divider.style.opacity) >= 1) {
+                clearInterval(interval);
+                if (tweenCallback) tweenCallback();
+            }
+        }, 2);
+    }
+}
+
+/**
+ * Hide loading divider.
+ */
+function hideLoadingDivider(callback) {
+    document.body.removeAttribute('style');
+    const divider = document.getElementById('loadingDiv');
+    divider.style.opacity = 1;
+    const interval = setInterval(() => {
+        divider.style.opacity = parseFloat(divider.style.opacity) - 0.005;
+        if (parseFloat(divider.style.opacity) <= 0) {
+            clearInterval(interval);
+            divider.remove();
+            document.documentElement.style.overflowY = 'auto';
+            document.documentElement.style.overflowX = 'auto';
+            if (callback) {
+                callback();
+            }
+        }
+    }, 2);
+}
+
+/**
+ * Function to connect the loading menu to all anchor elements.
+ */
+function attachLoadingAnimation() {
+    const links = document.getElementsByTagName('a');
+    for (const link of links) {
+        if (!link.href) continue;
+        if (!link.href.includes('bpa')) continue;
+        const destination = link.href;
+        link.href = 'javascript:;';
+        link.addEventListener('click', function () {
+            insertLoadingDivider(true, function () {
+                document.location.href = `${destination}?l`;
+            });
+        });
+    }
+}
+
+const shouldDisplayLoadingScreen = new URLSearchParams(window.location.search).has('l');
+
+if (shouldDisplayLoadingScreen) {
+    insertLoadingDivider();
+} else {
+    document.body.removeAttribute('style');
+}
+
 window.addEventListener('load', function () {
     changeTitle(document, document.title, 'Game Day Grill');
     libs.include.includeBody(document, 'includes/menuBar.html', 'start');
@@ -48,4 +119,11 @@ window.addEventListener('load', function () {
     libs.include.includeHeadCSS(document, 'css/menuBar.css', 'end');
     libs.include.includeHeadCSS(document, 'css/footer.css', 'end');
     waitForElement('menuBar').then(updateMenuBar);
+    setTimeout(() => {
+        if (shouldDisplayLoadingScreen) {
+            hideLoadingDivider(attachLoadingAnimation);
+        } else {
+            attachLoadingAnimation();
+        }
+    }, 500);
 });
