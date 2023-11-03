@@ -49,6 +49,7 @@ function insertLoadingDivider(tween, tweenCallback) {
     divider.id = 'loadingDiv';
     const img = document.createElement('img');
     img.src = './assets/images/logo.png';
+    if (tween) img.classList.add('no-anim');
     divider.insertAdjacentElement('afterbegin', img);
     document.documentElement.insertAdjacentElement('beforeEnd', divider);
     document.documentElement.style.overflowY = 'hidden';
@@ -96,10 +97,14 @@ function attachLoadingAnimation() {
         if (!link.href.includes('bpa')) continue;
         const destination = link.href;
         link.href = 'javascript:;';
-        link.addEventListener('click', function () {
-            insertLoadingDivider(true, function () {
-                document.location.href = `${destination}?l`;
-            });
+        link.addEventListener('click', function (event) {
+            if (event.ctrlKey) {
+                window.open(destination);
+            } else {
+                insertLoadingDivider(true, function () {
+                    document.location.href = `${destination}?l`;
+                });
+            }
         });
     }
 }

@@ -94,9 +94,27 @@ a:hover {
     left: 0;
 }
 
+@keyframes rotate {
+    1% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
 #loadingDiv img {
     width: 25%;
     height: auto;
     margin-left: 37.5%;
     margin-top: 10%;
+    animation: rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 100ms;
+}
+
+#loadingDiv .no-anim {
+    animation: none !important;
 }

@@ -5,7 +5,6 @@ footer {
 }
 
 .footerBox {
-    margin-top: 200px;
     background-color: var(--secondaryBackground);
     height: 250px;
 }
