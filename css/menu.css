@@ -35,12 +35,18 @@
 .item p b {
     color: var(--accent);
     font-size: larger;
+    float: right;
 }
 
 .item img {
-    width: 300px;
-    height: 140px;
+    /* width: 300px; */
+    width: auto;
+    height: 143px;
     border-radius: 10px;
+    margin-bottom: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
 }
 
 .item button {

@@ -1,56 +1,83 @@
 [
     {
-        "name": "Burger",
+        "name": "Game Day Burger",
         "id": "b1",
         "image": "./assets/images/burgermain.png",
-        "price": 2.99
+        "price": 835,
+        "category": "burgers"
     },
     {
-        "name": "Cheese Burger",
+        "name": "Cheeseburger",
         "id": "12",
         "image": "./assets/images/burgermain.png",
-        "price": 99.99
+        "price": 230,
+        "category": "example"
     },
     {
         "name": "CHEESE",
         "id": "64",
         "image": "./assets/images/burgermain.png",
-        "price": 0.99
+        "price": 0.99,
+        "category": "example"
     },
     {
         "name": "Nvm...",
         "id": "26",
         "image": "./assets/images/burgermain.png",
-        "price": 0
+        "price": 0,
+        "category": "example"
     },
     {
         "name": "Bigger Burger",
         "id": "a3",
         "image": "./assets/images/burgermain.png",
-        "price": 1000.99
+        "price": 1000.99,
+        "category": "example"
     },
     {
         "name": "Fries",
         "id": "v4",
         "image": "./assets/images/burgermain.png",
-        "price": 2.99
+        "price": 2.99,
+        "category": "example"
     },
     {
         "name": "Car",
         "id": "98",
         "image": "./assets/images/burgermain.png",
-        "price": 2.99
+        "price": 2.99,
+        "category": "example"
     },
     {
         "name": "Anything Burger",
         "id": "37",
         "image": "./assets/images/burgermain.png",
-        "price": 2.2678
+        "price": 2.2678,
+        "category": "example"
     },
     {
         "name": "Developer Role",
         "id": "54",
         "image": "./assets/images/burgermain.png",
-        "price": 9999999.02
+        "price": 9999999.02,
+        "category": "example"
+    },
+    {
+        "name": "s",
+        "id": "54",
+        "image": "./assets/images/burgermain.png",
+        "price": 9999999.02,
+        "category": "example"
     }
+
+    // MAINS ABOVE
+
+
+     // SIDES ABOVE
+
+
+     // APPETIZERS ABOVE
+
+
+       // DESSERTS ABOVE
 ]

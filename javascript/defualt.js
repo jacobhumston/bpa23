@@ -135,18 +135,3 @@ window.addEventListener('load', function () {
         }
     }, 500);
 });
-
-/**
- * This should prevent right-clicks.
- */
-const ignoreRCP = false;
-document.addEventListener('contextmenu', function (event) {
-    if (ignoreRCP === true) return;
-    const result = confirm('Right-clicking is disabled by default.\nEnable right-clicking?');
-    if (result === true) {
-        ignoreRCP = true;
-        return;
-    } else {
-        event.preventDefault();
-    }
-});
