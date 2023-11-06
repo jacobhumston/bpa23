@@ -26,15 +26,13 @@
     margin: 0px;
 }
 
-.item p
-{
+.item p {
     margin-bottom: 5px;
     color: var(--secondaryBackground);
     font-size: large;
 }
 
-.item p b
-{
+.item p b {
     color: var(--accent);
     font-size: larger;
 }
