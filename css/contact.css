@@ -13,11 +13,6 @@
     margin-top: 60px;
 }
 
-h2 {
-    font-family: var(--header-font);
-    font-weight: 801;
-}
-
 #calendarImg {
     width: 800px;
     display: block;
