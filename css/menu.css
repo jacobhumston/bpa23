@@ -1,9 +1,19 @@
+#details {
+    text-align: center;
+    margin-top: 70px;
+}
+
+#details svg {
+    vertical-align: bottom;
+    color: var(--accent);
+}
+
 #items {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 10px;
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -57,4 +67,9 @@
     background-color: var(--secondaryAccent);
     color: var(--background);
     font-size: large;
+}
+
+.item button:hover {
+    background-color: var(--secondaryAccentDarken);
+    cursor: pointer;
 }

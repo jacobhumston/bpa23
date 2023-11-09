@@ -21,6 +21,11 @@ console.log(`Serving on path "${path}"...`);
 // Use express.static to serve static files.
 app.use(express.static(path));
 
+// Favicon requests.
+app.get('/favicon.ico', function (_, response) {
+    response.sendFile(`favicon.ico`, { root: '.' });
+});
+
 // Redirect root to the bpa folder.
 app.get('/', function (_, response) {
     response.redirect('/bpa/');

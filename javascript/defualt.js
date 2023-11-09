@@ -35,7 +35,7 @@ function updateMenuBar() {
     const anchors = menubar.getElementsByClassName('menuBarNormal');
     for (let i = 0; i !== anchors.length; i++) {
         const item = anchors.item(i);
-        if (item.href === window.location.href) {
+        if (item.href.replace('?l', '') === window.location.href.replace('?l', '')) {
             item.classList.add('menuBarNormalCurrent');
         }
     }
@@ -96,6 +96,7 @@ function attachLoadingAnimation() {
         if (!link.href) continue;
         if (!link.href.includes('bpa')) continue;
         const destination = link.href;
+        link.dataset.href = destination;
         link.href = 'javascript:;';
         link.addEventListener('click', function (event) {
             if (event.ctrlKey) {
@@ -127,6 +128,7 @@ window.addEventListener('load', function () {
     libs.include.includeHeadCSS(document, 'css/menuBar.css', 'end');
     libs.include.includeHeadCSS(document, 'css/footer.css', 'end');
     waitForElement('menuBar').then(updateMenuBar);
+
     setTimeout(() => {
         if (shouldDisplayLoadingScreen) {
             hideLoadingDivider(attachLoadingAnimation);
