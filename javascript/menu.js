@@ -19,7 +19,7 @@ async function main() {
                 `<p><b>${new Intl.NumberFormat('en-US', {
                     style: 'currency',
                     currency: 'USD',
-                }).format(value.price)}</b> ${value.name}</p><img src="${value.image}" alt="${
+                }).format(parseFloat(value.price))}</b> ${value.name}</p><img src="${value.image}" alt="${
                     value.name
                 }"><button type="button">Add to Bag</button>`
             );

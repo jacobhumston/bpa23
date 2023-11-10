@@ -23,6 +23,7 @@ async function main() {
         itemDiv.innerHTML = '';
         currentItems.forEach((value) => {
             const details = items.find((item) => item.id === value);
+            if (!details) return;
             itemDiv.insertAdjacentHTML('beforeend', `<br>${details.name} x${currentItemsCount[value]}<br>`);
         });
     }
