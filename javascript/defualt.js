@@ -106,7 +106,7 @@ function attachLoadingAnimation() {
                     document.location.href = `${destination}?l`;
                     setTimeout(() => {
                         hideLoadingDivider();
-                    }, 1000);
+                    }, 30 * 1000);
                 });
             }
         });

@@ -32,7 +32,7 @@
 #menuBar .menuBarNormal:hover,
 #menuBar .menuBarNormalCurrent {
     color: var(--secondaryAccent);
-    border-bottom-width: 7px;
+    border-bottom-width: 8px;
     padding-bottom: 3px;
     border-bottom-style: solid;
     border-bottom-color: var(--secondaryAccent);

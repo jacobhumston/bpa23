@@ -1,6 +1,8 @@
 /**
  * A simple node server, incase apache isn't available.
- * The first cmd param is the root of express.static!
+ *
+ * The first cmd param is the port to listen on.
+ * And the second is the root of express.static.
  *
  * It's important that the directory you provide contains a
  * folder named bpa with the repository's contents.
@@ -13,7 +15,7 @@ const express = require('express');
 const app = express();
 
 // Set the current express.static path.
-const path = process.argv[2] ?? '/';
+const path = process.argv[3] ?? '/';
 
 // Log the current path.
 console.log(`Serving on path "${path}"...`);
@@ -49,11 +51,12 @@ app.use(function (_, response) {
 });
 
 /**
- * Listen on port 80 and 5555 for compatibility
- * with different apache configurations.
+ * Listen on the provided port
+ * or port 80 if none is provided.
  */
-app.listen(80);
-app.listen(5555);
+const port = process.argv[2] ?? 80;
+app.listen(port);
+console.log(`Listening on port ${port}...`);
 
 // Log that the server has started.
 console.log('Node server has started!');
