@@ -1,5 +1,6 @@
 /* includes/menuBar.html */
-#menuBar {
+#menuBar,
+#menuBarMobile {
     display: block;
     width: 100%;
     height: 50px;
@@ -8,7 +9,8 @@
     font-family: var(--header-font);
 }
 
-#menuBar a {
+#menuBar a,
+#menuBarMobile a {
     font: var(--header-font);
     display: inline-block;
     color: var(--accent);
@@ -21,7 +23,8 @@
     transition-property: color, border-width;
 }
 
-#menuBar a svg {
+#menuBar a svg,
+#menuBarMobile a svg {
     display: inline;
     height: 29px;
     width: 29px;
@@ -38,16 +41,24 @@
     border-bottom-color: var(--secondaryAccent);
 }
 
-#menuBar .menuBarIcon {
+#menuBarMobile .menuBarNormal:hover,
+#menuBarMobile .menuBarNormalCurrent {
+    color: var(--secondaryAccent);
+}
+
+#menuBar .menuBarIcon,
+#menuBarMobile .menuBarIcon {
     float: right;
     margin-right: 10px;
 }
 
-#menuBar .menuBarIcon:hover {
+#menuBar .menuBarIcon:hover,
+#menuBarMobile .menuBarIcon:hover {
     color: var(--secondaryAccent);
 }
 
-#menuBar .menuBarIconMain img {
+#menuBar .menuBarIconMain img,
+#menuBarMobile .menuBarIconMain img {
     display: inline-block;
     height: 80px;
     width: 80px;
@@ -61,4 +72,28 @@
 
 #menuBar .menuBarIconMainIcon {
     margin-top: -8px;
+}
+
+#menuBarMobile .menuBarIconMainIcon {
+    margin-top: -16px;
+}
+
+#menuBarMobile {
+    display: none;
+}
+
+@media screen and (max-width: 650px) {
+    #menuBar {
+        display: none;
+    }
+
+    #menuBarMobile {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #menuBarMobile .menuBarIconMain img {
+        display: none;
+    }
 }

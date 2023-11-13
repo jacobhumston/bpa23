@@ -1,214 +1,67 @@
 [
     //MEALS
     {
-        "name": "Game Day Burger Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 8.35,
-        "category": "burgers",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Cheeseburger Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 2.3,
-        "category": "burgers",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Bacon Burger Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 0.99,
-        "category": "burgers",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Sloppy Joe Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 0,
-        "category": "burgers",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Double Trouble Burger Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 1000.99,
-        "category": "burger",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Hotdog Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 2.99,
-        "category": "hotdog",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Chilli Hotdog Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 2.99,
-        "category": "hotdog",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Steak Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 2.2678,
-        "category": "steak",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "1/2 Rack Ribs Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "ribs",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Full Rack Ribs Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "ribs",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Grilled Chicken Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "ribs",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Grilled Chicken Salad Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "chicken",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Chicken Tenders Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "chicken",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Chicken Wings Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "chicken",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Chicken Breast Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "chicken",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Chicken Sandwich Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "chicken",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "BBQ Chicken Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "chicken",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Pork Tenderloin Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "pork",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Pork Chop Meal",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "pork",
-        "description": "lalalal \n lallala"
-    },
-
-    // MAINS
-    {
         "name": "Game Day Burger",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
         "price": 8.35,
         "category": "burgers",
-        "description": "lalalal \n lallala"
+        "description": "The Game Day Burger is the sandwich that started it all. A patty sandwiched between two toasted sesame seed buns, doused with our signature Game Day sauce, and topped off with tomatoes, pickles, onions, lettuce, and a slice of all American cheese, it's sure to leave you craving more.  \n ThThe meal features a delicious pairing of our signature Game Day Burger and two sides of your choice. \n The burger can be customized to your liking per request.",
+        "canBeMeal": true
     },
     {
         "name": "Cheeseburger",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
-        "price": 2.3,
+        "price": 8.35,
         "category": "burgers",
-        "description": "lalalal \n lallala"
+        "description": " The meal consists of a standard cheeseburger and two sides of your choice. \n The burger can be customized to your liking per request.",
+        "canBeMeal": true
     },
     {
         "name": "Bacon Burger",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
-        "price": 2.99,
+        "price": 0.99,
         "category": "burgers",
-        "description": "lalalal \n lallala"
+        "description": "The meal consists of a classic BLT style sandwich. \n The burger can be customized to your liking per request.",
+        "canBeMeal": true
     },
     {
         "name": "Sloppy Joe",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
-        "price": 2.99,
+        "price": 0,
         "category": "burgers",
-        "description": "lalalal \n lallala"
+        "description": "The meal features our mouth-watering Sloppy Joe sandwich, along with two sides of your choice.",
+        "canBeMeal": true
     },
     {
         "name": "Double Trouble Burger",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
-        "price": 3.2,
+        "price": 10.99,
         "category": "burger",
-        "description": "lalalal \n lallala"
+        "description": "The meal features our infamous Double Trouble Burger and two sides of your choice. \n The burger can be customized to your liking per request.",
+        "canBeMeal": true
     },
     {
         "name": "Hotdog",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
-        "price": 1.99,
+        "price": 2.99,
         "category": "hotdog",
-        "description": "lalalal \n lallala"
+        "description": "The meal consists of a standard hotdog and two sides of your choice. \n The hotdog can be customized to your liking per request.",
+        "canBeMeal": true
     },
     {
         "name": "Chilli Hotdog",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
-        "price": 2.2,
+        "price": 2.99,
         "category": "hotdog",
-        "description": "lalalal \n lallala"
+        "description": "The meal consists of a standard chilli hotdog and two sides of your choice. \n The hotdog can be customized to your liking per request.",
+        "canBeMeal": true
     },
     {
         "name": "Steak",
@@ -216,7 +69,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 2.2678,
         "category": "steak",
-        "description": "lalalal \n lallala"
+        "description": "The meal consists of your favorite mouth-watering cut of steak, along with two sides of your choice. \n Different cuts you can choose from are Sirloin, Rib Eye, Porterhouse, NY Strip, T-Bone, and Filet.",
+        "canBeMeal": true
     },
     {
         "name": "1/2 Rack Ribs",
@@ -224,7 +78,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "ribs",
-        "description": "lalalal \n lallala"
+        "description": "The meal features a half rack of ribs and two sides of your choosing. \n You can select from a wide variety of sauces for your ribs to be coated in.",
+        "canBeMeal": true
     },
     {
         "name": "Full Rack Ribs",
@@ -232,7 +87,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "ribs",
-        "description": "lalalal \n lallala"
+        "description": "The meal features a full rack of ribs and two sides of your choosing. \n You can select from a wide variety of sauces for your ribs to be coated in.",
+        "canBeMeal": true
     },
     {
         "name": "Grilled Chicken",
@@ -240,7 +96,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "ribs",
-        "description": "lalalal \n lallala"
+        "description": "The meal features our legendary grilled chicken and two sides of your choosing.",
+        "canBeMeal": true
     },
     {
         "name": "Grilled Chicken Salad",
@@ -248,7 +105,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "lalalal \n lallala"
+        "description": "The meal features our refreshing grilled chicken salad and one side of your choosing. \n You can customize what comes in your salad.",
+        "canBeMeal": true
     },
     {
         "name": "Chicken Tenders",
@@ -256,7 +114,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "lalalal \n lallala"
+        "description": "The meal features our savory chicken tenders and two sides of your choosing. \n You can pick from a selection of sauces to get with your chicken tenders.",
+        "canBeMeal": true
     },
     {
         "name": "Chicken Wings",
@@ -264,7 +123,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "lalalal \n lallala"
+        "description": "The meal consists of chicken wings coated in your favorite sauce, and your choice of two sides. \n For your wings, you can choose between drums or flats.",
+        "canBeMeal": true
     },
     {
         "name": "Chicken Breast",
@@ -272,7 +132,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "lalalal \n lallala"
+        "description": "The meal consists of your choice between a small or large chicken breast, and two sides of your choosing.",
+        "canBeMeal": true
     },
     {
         "name": "Chicken Sandwich",
@@ -280,7 +141,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "lalalal \n lallala"
+        "description": "The meal features a classic fried chicken sandwich and two sides of your choosing. \n The sandwich can be customized to your liking.",
+        "canBeMeal": true
     },
     {
         "name": "BBQ Chicken",
@@ -288,7 +150,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "lalalal \n lallala"
+        "description": "The meal features our BBQ chicken, along with two sides of your choice. \n You are able to choose between two or four cuts of chicken.",
+        "canBeMeal": true
     },
     {
         "name": "Pork Tenderloin",
@@ -296,7 +159,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "pork",
-        "description": "lalalal \n lallala"
+        "description": "chilli powder, brown sugar, oregano, paprika, cinnamon, garlic powder, and sea salt \n The meal consists of our mouth-watering pork tenderloin, and two sides of your choosing. \n You are able to choose between four or eight slices of pork tenderloin.",
+        "canBeMeal": true
     },
     {
         "name": "Pork Chop",
@@ -304,7 +168,8 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "pork",
-        "description": "lalalal \n lallala"
+        "description": "The meal features our our acclaimed pork chops and two sides of your choice. \n You are able to choose between two or four pork chops.",
+        "canBeMeal": true
     },
     // SIDES
     {
@@ -316,12 +181,12 @@
         "description": "lalalal \n lallala"
     },
     {
-        "name": "Homestyle Fries",
+        "name": "Home-Style Fries",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "potato",
-        "description": "lalalal \n lallala"
+        "description": "A savory side dish of home-style fries. Baked with fresh potatoes. "
     },
     {
         "name": "Hash Browns",
@@ -329,7 +194,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "potato",
-        "description": "lalalal \n lallala"
+        "description": "A crispy side dish containing two salted hash browns."
     },
     {
         "name": "Baked Potato",
@@ -337,7 +202,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "potato",
-        "description": "lalalal \n lallala"
+        "description": "A large baked potato topped with butter and salt."
     },
     {
         "name": "Mashed Potatoes",
@@ -345,7 +210,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "fries",
-        "description": "lalalal \n lallala"
+        "description": "A savory side dish of mashed potatoes featuring real and fresh potatoes. "
     },
     {
         "name": "Mac and Cheese",
@@ -353,7 +218,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousSides",
-        "description": "lalalal \n lallala"
+        "description": "A fun and cheesy side of macaroni and cheese."
     },
     {
         "name": "Coleslaw",
@@ -361,7 +226,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousSides",
-        "description": "lalalal \n lallala"
+        "description": "A familiar side dish of coleslaw."
     },
     {
         "name": "Baked Beans",
@@ -369,7 +234,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousSides",
-        "description": "lalalal \n lallala"
+        "description": "A homely side dish of fresh baked beans."
     },
     {
         "name": "Corn on the Cob",
@@ -377,7 +242,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousSides",
-        "description": "lalalal \n lallala"
+        "description": "A buttery side dish consisting of two mid-sized cobs of cooked and salted corn."
     },
     {
         "name": "Asparagus",
@@ -385,7 +250,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousSides",
-        "description": "lalalal \n lallala"
+        "description": "A delicious side dish of Oven-Roasted Asparagus."
     },
     {
         "name": "Broccoli and Cheese",
@@ -393,32 +258,9 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousSides",
-        "description": "lalalal \n lallala"
+        "description": "A delicious side dish of cooked brocoli drizzled in a beautiful nacho cheese."
     },
-    {
-        "name": "Brown Rice",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "rice",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "White Rice",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "rice",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Chicken Rice",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "rice",
-        "description": "lalalal \n lallala"
-    },
+
     // APPETIZERS
     {
         "name": "Loaded Fry Basket",
@@ -426,15 +268,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "fries",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Loaded Fry Basket",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "fries",
-        "description": "lalalal \n lallala"
+        "description": "Get a huge bowl of french fries covered in beef, cheese, peppers, and/or peppers. Suitable for four people.  "
     },
     {
         "name": "Fried Pickles with Ranch",
@@ -442,7 +276,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousAppetizers",
-        "description": "lalalal \n lallala"
+        "description": "Experience pickles like you never had before by getting 12 fried up by our masterful chefs here at Game Day Grill. A side of ranch is included. Suitable for 4 people. "
     },
     {
         "name": "Salad",
@@ -466,7 +300,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousAppetizers",
-        "description": "lalalal \n lallala"
+        "description": "Get a bowl of 12 supremely cheesy mozzarella sticks."
     },
     {
         "name": "Nachos",
@@ -474,7 +308,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousAppetizers",
-        "description": "lalalal \n lallala"
+        "description": "Get a huge bowl of chips topped with nacho cheese. They can also be customized to your liking with the addition of meat, peppers, etc. Perfect for up to four people."
     },
     {
         "name": "Chips and Salsa/+ Guac",
@@ -482,44 +316,37 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousAppetizers",
-        "description": "lalalal \n lallala"
+        "description": "Get a huge bowl of chips with a side of salsa and/or guacamole. Perfect for up to four people."
     },
 
     // DESSERTS
+
     {
-        "name": "Cheesecake",
+        "name": "Chocolate Cake Slice",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "cake",
-        "description": "lalalal \n lallala"
+        "description": "Get a deluxe slice of a chocolate cake topped with chocolate buttercream icing."
     },
     {
-        "name": "Chocolate Cake",
+        "name": "Vanilla Cake Slice",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "cake",
-        "description": "lalalal \n lallala"
+        "description": "Get a deluxe slice of a vanilla cake topped with vanilla buttercream icing."
     },
     {
-        "name": "Vanilla Cake",
+        "name": "Marbled Cake Slice",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "cake",
-        "description": "lalalal \n lallala"
+        "description": "Get a deluxe slice of a marbled cake topped with half vanilla and half chocolate buttercream icing. "
     },
     {
-        "name": "Marbled Cake",
-        "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
-        "price": 10,
-        "category": "cake",
-        "description": "lalalal \n lallala"
-    },
-    {
-        "name": "Cheesecake",
+        "name": "Cheesecake Slice",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
         "price": 10,
@@ -532,7 +359,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "icecream",
-        "description": "lalalal \n lallala"
+        "description": "Get that nice vanilla ice cream flavor partnered with a deluxe texture. All on top of a sweet sugar cone."
     },
     {
         "name": "Chocolate Soft Serve",
@@ -540,7 +367,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "icecream",
-        "description": "lalalal \n lallala"
+        "description": "Get that nice chocolate ice cream flavor partnered with a deluxe texture. All on top of a sweet sugar cone."
     },
     {
         "name": "Chocolate and Vanilla Sundae",
@@ -548,7 +375,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "icecream",
-        "description": "lalalal \n lallala"
+        "description": "Get two huge scoops of chocolate and vanilla ice cream topped off by a delicious chocolate syrup and even a cherry on top."
     },
     {
         "name": "Fried Ice Cream",
@@ -556,15 +383,15 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "icecream",
-        "description": "lalalal \n lallala"
+        "description": "Experience ice cream like you never had before by getting a few scoops fried up by our masterful chefs here at Game Day Grill."
     },
     {
-        "name": "Fried Ice Cookies and Cream Cookie",
+        "name": "Fried Cookies and Cream Cookie",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousDesserts",
-        "description": "lalalal \n lallala"
+        "description": "Experience cookies like you never had before by getting one fried up by our masterful chefs here at Game Day Grill."
     },
     {
         "name": "Cinnamon Rolls",
@@ -572,6 +399,91 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "icecream",
-        "description": "lalalal \n lallala"
+        "description": "Our mouthwatering cinnamon rolls are a delicious blend between cinnamon, sugar, and yeast-leavened dough. An order of cinnamon rolls comes with four 1 1/2'' cinnamon rolls. "
+    },
+    {
+        "name": "Chocolate Milkshake",
+        "id": "{ID}",
+        "image": "./assets/images/burgermain.png",
+        "price": 10,
+        "category": "icecream",
+        "description": "Our magnificent chocolate milkshake is blasted with flavor and complimented with a delightful consistency.",
+        "isDrink": true
+    },
+
+    {
+        "name": "Strawberry Milkshake",
+        "id": "{ID}",
+        "image": "./assets/images/burgermain.png",
+        "price": 10,
+        "category": "icecream",
+        "description": "Our magnificent strawberry milkshake is blasted with flavor and complimented with a delightful consistency.",
+        "isDrink": true
+    },
+
+    // DRINKS
+
+    {
+        "name": "Water",
+        "id": "{ID}",
+        "image": "./assets/images/burgermain.png",
+        "price": 10,
+        "category": "drinks",
+        "description": "lalalal \n lallala",
+        "isDrink": true
+    },
+    {
+        "name": "Sweet Tea",
+        "id": "{ID}",
+        "image": "./assets/images/burgermain.png",
+        "price": 10,
+        "category": "drinks",
+        "description": "lalalal \n lallala",
+        "isDrink": true
+    },
+    {
+        "name": "Unsweetened Tea",
+        "id": "{ID}",
+        "image": "./assets/images/burgermain.png",
+        "price": 10,
+        "category": "drinks",
+        "description": "lalalal \n lallala",
+        "isDrink": true
+    },
+    {
+        "name": "Lemonade",
+        "id": "{ID}",
+        "image": "./assets/images/burgermain.png",
+        "price": 10,
+        "category": "drinks",
+        "description": "lalalal \n lallala",
+        "isDrink": true
+    },
+    {
+        "name": "Strawberry Lemonade",
+        "id": "{ID}",
+        "image": "./assets/images/burgermain.png",
+        "price": 10,
+        "category": "drinks",
+        "description": "lalalal \n lallala",
+        "isDrink": true
+    },
+    {
+        "name": "Fountain Drink",
+        "id": "{ID}",
+        "image": "./assets/images/burgermain.png",
+        "price": 10,
+        "category": "drinks",
+        "description": "lalalal \n lallala",
+        "isDrink": true
+    },
+    {
+        "name": "Fountain Drink",
+        "id": "{ID}",
+        "image": "./assets/images/burgermain.png",
+        "price": 10,
+        "category": "drinks",
+        "description": "lalalal \n lallala",
+        "isDrink": true
     }
 ]

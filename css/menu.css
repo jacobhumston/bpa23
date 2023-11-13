@@ -12,22 +12,24 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 10px;
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
     flex-wrap: wrap;
+    row-gap: 20px;
 }
 
 .item {
     width: 300px;
-    height: 208px;
+    height: auto;
     background-color: var(--backgroundPop2);
     padding: 10px;
     border-radius: 15px;
     margin-top: 15px;
     margin-right: 15px;
+    transition: all 0.5s ease;
 }
 
 .item img,
@@ -59,6 +61,10 @@
     display: block;
 }
 
+.item:hover {
+    transform: scale(1.05);
+}
+
 .item button {
     width: 300px;
     height: 35px;
@@ -67,9 +73,27 @@
     background-color: var(--secondaryAccent);
     color: var(--background);
     font-size: large;
+    margin-bottom: 4px;
 }
+
+.description {
+    text-align: left;
+    font-size: 0px;
+    display: none;
+}
+
 
 .item button:hover {
     background-color: var(--secondaryAccentDarken);
     cursor: pointer;
+}
+
+.item:hover > .description {
+    display: inline-block;
+    display: block;
+    font-size: medium;
+}
+
+.item .lastButton {
+    margin-bottom: -2px;
 }

@@ -167,46 +167,43 @@ img.frontPagePhotos:hover {
 
 #sloganContainer {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
-    row-gap: auto;
-}
-
-#winnerPhoto,
-#dinnerPhoto {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap: 20%;
+    column-gap: 40px;
+    row-gap: 40px;
     margin-bottom: 40px;
 }
 
-#winnerPhoto img,
-#dinnerPhoto img {
+#sloganContainer img {
     border-radius: 25px;
     width: 30%;
     height: auto;
     display: inline-block;
 }
 
-#winnerPhoto p,
-#dinnerPhoto p {
+#sloganContainer p {
     font-size: xx-large;
     text-align: center;
     display: inline-block;
     vertical-align: middle;
     margin: 0;
     color: var(--accent);
+}
+
+#sloganContainer .flexBreak {
+    width: 100%;
+}
+
+#sloganContainer .left {
+    margin-right: 200px;
+}
+
+#sloganContainer .right {
+    margin-left: 200px;
 }
 
 /*

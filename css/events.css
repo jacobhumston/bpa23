@@ -1,3 +1,4 @@
+/*
 .eventDivRight {
     display: flex;
     align-items: center;
@@ -15,4 +16,32 @@
     padding-right: 20px;
     padding-top: 20%;
     float: right;
+}
+*/
+
+.event {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+}
+
+.event p {
+    display: inline-block;
+    width: 30%;
+    font-size: larger;
+    text-align: center;
+}
+
+.event img {
+    border-radius: 15px;
+    width: 30%;
+    height: auto;
+    display: inline-block;
 }

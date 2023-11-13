@@ -31,12 +31,25 @@ function waitForElement(id) {
  * Update the menu bar to the correct state.
  */
 function updateMenuBar() {
-    const menubar = document.getElementById('menuBar');
-    const anchors = menubar.getElementsByClassName('menuBarNormal');
-    for (let i = 0; i !== anchors.length; i++) {
-        const item = anchors.item(i);
-        if (item.href.replace('?l', '') === window.location.href.replace('?l', '')) {
-            item.classList.add('menuBarNormalCurrent');
+    {
+        const menubar = document.getElementById('menuBar');
+        const anchors = menubar.getElementsByClassName('menuBarNormal');
+        for (let i = 0; i !== anchors.length; i++) {
+            const item = anchors.item(i);
+            if (item.href.replace('?l', '') === window.location.href.replace('?l', '')) {
+                item.classList.add('menuBarNormalCurrent');
+            }
+        }
+    }
+
+    {
+        const menubar = document.getElementById('menuBarMobile');
+        const anchors = menubar.getElementsByClassName('menuBarNormal');
+        for (let i = 0; i !== anchors.length; i++) {
+            const item = anchors.item(i);
+            if (item.href.replace('?l', '') === window.location.href.replace('?l', '')) {
+                item.classList.add('menuBarNormalCurrent');
+            }
         }
     }
 }
@@ -123,9 +136,9 @@ if (shouldDisplayLoadingScreen) {
 
 window.addEventListener('load', function () {
     changeTitle(document, document.title, 'Game Day Grill');
-    libs.include.includeBody(document, 'includes/menuBar.html', 'start');
+    libs.include.includeBody(document, 'includes/menu-bar.html', 'start');
     libs.include.includeBody(document, 'includes/footer.html', 'end');
-    libs.include.includeHeadCSS(document, 'css/menuBar.css', 'end');
+    libs.include.includeHeadCSS(document, 'css/menu-bar.css', 'end');
     libs.include.includeHeadCSS(document, 'css/footer.css', 'end');
     waitForElement('menuBar').then(updateMenuBar);
 
