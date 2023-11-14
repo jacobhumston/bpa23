@@ -4,6 +4,7 @@
  * @property {string} id
  * @property {number} price
  * @property {string} image
+ * @property {string} category
  * @property {string|undefined} description
  * @property {true|undefined} canBeMeal
  * @property {true|undefined} isDrink
@@ -17,20 +18,23 @@ async function main() {
         json.forEach((value) => {
             const div = document.createElement('div');
             div.classList.add('item');
+
             div.insertAdjacentHTML(
                 'beforeend',
                 `<p><b>${new Intl.NumberFormat('en-US', {
                     style: 'currency',
                     currency: 'USD',
-                }).format(parseFloat(value.price))}</b> ${value.name}</p><img src="${value.image}" alt="${
-                    value.name
-                }"><p class="description">${
-                    value.description
-                        ? '&nbsp;&nbsp;&nbsp;&nbsp;' +
-                          value.description.replaceAll('\n', '<br><br>&nbsp;&nbsp;&nbsp;&nbsp;')
-                        : ''
-                }</p>`
+                }).format(parseFloat(value.price))}</b> ${value.name}</p><img src="${value.image}" alt="${value.name}">`
             );
+
+            div.insertAdjacentHTML(
+                'beforeend',
+                `<p class="description" style="display:none;">&nbsp;&nbsp;&nbsp;&nbsp;${(
+                    value.description || 'No description available.'
+                ).replace('\n', '<br>&nbsp;&nbsp;&nbsp;&nbsp;')}</p>`
+            );
+
+            div.insertAdjacentHTML('beforeend', `<button id="viewDescription">View Description</button><hr>`);
 
             if (value.canBeMeal) {
                 div.insertAdjacentHTML(
@@ -49,6 +53,7 @@ async function main() {
                     );
                 }
             }
+
             items.insertAdjacentElement('beforeend', div);
 
             const buttons = div.getElementsByTagName('button');
@@ -56,13 +61,28 @@ async function main() {
                 let debounce = false;
                 button.addEventListener('click', () => {
                     if (debounce) return;
-                    debounce = true;
-                    libs.cart.add(value.id);
-                    button.innerText = 'Added!';
-                    setTimeout(() => {
-                        button.innerText = 'Add to Bag';
-                        debounce = false;
-                    }, 1000);
+                    if (button.id === 'viewDescription') {
+                        debounce = true;
+                        const description = div.getElementsByClassName('description').item(0);
+                        if (description.style.display === 'none') {
+                            description.style.display = 'inline-block';
+                            button.innerText = 'Hide Description';
+                        } else {
+                            description.style.display = 'none';
+                            button.innerText = 'View Description';
+                        }
+                        setTimeout(() => {
+                            debounce = false;
+                        }, 1000);
+                    } else {
+                        debounce = true;
+                        libs.cart.add(value.id);
+                        button.innerText = 'Added!';
+                        setTimeout(() => {
+                            button.innerText = 'Add to Bag';
+                            debounce = false;
+                        }, 1000);
+                    }
                 });
             }
         });

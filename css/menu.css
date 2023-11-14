@@ -19,6 +19,7 @@
     margin-right: auto;
     flex-wrap: wrap;
     row-gap: 20px;
+    transition: all 0.5s ease;
 }
 
 .item {
@@ -78,21 +79,39 @@
 
 .description {
     text-align: left;
-    font-size: 0px;
+    font-size: medium;
     display: none;
 }
-
 
 .item button:hover {
     background-color: var(--secondaryAccentDarken);
     cursor: pointer;
 }
 
+.item button[id='viewDescription'] {
+    background-color: var(--secondaryBackground);
+    color: var(--background);
+    font-size: medium;
+    height: 25px;
+    margin-bottom: -1px;
+}
+
+.item button[id='viewDescription']:hover {
+    background-color: var(--accent);
+}
+
+.item hr {
+    border: none;
+    background-color: var(--tertiaryAccent);
+    height: 2px;
+    border-radius: 360deg;
+}
+
+/*
 .item:hover > .description {
     display: inline-block;
-    display: block;
-    font-size: medium;
 }
+*/
 
 .item .lastButton {
     margin-bottom: -2px;

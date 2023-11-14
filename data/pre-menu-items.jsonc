@@ -6,7 +6,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 8.35,
         "category": "burgers",
-        "description": "The Game Day Burger is the sandwich that started it all. A patty sandwiched between two toasted sesame seed buns, doused with our signature Game Day sauce, and topped off with tomatoes, pickles, onions, lettuce, and a slice of all American cheese, it's sure to leave you craving more.  \n ThThe meal features a delicious pairing of our signature Game Day Burger and two sides of your choice. \n The burger can be customized to your liking per request.",
+        "description": "Our Game Day Burger is our unique take on a classic burger. Doused with our specialty sauce, it's sure to leave you feeling like a winner. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -15,7 +15,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 8.35,
         "category": "burgers",
-        "description": " The meal consists of a standard cheeseburger and two sides of your choice. \n The burger can be customized to your liking per request.",
+        "description": "A good old-fashioned cheeseburger. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -24,7 +24,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 0.99,
         "category": "burgers",
-        "description": "The meal consists of a classic BLT style sandwich. \n The burger can be customized to your liking per request.",
+        "description": "Game Day Grill's fan favorite BLT style burger. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -33,7 +33,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 0,
         "category": "burgers",
-        "description": "The meal features our mouth-watering Sloppy Joe sandwich, along with two sides of your choice.",
+        "description": "Our sloppy joe's are derived from late Richard Harley's very own recipe. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -42,7 +42,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10.99,
         "category": "burger",
-        "description": "The meal features our infamous Double Trouble Burger and two sides of your choice. \n The burger can be customized to your liking per request.",
+        "description": "Our Double Trouble Burger is exactly what the name implies. A classic cheeseburger with an additional bun and patty is the perfect way to celebrate that team victory. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -51,16 +51,16 @@
         "image": "./assets/images/burgermain.png",
         "price": 2.99,
         "category": "hotdog",
-        "description": "The meal consists of a standard hotdog and two sides of your choice. \n The hotdog can be customized to your liking per request.",
+        "description": "Our grilled hotdogs will make you feel like you are there in the stadium with your favorite teams. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
-        "name": "Chilli Hotdog",
+        "name": "Chili Hotdog",
         "id": "{ID}",
         "image": "./assets/images/burgermain.png",
         "price": 2.99,
         "category": "hotdog",
-        "description": "The meal consists of a standard chilli hotdog and two sides of your choice. \n The hotdog can be customized to your liking per request.",
+        "description": "Our grilled chili hotdogs will make you feel like you are there in the stadium with your favorite teams. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -69,7 +69,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 2.2678,
         "category": "steak",
-        "description": "The meal consists of your favorite mouth-watering cut of steak, along with two sides of your choice. \n Different cuts you can choose from are Sirloin, Rib Eye, Porterhouse, NY Strip, T-Bone, and Filet.",
+        "description": "Try our mouth-watering take on your favorite cut of steak. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -78,7 +78,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "ribs",
-        "description": "The meal features a half rack of ribs and two sides of your choosing. \n You can select from a wide variety of sauces for your ribs to be coated in.",
+        "description": "Half the ribs, ribs all the yum! Our ribs are coated with out signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -87,7 +87,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "ribs",
-        "description": "The meal features a full rack of ribs and two sides of your choosing. \n You can select from a wide variety of sauces for your ribs to be coated in.",
+        "description": "Try our full back ribs. Our ribs are coated with out signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -96,7 +96,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "ribs",
-        "description": "The meal features our legendary grilled chicken and two sides of your choosing.",
+        "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -105,7 +105,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "The meal features our refreshing grilled chicken salad and one side of your choosing. \n You can customize what comes in your salad.",
+        "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -114,7 +114,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "The meal features our savory chicken tenders and two sides of your choosing. \n You can pick from a selection of sauces to get with your chicken tenders.",
+        "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -123,7 +123,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "The meal consists of chicken wings coated in your favorite sauce, and your choice of two sides. \n For your wings, you can choose between drums or flats.",
+        "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -132,7 +132,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "The meal consists of your choice between a small or large chicken breast, and two sides of your choosing.",
+        "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -141,7 +141,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "chicken",
-        "description": "The meal features a classic fried chicken sandwich and two sides of your choosing. \n The sandwich can be customized to your liking.",
+        "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -159,7 +159,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "pork",
-        "description": "chilli powder, brown sugar, oregano, paprika, cinnamon, garlic powder, and sea salt \n The meal consists of our mouth-watering pork tenderloin, and two sides of your choosing. \n You are able to choose between four or eight slices of pork tenderloin.",
+        "description": "A grouping of pork tenderloins seasoned magnificently by our chefs \n You are able to choose between four or eight slices of pork tenderloin. \n The meal consists of our mouth-watering pork tenderloin, and two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -178,7 +178,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "potato",
-        "description": "lalalal \n lallala"
+        "description": "A basket of fries with salt on the top of them. \n Suitable for four people."
     },
     {
         "name": "Home-Style Fries",
@@ -268,7 +268,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "fries",
-        "description": "Get a huge bowl of french fries covered in beef, cheese, peppers, and/or peppers. Suitable for four people.  "
+        "description": "Get a huge bowl of french fries covered in beef, cheese, peppers, and/or peppers.  \n Suitable for four people.  "
     },
     {
         "name": "Fried Pickles with Ranch",
@@ -276,7 +276,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousAppetizers",
-        "description": "Experience pickles like you never had before by getting 12 fried up by our masterful chefs here at Game Day Grill. A side of ranch is included. Suitable for 4 people. "
+        "description": "Experience pickles like you never had before by getting 12 fried up by our masterful chefs here at Game Day Grill. A side of ranch is included.  \n Suitable for four people. "
     },
     {
         "name": "Salad",
@@ -308,7 +308,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousAppetizers",
-        "description": "Get a huge bowl of chips topped with nacho cheese. They can also be customized to your liking with the addition of meat, peppers, etc. Perfect for up to four people."
+        "description": "Get a huge bowl of chips topped with nacho cheese. They can also be customized to your liking with the addition of meat, peppers, etc.  \n Perfect for up to four people."
     },
     {
         "name": "Chips and Salsa/+ Guac",
@@ -316,7 +316,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "miscellaneousAppetizers",
-        "description": "Get a huge bowl of chips with a side of salsa and/or guacamole. Perfect for up to four people."
+        "description": "Get a huge bowl of chips with a side of salsa and/or guacamole.  \n Perfect for up to four people."
     },
 
     // DESSERTS
