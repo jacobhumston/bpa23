@@ -9,7 +9,7 @@
 }
 
 #items {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
@@ -20,6 +20,8 @@
     flex-wrap: wrap;
     row-gap: 20px;
     transition: all 0.5s ease;
+    margin-left: 0px;
+    margin-left: 250px;
 }
 
 .item {
@@ -75,12 +77,26 @@
     color: var(--background);
     font-size: large;
     margin-bottom: 4px;
+    vertical-align: middle;
+    transition: all 0.5s ease;
+}
+
+.item button .text {
+    margin-left: -22px;
+}
+
+.item button svg {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+    float: left;
 }
 
 .description {
     text-align: left;
-    font-size: medium;
-    display: none;
+    font-size: 0px;
+    transition: all 0.5s ease;
+    display: inline-block;
 }
 
 .item button:hover {
@@ -94,10 +110,13 @@
     font-size: medium;
     height: 25px;
     margin-bottom: -1px;
+    transition: all 0.5s ease;
+    display: block;
 }
 
 .item button[id='viewDescription']:hover {
     background-color: var(--accent);
+    transition: all 0.5s ease;
 }
 
 .item hr {
@@ -118,8 +137,9 @@
 }
 
 #itemCategories {
-    display: block;
-    width: 230px;
+    display: inline-block;
+    position: absolute;
+    width: 250px;
     height: 100%;
     padding: 20px;
     padding-left: 0px;
@@ -128,6 +148,7 @@
     border-bottom-right-radius: 15px;
     background-color: var(--tertiaryAccent);
     transition: all 1s ease;
+    vertical-align: bottom;
 }
 
 #itemCategories button {
@@ -143,6 +164,8 @@
     color: var(--background);
     background-color: var(--accent);
     border: none;
+    vertical-align: middle;
+    transition: all 0.5s ease;
 }
 
 #itemCategories button:hover {
@@ -150,10 +173,17 @@
     height: 35px;
     background-color: var(--secondaryAccent);
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 #itemCategories .current {
     background-color: var(--secondaryAccent);
     width: 95%;
     height: 35px;
+}
+
+#itemCategories button svg {
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
 }

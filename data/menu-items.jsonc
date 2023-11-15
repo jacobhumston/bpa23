@@ -3,339 +3,331 @@
     {
         "name": "_categoryIcons",
         "icons": {
-            "Appetizers (other)": "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><path d='M0 0h24v24H0z' fill='none'/><path d='M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z'/></svg>",
-            "Burgers": "",
-            "Cake": "",
-            "Chicken": "",
-            "Desserts (other)": "",
-            "Drinks": "",
-            "Hotdogs": "",
-            "Ice Cream": "",
-            "Pork": "",
-            "Potato": "",
-            "Ribs": "",
-            "Sides (other)": "",
-            "Steaks": ""
+            "Appetizers": "<svg enable-background='new 0 0 24 24' height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><g><rect fill='none' height='24' width='24'/></g><g><path d='M2,19h20l-2,2H4L2,19z M5,6h1v1H5V6z M5,4h1v1H5V4z M9,4v1H7V4H9z M9,7H7V6h2V7z M6,15.23c-0.36,0.11-0.69,0.28-1,0.47V8h1 V15.23z M4,16.52C3.62,16.96,3.32,17.45,3.16,18h16.82c0.01-0.16,0.03-0.33,0.03-0.5c0-3.04-2.46-5.5-5.5-5.5 c-2.29,0-4.25,1.4-5.08,3.4C8.84,15.15,8.19,15,7.5,15c-0.17,0-0.33,0.02-0.5,0.04V8h2c1.03,0.06,1.9-0.96,2-2h10V5H11 c-0.1-1.05-0.97-1.97-2-2H3v1h1v1H3v1h1v1H3v1h1V16.52z'/></g></svg>",
+            "Mains": "<svg enable-background='new 0 0 24 24' height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><g><rect fill='none' height='24' width='24'/></g><g><g><path d='M22,10c0.32-3.28-4.28-6-9.99-6C6.3,4,1.7,6.72,2.02,10H22z' fill-rule='evenodd'/><path d='M5.35,13.5c0.55,0,0.78,0.14,1.15,0.36c0.45,0.27,1.07,0.64,2.18,0.64 s1.73-0.37,2.18-0.64c0.37-0.23,0.59-0.36,1.15-0.36c0.55,0,0.78,0.14,1.15,0.36c0.45,0.27,1.07,0.64,2.18,0.64 c1.11,0,1.73-0.37,2.18-0.64c0.37-0.23,0.59-0.36,1.15-0.36c0.55,0,0.78,0.14,1.15,0.36c0.45,0.27,1.07,0.63,2.17,0.64v-1.98 c0,0-0.79-0.16-1.16-0.38c-0.45-0.27-1.07-0.64-2.18-0.64c-1.11,0-1.73,0.37-2.18,0.64c-0.37,0.23-0.6,0.36-1.15,0.36 s-0.78-0.14-1.15-0.36c-0.45-0.27-1.07-0.64-2.18-0.64s-1.73,0.37-2.18,0.64c-0.37,0.23-0.59,0.36-1.15,0.36 c-0.55,0-0.78-0.14-1.15-0.36c-0.45-0.27-1.07-0.64-2.18-0.64c-1.11,0-1.73,0.37-2.18,0.64C2.78,12.37,2.56,12.5,2,12.5v2 c1.11,0,1.73-0.37,2.21-0.64C4.58,13.63,4.8,13.5,5.35,13.5z' fill-rule='evenodd'/><path d='M2,16v2c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2v-2H2z' fill-rule='evenodd'/></g></g></svg>",
+            "Sides": "<svg height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><path d='M0 0h24v24H0z' fill='none'/><path d='M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z'/></svg>",
+            "Desserts": "<svg height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><path d='M0 0h24v24H0z' fill='none'/><path d='M12 6c1.11 0 2-.9 2-2 0-.38-.1-.73-.29-1.03L12 0l-1.71 2.97c-.19.3-.29.65-.29 1.03 0 1.1.9 2 2 2zm4.6 9.99l-1.07-1.07-1.08 1.07c-1.3 1.3-3.58 1.31-4.89 0l-1.07-1.07-1.09 1.07C6.75 16.64 5.88 17 4.96 17c-.73 0-1.4-.23-1.96-.61V21c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-4.61c-.56.38-1.23.61-1.96.61-.92 0-1.79-.36-2.44-1.01zM18 9h-5V7h-2v2H6c-1.66 0-3 1.34-3 3v1.54c0 1.08.88 1.96 1.96 1.96.52 0 1.02-.2 1.38-.57l2.14-2.13 2.13 2.13c.74.74 2.03.74 2.77 0l2.14-2.13 2.13 2.13c.37.37.86.57 1.38.57 1.08 0 1.96-.88 1.96-1.96V12C21 10.34 19.66 9 18 9z'/></svg>",
+            "Drinks": "<svg height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><path d='M0 0h24v24H0V0z' fill='none'/><path d='M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z'/></svg>"
         }
     },
 
     // MEALS
     {
         "name": "Game Day Burger",
-        "id": "64b0e214-9f9a-4933-ad6f-79c5556fb346",
+        "id": "e6975ee5-c1f8-432a-adc1-b907562560ef",
         "image": "./assets/images/burgermain.png",
         "price": 8.35,
-        "category": "Burgers",
+        "category": "Mains",
         "description": "Our Game Day Burger is our unique take on a classic burger. Doused with our specialty sauce, it's sure to leave you feeling like a winner. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Cheeseburger",
-        "id": "51d2039a-0e96-4a1e-9d17-dabd746b6cd3",
+        "id": "105b9a57-259b-4467-b59d-6bd2f4154ccd",
         "image": "./assets/images/burgermain.png",
         "price": 8.35,
-        "category": "Burgers",
+        "category": "Mains",
         "description": "A good old-fashioned cheeseburger. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Bacon Burger",
-        "id": "29f24337-12b8-4b28-99d0-668d468bc86c",
+        "id": "d6f9b959-06b0-4554-bab0-ec4368432778",
         "image": "./assets/images/burgermain.png",
         "price": 0.99,
-        "category": "Burgers",
+        "category": "Mains",
         "description": "Game Day Grill's fan favorite BLT style burger. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Sloppy Joe",
-        "id": "e457b438-2398-486e-b2fd-266c23b995f3",
+        "id": "f5671d15-2a51-4892-943b-1dd9fef32529",
         "image": "./assets/images/burgermain.png",
         "price": 0,
-        "category": "Burgers",
+        "category": "Mains",
         "description": "Our sloppy joe's are derived from late Richard Harley's very own recipe. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Double Trouble Burger",
-        "id": "e8f6a666-2768-4f3d-924a-ea2b7210b31b",
+        "id": "f3cb1138-df24-41a3-b371-b177ad9c7711",
         "image": "./assets/images/burgermain.png",
         "price": 10.99,
-        "category": "Burgers",
+        "category": "Mains",
         "description": "Our Double Trouble Burger is exactly what the name implies. A classic cheeseburger with an additional bun and patty is the perfect way to celebrate that team victory. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Hotdog",
-        "id": "14c4948d-5ca8-4e14-b0e0-30275340e3d2",
+        "id": "66a80478-ead2-4ff5-ba19-06ea2a8f7398",
         "image": "./assets/images/burgermain.png",
         "price": 2.99,
-        "category": "Hotdogs",
+        "category": "Mains",
         "description": "Our grilled hotdogs will make you feel like you are there in the stadium with your favorite teams. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Chili Hotdog",
-        "id": "2562a910-904b-4737-8612-0b2b62594913",
+        "id": "c7e45d16-da14-4e21-9821-b57ea7e22dd8",
         "image": "./assets/images/burgermain.png",
         "price": 2.99,
-        "category": "Hotdogs",
+        "category": "Mains",
         "description": "Our grilled chili hotdogs will make you feel like you are there in the stadium with your favorite teams. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Steak",
-        "id": "8fe63f85-6623-4d8e-a668-bff42fab0ef8",
+        "id": "dd52ef6e-f771-48e5-977a-6895ccf0b773",
         "image": "./assets/images/burgermain.png",
         "price": 2.2678,
-        "category": "Steaks",
+        "category": "Mains",
         "description": "Try our mouth-watering take on your favorite cut of steak. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "1/2 Rack Ribs",
-        "id": "dd14cbc7-a09a-4367-b136-307dc9e73a2a",
+        "id": "7e028743-c737-4f7b-84b2-9b4ae706ce00",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Ribs",
+        "category": "Mains",
         "description": "Half the ribs, ribs all the yum! Our ribs are coated with out signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Full Rack Ribs",
-        "id": "a9f7518b-0c19-4d68-b93a-58e186e346f9",
+        "id": "0484136f-0095-4e66-af8e-bbe676ddcc2d",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Ribs",
-        "description": "Try our full back ribs. Our ribs are coated with out signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
+        "category": "Mains",
+        "description": "Try our full back ribs. Our ribs are coated with our signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Grilled Chicken",
-        "id": "167cd0e1-5bfc-44a1-ab99-c87a7736e68a",
+        "id": "10d5efde-0823-4d6b-8b04-f0c67aaf045d",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Ribs",
+        "category": "Mains",
         "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Grilled Chicken Salad",
-        "id": "aa1c9364-0721-44f6-8ce7-4ecc6a005fc4",
+        "id": "4fa5bd76-ab52-4081-a38b-043a19ed444f",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Chicken",
+        "category": "Mains",
         "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Chicken Tenders",
-        "id": "750ec9d3-bf44-4171-85a7-dcb04f2aed37",
+        "id": "b7067a08-f117-4ef4-9ec9-2eb70f4016c4",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Chicken",
+        "category": "Mains",
         "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Chicken Wings",
-        "id": "3721a3ef-1d2e-4d82-aea6-e9214775761e",
+        "id": "8edb19a2-641a-4501-81fe-9091507a4c17",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Chicken",
+        "category": "Mains",
         "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Chicken Breast",
-        "id": "e06fc12c-2fbe-4756-873c-57be206f829d",
+        "id": "6ea865bd-54b7-4397-8934-a08af0a9cb84",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Chicken",
+        "category": "Mains",
         "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Chicken Sandwich",
-        "id": "7cc904d5-6ba8-4d63-b5c1-010bceecff6a",
+        "id": "cac4a9c6-cbac-43ce-bb80-f9ef72c479e1",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Chicken",
+        "category": "Mains",
         "description": "fix text \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "BBQ Chicken",
-        "id": "10861d35-5b94-47f1-a5cf-3e227c9cafdb",
+        "id": "7740326f-63ce-4498-9157-a8a8d05872d9",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Chicken",
+        "category": "Mains",
         "description": "The meal features our BBQ chicken, along with two sides of your choice. \n You are able to choose between two or four cuts of chicken.",
         "canBeMeal": true
     },
     {
         "name": "Pork Tenderloin",
-        "id": "67b05b04-28d5-4533-9a63-3b0667d71b76",
+        "id": "23716355-ccf2-4dc1-af75-9cb2d0e6dd28",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Pork",
+        "category": "Mains",
         "description": "A grouping of pork tenderloins seasoned magnificently by our chefs \n You are able to choose between four or eight slices of pork tenderloin. \n The meal consists of our mouth-watering pork tenderloin, and two sides of your choosing.",
         "canBeMeal": true
     },
     {
         "name": "Pork Chop",
-        "id": "e9a90b81-4ae5-45fb-a975-f4fb7ebecef0",
+        "id": "b8ed07be-65df-4bba-a854-e1c5ae5dd105",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Pork",
+        "category": "Mains",
         "description": "The meal features our our acclaimed pork chops and two sides of your choice. \n You are able to choose between two or four pork chops.",
         "canBeMeal": true
     },
     // SIDES
     {
         "name": "Fries",
-        "id": "2311c50c-31f7-4e06-829c-298cdc5a765c",
+        "id": "13dd4a3a-6740-4800-a008-9a8dc511c54a",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Potato",
+        "category": "Sides",
         "description": "A basket of fries with salt on the top of them. \n Suitable for four people."
     },
     {
         "name": "Home-Style Fries",
-        "id": "6d6e7051-a2fa-478c-ab40-dfba99fe8b98",
+        "id": "d01c97b7-dfaa-47e6-9359-808e4d078649",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Potato",
+        "category": "Sides",
         "description": "A savory side dish of home-style fries. Baked with fresh potatoes. "
     },
     {
         "name": "Hash Browns",
-        "id": "7065d1b9-21bd-4b6d-85b8-a1641ae9f616",
+        "id": "76cd6475-3069-4c4f-b4be-b485426d32d8",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Potato",
+        "category": "Sides",
         "description": "A crispy side dish containing two salted hash browns."
     },
     {
         "name": "Baked Potato",
-        "id": "22cc9f04-dafe-4875-8d72-91f37a41ebf5",
+        "id": "19393192-6aa8-4ef4-be5a-d910de7593d1",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Potato",
+        "category": "Sides",
         "description": "A large baked potato topped with butter and salt."
     },
     {
         "name": "Mashed Potatoes",
-        "id": "f0ce72ad-bf56-42f0-9afe-b6867e945334",
+        "id": "732395c4-2f02-49f6-a8ba-8994aad65975",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Potato",
+        "category": "Sides",
         "description": "A savory side dish of mashed potatoes featuring real and fresh potatoes. "
     },
     {
         "name": "Mac and Cheese",
-        "id": "27539080-9e89-497c-af67-706df6ec5295",
+        "id": "1f2e78c1-2cfc-413a-b166-3b634788b596",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Sides (other)",
+        "category": "Sides",
         "description": "A fun and cheesy side of macaroni and cheese."
     },
     {
         "name": "Coleslaw",
-        "id": "344bab36-1de1-4138-b91f-1c2c3816e16c",
+        "id": "5b7904df-c5e6-482a-89ed-fa61118e4af6",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Sides (other)",
+        "category": "Sides",
         "description": "A familiar side dish of coleslaw."
     },
     {
         "name": "Baked Beans",
-        "id": "ad95577d-5129-498c-9011-05e19f7eb4d0",
+        "id": "b88f35f2-3cfa-445a-864e-5fb376c2e619",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Sides (other)",
+        "category": "Sides",
         "description": "A homely side dish of fresh baked beans."
     },
     {
         "name": "Corn on the Cob",
-        "id": "b67640f3-cba3-41df-a683-bb443c23b865",
+        "id": "b6a9d1f5-2c3a-497b-beb3-0fdcdc3a4529",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Sides (other)",
+        "category": "Sides",
         "description": "A buttery side dish consisting of two mid-sized cobs of cooked and salted corn."
     },
     {
         "name": "Asparagus",
-        "id": "3bfca99c-e421-49be-879d-8253224ad84e",
+        "id": "294c2d7d-1be2-41ac-8470-0766e74db260",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Sides (other)",
+        "category": "Sides",
         "description": "A delicious side dish of Oven-Roasted Asparagus."
     },
     {
         "name": "Broccoli and Cheese",
-        "id": "cbdc7f51-a8d0-4753-9c04-2bafef22a553",
+        "id": "5af441a5-2edb-4deb-8d8f-4c8762251a32",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Sides (other)",
+        "category": "Sides",
         "description": "A delicious side dish of cooked brocoli drizzled in a beautiful nacho cheese."
     },
 
     // APPETIZERS
     {
         "name": "Loaded Fry Basket",
-        "id": "157a5ae1-9493-43d1-b8c6-20cfbe852da5",
+        "id": "41e35f69-8512-411f-9ccb-25af63479dfb",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Potato",
+        "category": "Appetizers",
         "description": "Get a huge bowl of french fries covered in beef, cheese, peppers, and/or peppers.  \n Suitable for four people.  "
     },
     {
         "name": "Fried Pickles with Ranch",
-        "id": "81017cd2-6c0f-4b6c-8ddc-85f8a984fe22",
+        "id": "ac0f0fbc-358f-4ad5-bd7d-498c328daf14",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Appetizers (other)",
+        "category": "Appetizers",
         "description": "Experience pickles like you never had before by getting 12 fried up by our masterful chefs here at Game Day Grill. A side of ranch is included.  \n Suitable for four people. "
     },
     {
         "name": "Salad",
-        "id": "a01797fb-00ce-4c25-bcd8-73fd297c001e",
+        "id": "028e5cea-52f5-4a08-910b-72cdfb1a1cd3",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Appetizers (other)",
+        "category": "Appetizers",
         "description": "lalalal \n lallala"
     },
     {
         "name": "Cheese Curds",
-        "id": "545f311c-a651-4b68-b78a-a3022295c3fc",
+        "id": "ee9aa007-80b8-43cd-988a-aa3bc1e6fbbf",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Appetizers (other)",
+        "category": "Appetizers",
         "description": "lalalal \n lallala"
     },
     {
         "name": "Mozzarella Sticks",
-        "id": "fb4a3447-d83c-439d-b1a3-964d32854f3d",
+        "id": "7b111d2a-07ef-4b2b-9c4d-d602c954bbed",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Appetizers (other)",
+        "category": "Appetizers",
         "description": "Get a bowl of 12 supremely cheesy mozzarella sticks."
     },
     {
         "name": "Nachos",
-        "id": "87cd1b37-e3b3-4481-99ad-c996a7597fb9",
+        "id": "f8d5b477-a910-4235-8098-77082689ae94",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Appetizers (other)",
+        "category": "Appetizers",
         "description": "Get a huge bowl of chips topped with nacho cheese. They can also be customized to your liking with the addition of meat, peppers, etc.  \n Perfect for up to four people."
     },
     {
         "name": "Chips and Salsa/+ Guac",
-        "id": "a97187cc-e49d-49a3-8b6f-842f7576348c",
+        "id": "bf29daa5-3f7c-44d9-ab8f-870930c251e7",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Appetizers (other)",
+        "category": "Appetizers",
         "description": "Get a huge bowl of chips with a side of salsa and/or guacamole.  \n Perfect for up to four people."
     },
 
@@ -343,100 +335,100 @@
 
     {
         "name": "Chocolate Cake Slice",
-        "id": "0e44bdcc-8e95-48fb-b7b3-e012fd5c598d",
+        "id": "50135d59-6713-4398-9655-d269f2a00f03",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Cake",
+        "category": "Desserts",
         "description": "Get a deluxe slice of a chocolate cake topped with chocolate buttercream icing."
     },
     {
         "name": "Vanilla Cake Slice",
-        "id": "165db039-bfbc-4a02-82d2-2b73e828d40f",
+        "id": "010473b8-22f9-49a2-8ce0-d86d26f45659",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Cake",
+        "category": "Desserts",
         "description": "Get a deluxe slice of a vanilla cake topped with vanilla buttercream icing."
     },
     {
         "name": "Marbled Cake Slice",
-        "id": "b53de547-11c9-4372-95f8-c26e05c07d99",
+        "id": "db6881b0-56ef-4669-95a5-981359203a99",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Cake",
+        "category": "Desserts",
         "description": "Get a deluxe slice of a marbled cake topped with half vanilla and half chocolate buttercream icing. "
     },
     {
         "name": "Cheesecake Slice",
-        "id": "c396871d-2c49-40cc-a945-a4e93c40263c",
+        "id": "3ee318d0-a78d-4ae0-8421-69a869c13433",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Cake",
+        "category": "Desserts",
         "description": "lalalal \n lallala"
     },
     {
         "name": "Vanilla Soft Serve",
-        "id": "fc3a025c-f826-461a-9f9e-cd05c8c4ebd4",
+        "id": "cbd171a5-a5b8-4b23-a0af-b6efc2dd4ec0",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Ice Cream",
+        "category": "Desserts",
         "description": "Get that nice vanilla ice cream flavor partnered with a deluxe texture. All on top of a sweet sugar cone."
     },
     {
         "name": "Chocolate Soft Serve",
-        "id": "a870668c-879b-4c25-bffc-4fe8e8cb9428",
+        "id": "d523bee7-6983-488b-bf68-698b8aa8d353",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Ice Cream",
+        "category": "Desserts",
         "description": "Get that nice chocolate ice cream flavor partnered with a deluxe texture. All on top of a sweet sugar cone."
     },
     {
         "name": "Chocolate and Vanilla Sundae",
-        "id": "8d7f6925-816f-4795-91f7-e742192a6910",
+        "id": "f6aab37f-3d00-4e65-aeac-0e434179fc33",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Ice Cream",
+        "category": "Desserts",
         "description": "Get two huge scoops of chocolate and vanilla ice cream topped off by a delicious chocolate syrup and even a cherry on top."
     },
     {
         "name": "Fried Ice Cream",
-        "id": "435ddfe0-e1e4-44a0-95ed-8f4125617a1d",
+        "id": "e22a95c8-ab3a-4006-8c6c-0ea78c057f47",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Ice Cream",
+        "category": "Desserts",
         "description": "Experience ice cream like you never had before by getting a few scoops fried up by our masterful chefs here at Game Day Grill."
     },
     {
         "name": "Fried Cookies and Cream Cookie",
-        "id": "7baedca2-846b-4fae-ba73-7da372f454d1",
+        "id": "69dbc04d-36f3-4f2f-b08c-8b29a8453b5f",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Desserts (other)",
+        "category": "Desserts",
         "description": "Experience cookies like you never had before by getting one fried up by our masterful chefs here at Game Day Grill."
     },
     {
         "name": "Cinnamon Rolls",
-        "id": "f793c75c-5282-4c3a-bf0f-e249118be3e4",
+        "id": "55ff8427-b366-47a4-a9c5-8c2eef9c1ad8",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Ice Cream",
+        "category": "Desserts",
         "description": "Our mouthwatering cinnamon rolls are a delicious blend between cinnamon, sugar, and yeast-leavened dough. An order of cinnamon rolls comes with four 1 1/2'' cinnamon rolls. "
     },
     {
         "name": "Chocolate Milkshake",
-        "id": "64e0abc6-a676-449c-8523-6cb8c051a848",
+        "id": "65f6cb24-1620-4c51-bf77-f1eb7cbcca96",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Ice Cream",
+        "category": "Desserts",
         "description": "Our magnificent chocolate milkshake is blasted with flavor and complimented with a delightful consistency.",
         "isDrink": true
     },
 
     {
         "name": "Strawberry Milkshake",
-        "id": "915d3ba7-7b15-4088-a8fb-7da3281d7eb9",
+        "id": "20cdd4fb-c595-4f14-8010-75d36ae2b988",
         "image": "./assets/images/burgermain.png",
         "price": 10,
-        "category": "Ice Cream",
+        "category": "Desserts",
         "description": "Our magnificent strawberry milkshake is blasted with flavor and complimented with a delightful consistency.",
         "isDrink": true
     },
@@ -445,7 +437,7 @@
 
     {
         "name": "Water",
-        "id": "d01d7b28-91d5-4cc8-b059-d1167580a731",
+        "id": "d386d832-8a40-472f-8eef-bf32f86f014c",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -454,7 +446,7 @@
     },
     {
         "name": "Sweet Tea",
-        "id": "e6fd109a-5d7d-4eae-8417-9fe5a9ad3a72",
+        "id": "e0b394c3-9334-4903-ab1c-d282e11f0316",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -463,7 +455,7 @@
     },
     {
         "name": "Unsweetened Tea",
-        "id": "dd57769f-977e-4152-b78a-0e6064ebe0eb",
+        "id": "b9495fca-cd48-4adb-86d8-4146ee5b43b2",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -472,7 +464,7 @@
     },
     {
         "name": "Lemonade",
-        "id": "34a22644-ce28-4c35-8577-91b0a37e7b69",
+        "id": "810eb590-fa3e-474a-b0e4-0acd67f0b4d9",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -481,7 +473,7 @@
     },
     {
         "name": "Strawberry Lemonade",
-        "id": "95b99a30-d1fe-49b3-b6e1-8cd58920db60",
+        "id": "d5de89eb-a8d0-44cf-9d79-b9a2d4da46b2",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -490,7 +482,7 @@
     },
     {
         "name": "Fountain Drink",
-        "id": "a877b236-8184-488a-bf8f-17e91958b456",
+        "id": "f4aa654f-2c36-4bb1-b652-8fd7fc578ba5",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -499,7 +491,7 @@
     },
     {
         "name": "Fountain Drink",
-        "id": "54c911d7-3478-4e8c-92e9-2dbdc79cd56c",
+        "id": "d494cf79-7645-4fb8-9728-c9e85decedc7",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",

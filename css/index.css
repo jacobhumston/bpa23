@@ -186,7 +186,7 @@ img.frontPagePhotos:hover {
 }
 
 #sloganContainer p {
-    font-size: xx-large;
+    font-size: 40px;
     text-align: center;
     display: inline-block;
     vertical-align: middle;
@@ -206,6 +206,15 @@ img.frontPagePhotos:hover {
     margin-left: 200px;
 }
 
+.left {
+    font-family: var(--header-font) !important;
+    font-weight: 600;
+}
+
+.right {
+    font-family: var(--header-font) !important;
+    font-weight: 600;
+}
 /*
 #frontPageGallery
 {

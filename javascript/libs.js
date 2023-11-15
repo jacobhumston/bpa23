@@ -101,7 +101,9 @@ if (storage.getItem('cartData_v2') !== null) {
  * @returns {any} JSON
  */
 function parseJSONC(string) {
-    return JSON.parse(string.replace(new RegExp('//.*', 'mg'), ''));
+    const newString = string.replace(new RegExp('//.*', 'mg'), '');
+    // console.log(newString);
+    return JSON.parse(newString);
 }
 
 // Wasn't really sure how to do this, but I found a good solution on stack overflow that matched my needs.
