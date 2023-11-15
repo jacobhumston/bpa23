@@ -97,11 +97,11 @@ if (storage.getItem('cartData_v2') !== null) {
 
 /**
  * Function to parse JSONC.
- * @param {string} string 
+ * @param {string} string
  * @returns {any} JSON
  */
 function parseJSONC(string) {
-    return JSON.parse(string.replace(new RegExp('//.*', 'mg'), ''))
+    return JSON.parse(string.replace(new RegExp('//.*', 'mg'), ''));
 }
 
 // Wasn't really sure how to do this, but I found a good solution on stack overflow that matched my needs.
@@ -109,6 +109,5 @@ function parseJSONC(string) {
  * Function to sort objects.
  * SOURCE: https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key
  */
-const sortObjectByKeys = (object, { desc = false } = {}) => Object.fromEntries(
-    Object.entries(object).sort(([k1], [k2]) => k1 < k2 ^ desc ? -1 : 1),
-)
+const sortObjectByKeys = (object, { desc = false } = {}) =>
+    Object.fromEntries(Object.entries(object).sort(([k1], [k2]) => ((k1 < k2) ^ desc ? -1 : 1)));

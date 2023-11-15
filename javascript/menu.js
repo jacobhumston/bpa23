@@ -11,47 +11,49 @@
  */
 
 async function main() {
-    fetch('./data/menu-items.jsonc').then(async function (response) {
-        const itemsDiv = document.getElementById('items');
-        const itemCategoriesDiv = document.getElementById('itemCategories');
-        const rawResponse = await response.text();
+    fetch('./data/menu-items.jsonc')
+        .then(async function (response) {
+            const itemsDiv = document.getElementById('items');
+            const itemCategoriesDiv = document.getElementById('itemCategories');
+            const rawResponse = await response.text();
 
-        /** @type {item[]} */
-        const items = parseJSONC(rawResponse);
+            /** @type {item[]} */
+            const items = parseJSONC(rawResponse);
 
-        /** @type {Object.<string, Array<item>>} */
-        let categories = {};
+            /** @type {Object.<string, Array<item>>} */
+            let categories = {};
 
-        /** @type {Object.<string, HTMLButtonElement>} */
-        const categoriesButtons = {};
+            /** @type {Object.<string, HTMLButtonElement>} */
+            const categoriesButtons = {};
 
-        items.forEach(function (item) {
-            if (!categories[item.category]) categories[item.category] = [];
-            categories[item.category].push(item);
-        })
+            const icons = items[0].icons;
+            items.shift();
 
-        categories = sortObjectByKeys(categories);
+            items.forEach(function (item) {
+                if (!categories[item.category]) categories[item.category] = [];
+                categories[item.category].push(item);
+            });
 
-        function displayItems() {
+            categories = sortObjectByKeys(categories);
 
-        }
+            function displayItems() {}
 
-        for (const category of Object.keys(categories)) {
-            const button = document.createElement('button');
-            button.type = 'button';
-            button.innerText = category;
-            button.classList.add('categoryButton');
-            categoriesButtons[category] = button;
-        }
+            for (const category of Object.keys(categories)) {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.innerHTML = `${category} ${icons[category]}`;
+                button.classList.add('categoryButton');
+                categoriesButtons[category] = button;
+            }
 
-        for (const [_, button] of Object.entries(categoriesButtons)) {
-            itemCategoriesDiv.insertAdjacentElement('beforeend', button);
-            itemCategoriesDiv.insertAdjacentHTML('beforeend', '<br>');
-        }
+            for (const [_, button] of Object.entries(categoriesButtons)) {
+                itemCategoriesDiv.insertAdjacentElement('beforeend', button);
+                // itemCategoriesDiv.insertAdjacentHTML('beforeend', '<br>');
+            }
 
-        console.log(categories);
+            console.log(categories);
 
-        /*        
+            /*        
                 json.forEach((value) => {
                     const div = document.createElement('div');
                     div.classList.add('item');
@@ -124,10 +126,11 @@ async function main() {
                     }
                 });
         */
-    }).catch(function (err) {
-        const result = confirm(`Failed to load menu items, would you like to refresh the page?\n\nERR: ${err}`);
-        if (result) document.location.reload();
-    });
+        })
+        .catch(function (err) {
+            const result = confirm(`Failed to load menu items, would you like to refresh the page?\n\nERR: ${err}`);
+            if (result) document.location.reload();
+        });
 }
 
 window.addEventListener('load', main);

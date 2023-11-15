@@ -117,4 +117,43 @@
     margin-bottom: -2px;
 }
 
-#itemCategories
+#itemCategories {
+    display: block;
+    width: 230px;
+    height: 100%;
+    padding: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: var(--tertiaryAccent);
+    transition: all 1s ease;
+}
+
+#itemCategories button {
+    display: inline-block;
+    width: 90%;
+    height: 30px;
+    font-size: large;
+    text-align: right;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: var(--background);
+    background-color: var(--accent);
+    border: none;
+}
+
+#itemCategories button:hover {
+    width: 95%;
+    height: 35px;
+    background-color: var(--secondaryAccent);
+    cursor: pointer;
+}
+
+#itemCategories .current {
+    background-color: var(--secondaryAccent);
+    width: 95%;
+    height: 35px;
+}
