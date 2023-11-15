@@ -20,15 +20,17 @@ async function main() {
         const items = parseJSONC(rawResponse);
 
         /** @type {Object.<string, Array<item>>} */
-        const categories = {};
+        let categories = {};
 
         /** @type {Object.<string, HTMLButtonElement>} */
-        let categoriesButtons = {};
+        const categoriesButtons = {};
 
         items.forEach(function (item) {
             if (!categories[item.category]) categories[item.category] = [];
             categories[item.category].push(item);
         })
+
+        categories = sortObjectByKeys(categories);
 
         function displayItems() {
 
@@ -42,10 +44,9 @@ async function main() {
             categoriesButtons[category] = button;
         }
 
-        categoriesButtons = sortObjectByKeys(categoriesButtons);
-
         for (const [_, button] of Object.entries(categoriesButtons)) {
             itemCategoriesDiv.insertAdjacentElement('beforeend', button);
+            itemCategoriesDiv.insertAdjacentHTML('beforeend', '<br>');
         }
 
         console.log(categories);
