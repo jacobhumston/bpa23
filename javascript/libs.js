@@ -36,36 +36,43 @@ libs.include = {
     },
 };
 
+/**
+ * @typedef {Object} cartItem Represents an item in the cart/bag.
+ * @property {string} id ID of this item.
+ * @property {string} displayName Display name of this item.
+ */
+
 // Library to add and remove items from the shopping cart.
 libs.cart = {
-    /** @type {string[]} IDs of the items. */
+    /** @type {cartItem[]} IDs of the items. */
     items: [],
 
     /**
      * Save all items in cart.
      */
     save: function () {
-        storage.setItem('cartData', JSON.stringify(this.items));
+        storage.setItem('cartData_v2', JSON.stringify(this.items));
     },
 
     /**
      * Add an item to the cart.
      * @param {string} id The ID of the item to add.
+     * @param {string} displayName Display name of the item to add.
      */
-    add: function (id) {
-        this.items.push(id);
+    add: function (id, displayName) {
+        this.items.push({ id: id, displayName: displayName });
         this.save();
     },
 
     /**
      * Remove an item from the cart.
-     * @param {number} id The ID of the item to remove.
+     * @param {string} displayName The displayName of the item to remove.
      */
-    remove: function (id) {
+    remove: function (displayName) {
         let removed = false;
         this.items.forEach((value, index) => {
             if (value !== null && removed == false) {
-                if (value === id) {
+                if (value.displayName === displayName) {
                     removed = true;
                     this.items.splice(index);
                 }
@@ -84,6 +91,24 @@ libs.cart = {
     },
 };
 
-if (storage.getItem('cartData') !== null) {
-    libs.cart.items = JSON.parse(storage.getItem('cartData'));
+if (storage.getItem('cartData_v2') !== null) {
+    libs.cart.items = JSON.parse(storage.getItem('cartData_v2'));
 }
+
+/**
+ * Function to parse JSONC.
+ * @param {string} string 
+ * @returns {any} JSON
+ */
+function parseJSONC(string) {
+    return JSON.parse(string.replace(new RegExp('//.*', 'mg'), ''))
+}
+
+// Wasn't really sure how to do this, but I found a good solution on stack overflow that matched my needs.
+/**
+ * Function to sort objects.
+ * SOURCE: https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key
+ */
+const sortObjectByKeys = (object, { desc = false } = {}) => Object.fromEntries(
+    Object.entries(object).sort(([k1], [k2]) => k1 < k2 ^ desc ? -1 : 1),
+)
