@@ -11,6 +11,77 @@
  */
 
 async function main() {
+    /**
+     * @param {string} title
+     * @param {string} message
+     * @param {{ type: 'button'|'input', text: string, onclick: function?, inputType: string?, textChanged: function? }[]} actions
+     */
+    async function displayPopup(title, message, actions) {
+        const popup = document.getElementById('popup');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupCloseButton = document.getElementById('popupCloseButton');
+        const popupBackground = document.getElementById('popupBackground');
+        const popupDescription = document.getElementById('popupDescription');
+        const popupActionContainer = document.getElementById('popupActionContainer');
+
+        document.documentElement.style.overflow = 'hidden';
+        popupTitle.innerText = title;
+        popupDescription.innerHTML = message.replace('\n', '<br>');
+        popup.style.display = 'block';
+        popupBackground.style.display = 'block';
+
+        popupActionContainer.innerHTML = '';
+
+        const elements = [];
+        for (const action of actions) {
+            if (action.type === 'button') {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.innerHTML = action.text;
+                button.classList.add('popupActionButton');
+                button.addEventListener('click', () => action.onclick());
+                popupActionContainer.insertAdjacentElement('beforeend', button);
+                elements.push(button);
+            } else if (action.type === 'input') {
+                const input = document.createElement('input');
+                input.type = action.inputType || 'text';
+                input.placeholder = action.text;
+                input.required = true;
+                input.classList.add('popupActionInput');
+                if (action.textChanged)
+                    input.addEventListener('input', () => {
+                        let value = input.value;
+                        if (value === '') value = null;
+                        action.textChanged(value);
+                    });
+                popupActionContainer.insertAdjacentElement('beforeend', input);
+                elements.push(input);
+            }
+        }
+
+        await wait(0);
+        popup.style.transform = 'scale(1)';
+        popupBackground.style.opacity = '1';
+
+        popupCloseButton.addEventListener('click', hidePopup);
+
+        return elements;
+    }
+
+    async function hidePopup() {
+        const popup = document.getElementById('popup');
+        const popupBackground = document.getElementById('popupBackground');
+
+        document.documentElement.style.overflow = 'auto';
+
+        popup.style.transform = 'scale(0)';
+        popupBackground.style.opacity = '0';
+
+        await wait(1000);
+        popup.style.display = 'none';
+        popupBackground.style.display = 'none';
+    }
+
     fetch('./data/menu-items.jsonc')
         .then(async function (response) {
             const itemsDiv = document.getElementById('items');
@@ -58,10 +129,11 @@ async function main() {
 
                 for (const div of itemsDiv.children) {
                     div.style.transform = 'scale(0)';
-                };
+                }
 
-                await new Promise((resolve) => setTimeout(resolve, 500));
-                
+                await wait(500);
+                itemsDiv.innerHTML = '';
+
                 let currentIndex = -1;
                 for (const item of items) {
                     currentIndex++;
@@ -126,8 +198,33 @@ async function main() {
                     button.innerHTML = `${bagIcon}<span class="text">Add to Bag<span>`;
                     button.classList.add('lastButton');
 
-                    if (item.canBeMeal || item.isDrink)
+                    if (item.canBeMeal || item.isDrink) {
                         button.innerHTML = `${optionsIcon}<span class="text">Show Options</span>`;
+                    } else {
+                        button.addEventListener('click', async () => {
+                            let amount = 0;
+                            const elements = await displayPopup('Amount', 'How many would you like to add to your bag?', [
+                                {
+                                    inputType: "number",
+                                    text: "Amount",
+                                    type: "input",
+                                    textChanged: (value) => {
+                                        amount = value ?? 0;
+                                        elements[1].innerText = `Submit x${amount}`
+                                    }
+                                },
+                                {
+                                    text: "Submit",
+                                    type: "button",
+                                    onclick: () => {
+                                        if (amount === 0) return;
+                                        libs.cart.add(item.id, `${item.name}${amount > 1 ? ` x${amount}` : ''}`);
+                                        hidePopup();
+                                    }
+                                }
+                            ])
+                        });
+                    }
 
                     div.insertAdjacentElement('beforeend', title);
                     div.insertAdjacentElement('beforeend', image);
@@ -142,9 +239,11 @@ async function main() {
                         () => {
                             div.style.transform = 'scale(1)';
                         },
-                        0 + currentIndex * 100
+                        100 + currentIndex * 100
                     );
                 }
+
+                await wait(1000);
 
                 displayItemsDebounce = false;
             }

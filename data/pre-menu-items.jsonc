@@ -64,7 +64,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 2.99,
         "category": "Mains",
-        "description": "Our grilled hotdogs will make you feel like you are there in the stadium with your favorite teams. \n Make it a meal and get two sides of your choosing.",
+        "description": "Our grilled Hotdogs will make you feel like you are there in the stadium with your favorite teams. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -73,7 +73,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 2.99,
         "category": "Mains",
-        "description": "Our grilled chili hotdogs will make you feel like you are there in the stadium with your favorite teams. \n Make it a meal and get two sides of your choosing.",
+        "description": "Our grilled Chili Hotdogs will make you feel like you are there in the stadium with your favorite teams. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -91,7 +91,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "Half the ribs, ribs all the yum! Our ribs are coated with out signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
+        "description": "Half the ribs, all the yum! Our ribs are coated with out signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -100,7 +100,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "Try our full back ribs. Our ribs are coated with our signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
+        "description": "Try our Full Back Ribs. Our ribs are coated with our signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -109,7 +109,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "fix text \n Make it a meal and get two sides of your choosing.",
+        "description": "Try our Grilled Chicken, where expertly seasoned chicken meets the grill for a mouthwatering experience. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -118,7 +118,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "fix text \n Make it a meal and get two sides of your choosing.",
+        "description": "Experience the freshness of our Grilled Chicken Salad, where tender grilled chicken meets crisp greens for a delightful dining experience. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -127,7 +127,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "fix text \n Make it a meal and get two sides of your choosing.",
+        "description": "Try our Chicken Tenders - golden, crispy perfection paired with your favorite dipping sauces for a satisfying and flavorful meal. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -136,7 +136,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "fix text \n Make it a meal and get two sides of your choosing.",
+        "description": "Crispy, succulent wings tossed in an array of irresistible sauces designed to make you feel like a winner. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -145,7 +145,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "fix text \n Make it a meal and get two sides of your choosing.",
+        "description": "Savor the experience of eating our famous Chicken Breasts. Made of premium, perfectly seasoned chicken they are sure to leave you craving more. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -154,7 +154,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "fix text \n Make it a meal and get two sides of your choosing.",
+        "description": "Try our Chicken Sandwich, which features tender, perfectly grilled chicken nestled in a soft bun, accompanied by a medley of fresh, mouthwatering toppings. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -163,7 +163,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "The meal features our BBQ chicken, along with two sides of your choice. \n You are able to choose between two or four cuts of chicken.",
+        "description": "Indulge in the smoky allure of our BBQ Chicken, where succulent grilled chicken doused in rich, flavorful barbecue sauce promises a taste journey beyond compare. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -172,7 +172,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "A grouping of pork tenderloins seasoned magnificently by our chefs \n You are able to choose between four or eight slices of pork tenderloin. \n The meal consists of our mouth-watering pork tenderloin, and two sides of your choosing.",
+        "description": "Indulge in culinary perfection with our Pork Tenderloins, featuring succulent, expertly seasoned pork tenderloin cooked to perfection. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     {
@@ -181,7 +181,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
-        "description": "The meal features our our acclaimed pork chops and two sides of your choice. \n You are able to choose between two or four pork chops.",
+        "description": "Juicy Pork Chops grilled to perfection and infused with delectable flavors. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
     // SIDES
@@ -191,7 +191,7 @@
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
-        "description": "A basket of fries with salt on the top of them. \n Suitable for four people."
+        "description": "A basket of fries seasoned with salt. \n Suitable for four people."
     },
     {
         "name": "Home-Style Fries",

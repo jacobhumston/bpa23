@@ -208,12 +208,12 @@ img.frontPagePhotos:hover {
 
 .left {
     font-family: var(--header-font) !important;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .right {
     font-family: var(--header-font) !important;
-    font-weight: 600;
+    font-weight: 700;
 }
 /*
 #frontPageGallery

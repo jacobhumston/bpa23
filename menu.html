@@ -12,6 +12,15 @@
         <script src="javascript/menu.js"></script>
     </head>
     <body style="display: none">
+        <div id="popupBackground" style="opacity: 0; display: none">
+            <div id="popup" style="transform: scale(0); display: none">
+                <h1 id="popupTitle">Popup Title</h1>
+                <p id="popupDescription">Popup Description</p>
+                <div id="popupActionContainer"></div>
+                <hr />
+                <button type="button" id="popupCloseButton">Cancel</button>
+            </div>
+        </div>
         <p hidden id="details">
             Click/tap
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">

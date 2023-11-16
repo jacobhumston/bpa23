@@ -51,7 +51,7 @@ libs.cart = {
      * Save all items in cart.
      */
     save: function () {
-        storage.setItem('cartData_v2', JSON.stringify(this.items));
+        storage.setItem('cartData_v3', JSON.stringify(this.items));
     },
 
     /**
@@ -91,8 +91,8 @@ libs.cart = {
     },
 };
 
-if (storage.getItem('cartData_v2') !== null) {
-    libs.cart.items = JSON.parse(storage.getItem('cartData_v2'));
+if (storage.getItem('cartData_v3') !== null) {
+    libs.cart.items = JSON.parse(storage.getItem('cartData_v3'));
 }
 
 /**
@@ -113,3 +113,8 @@ function parseJSONC(string) {
  */
 const sortObjectByKeys = (object, { desc = false } = {}) =>
     Object.fromEntries(Object.entries(object).sort(([k1], [k2]) => ((k1 < k2) ^ desc ? -1 : 1)));
+
+/**
+ * Function to wait a certain amount of time. (in ms)
+ */
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

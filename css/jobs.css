@@ -1,0 +1,14 @@
+.circleImages {
+    display: block;
+    text-align: center;
+}
+
+.outerCircleImg {
+    width: 10%;
+    border-radius: 360px;
+}
+
+.innerCircleImg {
+    width: 12%;
+    border-radius: 360px;
+}

@@ -1,16 +1,19 @@
+.contact-box p {
+    color: var(--background) !important;
+}
 .contact-box {
     color: var(--accent);
+    background-color: var(--secondaryBackground);
+    transform: translateY(-60%);
     position: fixed;
+    margin-top: 60px;
     top: 30%;
     right: 0;
     margin-right: 10px;
-    transform: translateY(-50%);
-    width: 200px;
     height: 360px;
+    width: 200px;
     padding: 15px;
-    background-color: var(--secondaryBackground);
     border-radius: 10px;
-    margin-top: 60px;
 }
 
 #calendarImg {
