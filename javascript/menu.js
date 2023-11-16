@@ -46,7 +46,11 @@ async function main() {
                 }
 
                 itemsDiv.innerHTML = '';
+                let currentIndex = -1;
+                
                 for (const item of items) {
+                    currentIndex++;
+
                     const div = document.createElement('div');
                     div.classList.add('item');
 
@@ -116,6 +120,11 @@ async function main() {
                     div.insertAdjacentHTML('beforeend', '<hr>');
                     div.insertAdjacentElement('beforeend', button);
                     itemsDiv.insertAdjacentElement('beforeend', div);
+
+                    div.style.transform = 'scale(0)';
+                    setTimeout(() => {
+                        div.style.transform = 'scale(1)';
+                    }, 0 + currentIndex * 200);
                 }
             }
 
@@ -148,6 +157,14 @@ async function main() {
             const categoriesTitle = document.createElement('p');
             categoriesTitle.innerHTML = "<b>Categories</b>"
             itemCategoriesDiv.insertAdjacentElement('beforeend', categoriesTitle);
+
+            const allCategoriesButton = document.createElement('button');
+            allCategoriesButton.type = 'button';
+            allCategoriesButton.innerHTML = `All ${icons.all}`;
+            allCategoriesButton.classList.add('categoryButton');
+            categoriesButtons.all = allCategoriesButton;
+            allCategoriesButton.addEventListener('click', () => {
+            });
 
             for (const category of Object.keys(categories)) {
                 const button = document.createElement('button');
