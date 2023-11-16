@@ -7,14 +7,15 @@
             "Mains": "<svg enable-background='new 0 0 24 24' height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><g><rect fill='none' height='24' width='24'/></g><g><g><path d='M22,10c0.32-3.28-4.28-6-9.99-6C6.3,4,1.7,6.72,2.02,10H22z' fill-rule='evenodd'/><path d='M5.35,13.5c0.55,0,0.78,0.14,1.15,0.36c0.45,0.27,1.07,0.64,2.18,0.64 s1.73-0.37,2.18-0.64c0.37-0.23,0.59-0.36,1.15-0.36c0.55,0,0.78,0.14,1.15,0.36c0.45,0.27,1.07,0.64,2.18,0.64 c1.11,0,1.73-0.37,2.18-0.64c0.37-0.23,0.59-0.36,1.15-0.36c0.55,0,0.78,0.14,1.15,0.36c0.45,0.27,1.07,0.63,2.17,0.64v-1.98 c0,0-0.79-0.16-1.16-0.38c-0.45-0.27-1.07-0.64-2.18-0.64c-1.11,0-1.73,0.37-2.18,0.64c-0.37,0.23-0.6,0.36-1.15,0.36 s-0.78-0.14-1.15-0.36c-0.45-0.27-1.07-0.64-2.18-0.64s-1.73,0.37-2.18,0.64c-0.37,0.23-0.59,0.36-1.15,0.36 c-0.55,0-0.78-0.14-1.15-0.36c-0.45-0.27-1.07-0.64-2.18-0.64c-1.11,0-1.73,0.37-2.18,0.64C2.78,12.37,2.56,12.5,2,12.5v2 c1.11,0,1.73-0.37,2.21-0.64C4.58,13.63,4.8,13.5,5.35,13.5z' fill-rule='evenodd'/><path d='M2,16v2c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2v-2H2z' fill-rule='evenodd'/></g></g></svg>",
             "Sides": "<svg height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><path d='M0 0h24v24H0z' fill='none'/><path d='M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z'/></svg>",
             "Desserts": "<svg height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><path d='M0 0h24v24H0z' fill='none'/><path d='M12 6c1.11 0 2-.9 2-2 0-.38-.1-.73-.29-1.03L12 0l-1.71 2.97c-.19.3-.29.65-.29 1.03 0 1.1.9 2 2 2zm4.6 9.99l-1.07-1.07-1.08 1.07c-1.3 1.3-3.58 1.31-4.89 0l-1.07-1.07-1.09 1.07C6.75 16.64 5.88 17 4.96 17c-.73 0-1.4-.23-1.96-.61V21c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-4.61c-.56.38-1.23.61-1.96.61-.92 0-1.79-.36-2.44-1.01zM18 9h-5V7h-2v2H6c-1.66 0-3 1.34-3 3v1.54c0 1.08.88 1.96 1.96 1.96.52 0 1.02-.2 1.38-.57l2.14-2.13 2.13 2.13c.74.74 2.03.74 2.77 0l2.14-2.13 2.13 2.13c.37.37.86.57 1.38.57 1.08 0 1.96-.88 1.96-1.96V12C21 10.34 19.66 9 18 9z'/></svg>",
-            "Drinks": "<svg height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><path d='M0 0h24v24H0V0z' fill='none'/><path d='M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z'/></svg>"
+            "Drinks": "<svg height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><path d='M0 0h24v24H0V0z' fill='none'/><path d='M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z'/></svg>",
+            "All": "<svg enable-background='new 0 0 24 24' height='24px' viewBox='0 0 24 24' width='24px' fill='currentColor'><g><rect fill='none' height='24' width='24'/></g><g><g/><g><path d='M21,5c-1.11-0.35-2.33-0.5-3.5-0.5c-1.95,0-4.05,0.4-5.5,1.5c-1.45-1.1-3.55-1.5-5.5-1.5S2.45,4.9,1,6v14.65 c0,0.25,0.25,0.5,0.5,0.5c0.1,0,0.15-0.05,0.25-0.05C3.1,20.45,5.05,20,6.5,20c1.95,0,4.05,0.4,5.5,1.5c1.35-0.85,3.8-1.5,5.5-1.5 c1.65,0,3.35,0.3,4.75,1.05c0.1,0.05,0.15,0.05,0.25,0.05c0.25,0,0.5-0.25,0.5-0.5V6C22.4,5.55,21.75,5.25,21,5z M21,18.5 c-1.1-0.35-2.3-0.5-3.5-0.5c-1.7,0-4.15,0.65-5.5,1.5V8c1.35-0.85,3.8-1.5,5.5-1.5c1.2,0,2.4,0.15,3.5,0.5V18.5z'/><g><path d='M17.5,10.5c0.88,0,1.73,0.09,2.5,0.26V9.24C19.21,9.09,18.36,9,17.5,9c-1.7,0-3.24,0.29-4.5,0.83v1.66 C14.13,10.85,15.7,10.5,17.5,10.5z'/><path d='M13,12.49v1.66c1.13-0.64,2.7-0.99,4.5-0.99c0.88,0,1.73,0.09,2.5,0.26V11.9c-0.79-0.15-1.64-0.24-2.5-0.24 C15.8,11.66,14.26,11.96,13,12.49z'/><path d='M17.5,14.33c-1.7,0-3.24,0.29-4.5,0.83v1.66c1.13-0.64,2.7-0.99,4.5-0.99c0.88,0,1.73,0.09,2.5,0.26v-1.52 C19.21,14.41,18.36,14.33,17.5,14.33z'/></g></g></g></svg>"
         }
     },
 
     // MEALS
     {
         "name": "Game Day Burger",
-        "id": "e6975ee5-c1f8-432a-adc1-b907562560ef",
+        "id": "f8820bcd-b1d4-44bf-b079-f70ea2d9f1bc",
         "image": "./assets/images/burgermain.png",
         "price": 8.35,
         "category": "Mains",
@@ -23,7 +24,7 @@
     },
     {
         "name": "Cheeseburger",
-        "id": "105b9a57-259b-4467-b59d-6bd2f4154ccd",
+        "id": "6c54f19e-0281-42fa-855d-4c706683b2ed",
         "image": "./assets/images/burgermain.png",
         "price": 8.35,
         "category": "Mains",
@@ -32,7 +33,7 @@
     },
     {
         "name": "Bacon Burger",
-        "id": "d6f9b959-06b0-4554-bab0-ec4368432778",
+        "id": "74c0b18b-4a11-4fc3-9091-515eacbf26cc",
         "image": "./assets/images/burgermain.png",
         "price": 0.99,
         "category": "Mains",
@@ -41,7 +42,7 @@
     },
     {
         "name": "Sloppy Joe",
-        "id": "f5671d15-2a51-4892-943b-1dd9fef32529",
+        "id": "96433b35-44f0-4496-ad4f-12179dce0084",
         "image": "./assets/images/burgermain.png",
         "price": 0,
         "category": "Mains",
@@ -50,7 +51,7 @@
     },
     {
         "name": "Double Trouble Burger",
-        "id": "f3cb1138-df24-41a3-b371-b177ad9c7711",
+        "id": "fffaedb2-4f8a-4248-987b-2d2e6a684f18",
         "image": "./assets/images/burgermain.png",
         "price": 10.99,
         "category": "Mains",
@@ -59,7 +60,7 @@
     },
     {
         "name": "Hotdog",
-        "id": "66a80478-ead2-4ff5-ba19-06ea2a8f7398",
+        "id": "e9e697e0-6a19-4fcc-8f1b-3888dc6e1023",
         "image": "./assets/images/burgermain.png",
         "price": 2.99,
         "category": "Mains",
@@ -68,7 +69,7 @@
     },
     {
         "name": "Chili Hotdog",
-        "id": "c7e45d16-da14-4e21-9821-b57ea7e22dd8",
+        "id": "3f01f1e8-e756-40dd-b707-6d7f6eb16eb1",
         "image": "./assets/images/burgermain.png",
         "price": 2.99,
         "category": "Mains",
@@ -77,7 +78,7 @@
     },
     {
         "name": "Steak",
-        "id": "dd52ef6e-f771-48e5-977a-6895ccf0b773",
+        "id": "bedb6be2-4b86-4c07-ac4c-a8700eccb4f9",
         "image": "./assets/images/burgermain.png",
         "price": 2.2678,
         "category": "Mains",
@@ -86,7 +87,7 @@
     },
     {
         "name": "1/2 Rack Ribs",
-        "id": "7e028743-c737-4f7b-84b2-9b4ae706ce00",
+        "id": "19a1c8a0-b2a2-4f1d-9a60-655e1be33774",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -95,7 +96,7 @@
     },
     {
         "name": "Full Rack Ribs",
-        "id": "0484136f-0095-4e66-af8e-bbe676ddcc2d",
+        "id": "703f93fc-2801-4dc6-b41e-c144b364965b",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -104,7 +105,7 @@
     },
     {
         "name": "Grilled Chicken",
-        "id": "10d5efde-0823-4d6b-8b04-f0c67aaf045d",
+        "id": "07c54e61-93d6-4d9e-a175-668d81dc1ac5",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -113,7 +114,7 @@
     },
     {
         "name": "Grilled Chicken Salad",
-        "id": "4fa5bd76-ab52-4081-a38b-043a19ed444f",
+        "id": "31591805-0c9d-46f5-8105-44ddaa9f3e2f",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -122,7 +123,7 @@
     },
     {
         "name": "Chicken Tenders",
-        "id": "b7067a08-f117-4ef4-9ec9-2eb70f4016c4",
+        "id": "fb321e03-7489-4dc8-9ce6-d223c7a141b1",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -131,7 +132,7 @@
     },
     {
         "name": "Chicken Wings",
-        "id": "8edb19a2-641a-4501-81fe-9091507a4c17",
+        "id": "af3a513a-017a-46f6-90c8-a3af153e9afc",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -140,7 +141,7 @@
     },
     {
         "name": "Chicken Breast",
-        "id": "6ea865bd-54b7-4397-8934-a08af0a9cb84",
+        "id": "18864c00-828d-4d79-ad19-fe102d5f98cb",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -149,7 +150,7 @@
     },
     {
         "name": "Chicken Sandwich",
-        "id": "cac4a9c6-cbac-43ce-bb80-f9ef72c479e1",
+        "id": "01d6a39b-a0c3-48c5-98d2-fba9c6e4f84f",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -158,7 +159,7 @@
     },
     {
         "name": "BBQ Chicken",
-        "id": "7740326f-63ce-4498-9157-a8a8d05872d9",
+        "id": "721a8bbf-defd-45c0-8a96-a584c37ba786",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -167,7 +168,7 @@
     },
     {
         "name": "Pork Tenderloin",
-        "id": "23716355-ccf2-4dc1-af75-9cb2d0e6dd28",
+        "id": "b3bcf776-ad13-40a3-abcc-f9fc3ea20985",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -176,7 +177,7 @@
     },
     {
         "name": "Pork Chop",
-        "id": "b8ed07be-65df-4bba-a854-e1c5ae5dd105",
+        "id": "413c7bee-131a-41d4-a55c-fd403dc36a4f",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Mains",
@@ -186,7 +187,7 @@
     // SIDES
     {
         "name": "Fries",
-        "id": "13dd4a3a-6740-4800-a008-9a8dc511c54a",
+        "id": "dfd2e799-bf48-4312-9e2a-35ced84d90f1",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -194,7 +195,7 @@
     },
     {
         "name": "Home-Style Fries",
-        "id": "d01c97b7-dfaa-47e6-9359-808e4d078649",
+        "id": "cfd8745d-c6b8-4d6f-ab3c-ec6aaf212af3",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -202,7 +203,7 @@
     },
     {
         "name": "Hash Browns",
-        "id": "76cd6475-3069-4c4f-b4be-b485426d32d8",
+        "id": "dc1cb7f5-903f-47c0-8fa5-38bff14e9b10",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -210,7 +211,7 @@
     },
     {
         "name": "Baked Potato",
-        "id": "19393192-6aa8-4ef4-be5a-d910de7593d1",
+        "id": "f00ed092-ce9c-4937-a7e4-e081cb432d02",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -218,7 +219,7 @@
     },
     {
         "name": "Mashed Potatoes",
-        "id": "732395c4-2f02-49f6-a8ba-8994aad65975",
+        "id": "a601c294-4d47-45c9-b690-343363b790a8",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -226,7 +227,7 @@
     },
     {
         "name": "Mac and Cheese",
-        "id": "1f2e78c1-2cfc-413a-b166-3b634788b596",
+        "id": "6f3917d1-e9fa-44c3-ae15-f61290e9cf8e",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -234,7 +235,7 @@
     },
     {
         "name": "Coleslaw",
-        "id": "5b7904df-c5e6-482a-89ed-fa61118e4af6",
+        "id": "56d2addf-798d-4f03-9455-1474e94a7ae8",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -242,7 +243,7 @@
     },
     {
         "name": "Baked Beans",
-        "id": "b88f35f2-3cfa-445a-864e-5fb376c2e619",
+        "id": "520a8144-11bf-4647-880c-eafcb1f5118f",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -250,7 +251,7 @@
     },
     {
         "name": "Corn on the Cob",
-        "id": "b6a9d1f5-2c3a-497b-beb3-0fdcdc3a4529",
+        "id": "93d53919-f409-4689-9351-5227df330ba9",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -258,7 +259,7 @@
     },
     {
         "name": "Asparagus",
-        "id": "294c2d7d-1be2-41ac-8470-0766e74db260",
+        "id": "d3ffde59-e185-4d9f-98be-0801fe3d8841",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -266,7 +267,7 @@
     },
     {
         "name": "Broccoli and Cheese",
-        "id": "5af441a5-2edb-4deb-8d8f-4c8762251a32",
+        "id": "47fe6f20-d322-460f-8f8f-1fef48ca4cd4",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Sides",
@@ -276,7 +277,7 @@
     // APPETIZERS
     {
         "name": "Loaded Fry Basket",
-        "id": "41e35f69-8512-411f-9ccb-25af63479dfb",
+        "id": "ab560a47-3b05-4f07-aed8-b07a9580ef37",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Appetizers",
@@ -284,7 +285,7 @@
     },
     {
         "name": "Fried Pickles with Ranch",
-        "id": "ac0f0fbc-358f-4ad5-bd7d-498c328daf14",
+        "id": "c7cd8090-3bbb-4275-8575-500dc81b837f",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Appetizers",
@@ -292,7 +293,7 @@
     },
     {
         "name": "Salad",
-        "id": "028e5cea-52f5-4a08-910b-72cdfb1a1cd3",
+        "id": "836a5735-e5c2-41ad-8b26-7162454511d5",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Appetizers",
@@ -300,7 +301,7 @@
     },
     {
         "name": "Cheese Curds",
-        "id": "ee9aa007-80b8-43cd-988a-aa3bc1e6fbbf",
+        "id": "a062a044-be97-408f-80d4-0e0b25ccecbb",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Appetizers",
@@ -308,7 +309,7 @@
     },
     {
         "name": "Mozzarella Sticks",
-        "id": "7b111d2a-07ef-4b2b-9c4d-d602c954bbed",
+        "id": "e71c9fed-f533-450b-a902-9921d9ce7676",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Appetizers",
@@ -316,7 +317,7 @@
     },
     {
         "name": "Nachos",
-        "id": "f8d5b477-a910-4235-8098-77082689ae94",
+        "id": "bdfaa03a-99a3-4c7f-88eb-00b045028a11",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Appetizers",
@@ -324,7 +325,7 @@
     },
     {
         "name": "Chips and Salsa/+ Guac",
-        "id": "bf29daa5-3f7c-44d9-ab8f-870930c251e7",
+        "id": "9175043a-ad43-4ae3-9020-4c3d1b22d3b3",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Appetizers",
@@ -335,7 +336,7 @@
 
     {
         "name": "Chocolate Cake Slice",
-        "id": "50135d59-6713-4398-9655-d269f2a00f03",
+        "id": "a69813dd-a2f5-45d6-b5fc-272781cc78e0",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -343,7 +344,7 @@
     },
     {
         "name": "Vanilla Cake Slice",
-        "id": "010473b8-22f9-49a2-8ce0-d86d26f45659",
+        "id": "4db73096-984b-40d5-a915-6602ee03e1c5",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -351,7 +352,7 @@
     },
     {
         "name": "Marbled Cake Slice",
-        "id": "db6881b0-56ef-4669-95a5-981359203a99",
+        "id": "ec9f3bd6-eea8-4f0f-9c5f-57db65ef7336",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -359,7 +360,7 @@
     },
     {
         "name": "Cheesecake Slice",
-        "id": "3ee318d0-a78d-4ae0-8421-69a869c13433",
+        "id": "dc41fbff-f206-4304-9965-ec8583524d01",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -367,7 +368,7 @@
     },
     {
         "name": "Vanilla Soft Serve",
-        "id": "cbd171a5-a5b8-4b23-a0af-b6efc2dd4ec0",
+        "id": "6c4edc24-93e3-401c-9f6b-b2667e799c17",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -375,7 +376,7 @@
     },
     {
         "name": "Chocolate Soft Serve",
-        "id": "d523bee7-6983-488b-bf68-698b8aa8d353",
+        "id": "66eb4d6d-ebf5-4607-b8e1-782771f95b4e",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -383,7 +384,7 @@
     },
     {
         "name": "Chocolate and Vanilla Sundae",
-        "id": "f6aab37f-3d00-4e65-aeac-0e434179fc33",
+        "id": "0c4631c0-4107-46ff-8eda-1860d6d27400",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -391,7 +392,7 @@
     },
     {
         "name": "Fried Ice Cream",
-        "id": "e22a95c8-ab3a-4006-8c6c-0ea78c057f47",
+        "id": "60f66076-eba0-477f-8e99-47272604b7b5",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -399,7 +400,7 @@
     },
     {
         "name": "Fried Cookies and Cream Cookie",
-        "id": "69dbc04d-36f3-4f2f-b08c-8b29a8453b5f",
+        "id": "34c8f5e9-b0d7-4c73-bd2a-3d724646d562",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -407,7 +408,7 @@
     },
     {
         "name": "Cinnamon Rolls",
-        "id": "55ff8427-b366-47a4-a9c5-8c2eef9c1ad8",
+        "id": "9be893f8-757a-43ef-9df3-be0820ebaa46",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -415,7 +416,7 @@
     },
     {
         "name": "Chocolate Milkshake",
-        "id": "65f6cb24-1620-4c51-bf77-f1eb7cbcca96",
+        "id": "f34c97f2-6ad7-4ed9-ade6-406d120a97f0",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -425,7 +426,7 @@
 
     {
         "name": "Strawberry Milkshake",
-        "id": "20cdd4fb-c595-4f14-8010-75d36ae2b988",
+        "id": "b805cbe1-9156-4565-a7cb-e813c4805ffa",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Desserts",
@@ -437,7 +438,7 @@
 
     {
         "name": "Water",
-        "id": "d386d832-8a40-472f-8eef-bf32f86f014c",
+        "id": "b2bcffb2-2900-4961-81b8-0b0b9fb994eb",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -446,7 +447,7 @@
     },
     {
         "name": "Sweet Tea",
-        "id": "e0b394c3-9334-4903-ab1c-d282e11f0316",
+        "id": "9beb169d-905b-4816-9edf-76e630c385fe",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -455,7 +456,7 @@
     },
     {
         "name": "Unsweetened Tea",
-        "id": "b9495fca-cd48-4adb-86d8-4146ee5b43b2",
+        "id": "ce3b7dd7-440c-467a-8fa1-6c62ee2f29d3",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -464,7 +465,7 @@
     },
     {
         "name": "Lemonade",
-        "id": "810eb590-fa3e-474a-b0e4-0acd67f0b4d9",
+        "id": "308d5528-ccb7-4736-9b0d-3e31912e06e7",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -473,7 +474,7 @@
     },
     {
         "name": "Strawberry Lemonade",
-        "id": "d5de89eb-a8d0-44cf-9d79-b9a2d4da46b2",
+        "id": "171aab1a-9319-47a8-9409-e886cb0efa98",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -482,7 +483,7 @@
     },
     {
         "name": "Fountain Drink",
-        "id": "f4aa654f-2c36-4bb1-b652-8fd7fc578ba5",
+        "id": "174d8f1d-dd4c-4d09-a5f6-bef88812a181",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",
@@ -491,7 +492,7 @@
     },
     {
         "name": "Fountain Drink",
-        "id": "d494cf79-7645-4fb8-9728-c9e85decedc7",
+        "id": "9c839b5b-7d3a-446d-9ad6-a7ca44ac360d",
         "image": "./assets/images/burgermain.png",
         "price": 10,
         "category": "Drinks",

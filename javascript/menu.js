@@ -37,17 +37,32 @@ async function main() {
             });
 
             // categories = sortObjectByKeys(categories);
+            let displayItemsDebounce = false;
 
-            /** @param {item[]} items */
-            function displayItems(items) {
+            /**
+             * @param {item[]} items
+             * @param {boolean|undefined} isAll
+             */
+            async function displayItems(items, isAll) {
+                if (displayItemsDebounce === true) return;
+                displayItemsDebounce = true;
+
                 for (const [_, button] of Object.entries(categoriesButtons)) {
                     button.classList.remove('current');
-                    if (items[0].category === button.innerText.split(' ')[0]) button.classList.add('current');
+                    if (isAll === true) {
+                        if (button.innerText.split(' ')[0] === 'All') button.classList.add('current');
+                    } else {
+                        if (items[0].category === button.innerText.split(' ')[0]) button.classList.add('current');
+                    }
                 }
 
-                itemsDiv.innerHTML = '';
-                let currentIndex = -1;
+                for (const div of itemsDiv.children) {
+                    div.style.transform = 'scale(0)';
+                };
+
+                await new Promise((resolve) => setTimeout(resolve, 500));
                 
+                let currentIndex = -1;
                 for (const item of items) {
                     currentIndex++;
 
@@ -59,6 +74,7 @@ async function main() {
                         style: 'currency',
                         currency: 'USD',
                     }).format(parseFloat(item.price))}</b> ${item.name}`;
+                    if (isAll) title.insertAdjacentHTML('afterbegin', ` ${icons[item.category]}`);
 
                     const image = document.createElement('img');
                     image.src = item.image;
@@ -122,17 +138,24 @@ async function main() {
                     itemsDiv.insertAdjacentElement('beforeend', div);
 
                     div.style.transform = 'scale(0)';
-                    setTimeout(() => {
-                        div.style.transform = 'scale(1)';
-                    }, 0 + currentIndex * 200);
+                    setTimeout(
+                        () => {
+                            div.style.transform = 'scale(1)';
+                        },
+                        0 + currentIndex * 100
+                    );
                 }
+
+                displayItemsDebounce = false;
             }
 
-            const toggleOnIcon = "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>";
-            const toggleOffIcon = "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>";
+            const toggleOnIcon =
+                "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>";
+            const toggleOffIcon =
+                "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>";
 
             const toggleDescriptionsButton = document.createElement('button');
-            toggleDescriptionsButton.id = "toggleDescriptions";
+            toggleDescriptionsButton.id = 'toggleDescriptions';
             toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOffIcon}`;
 
             let descriptionsShowed = true;
@@ -150,21 +173,26 @@ async function main() {
 
             toggleDescriptionsButton.addEventListener('click', () => {
                 descriptionsShowed = !descriptionsShowed;
-                descriptionsShowed === true ? toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOffIcon}` : toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOnIcon}`;
+                descriptionsShowed === true
+                    ? (toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOffIcon}`)
+                    : (toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOnIcon}`);
                 toggleDescriptions();
             });
 
             const categoriesTitle = document.createElement('p');
-            categoriesTitle.innerHTML = "<b>Categories</b>"
+            categoriesTitle.innerHTML = '<b>Categories</b>';
             itemCategoriesDiv.insertAdjacentElement('beforeend', categoriesTitle);
 
             const allCategoriesButton = document.createElement('button');
             allCategoriesButton.type = 'button';
-            allCategoriesButton.innerHTML = `All ${icons.all}`;
+            allCategoriesButton.innerHTML = `All ${icons.All}`;
             allCategoriesButton.classList.add('categoryButton');
-            categoriesButtons.all = allCategoriesButton;
+            categoriesButtons.All = allCategoriesButton;
             allCategoriesButton.addEventListener('click', () => {
+                displayItems(items, true);
+                toggleDescriptions();
             });
+            itemCategoriesDiv.insertAdjacentElement('beforeend', allCategoriesButton);
 
             for (const category of Object.keys(categories)) {
                 const button = document.createElement('button');
@@ -184,80 +212,6 @@ async function main() {
 
             displayItems(categories[Object.keys(categories)[0]]);
             toggleDescriptions();
-
-            /*        
-                json.forEach((value) => {
-                    const div = document.createElement('div');
-                    div.classList.add('item');
-        
-                    div.insertAdjacentHTML(
-                        'beforeend',
-                        `<p><b>${new Intl.NumberFormat('en-US', {
-                            style: 'currency',
-                            currency: 'USD',
-                        }).format(parseFloat(value.price))}</b> ${value.name}</p><img src="${value.image}" alt="${value.name}">`
-                    );
-        
-                    div.insertAdjacentHTML(
-                        'beforeend',
-                        `<p class="description" style="display:none;">&nbsp;&nbsp;&nbsp;&nbsp;${(
-                            value.description || 'No description available.'
-                        ).replace('\n', '<br>&nbsp;&nbsp;&nbsp;&nbsp;')}</p>`
-                    );
-        
-                    div.insertAdjacentHTML('beforeend', `<button id="viewDescription">View Description</button><hr>`);
-        
-                    if (value.canBeMeal) {
-                        div.insertAdjacentHTML(
-                            'beforeend',
-                            `<button>Add to Bag</button><button class="lastButton">Add to Bag (Make a Meal)</button>`
-                        );
-                    } else {
-                        if (!value.isDrink) {
-                            div.insertAdjacentHTML('beforeend', `<button class="lastButton">Add to Bag</button>`);
-                        } else {
-                            div.insertAdjacentHTML(
-                                'beforeend',
-                                `<button>Add to Bag (Small)</button>
-                            <button>Add to Bag (Medium)</button>
-                            <button class="lastButton">Add to Bag (Large)</button>`
-                            );
-                        }
-                    }
-        
-                    items.insertAdjacentElement('beforeend', div);
-        
-                    const buttons = div.getElementsByTagName('button');
-                    for (const button of buttons) {
-                        let debounce = false;
-                        button.addEventListener('click', () => {
-                            if (debounce) return;
-                            if (button.id === 'viewDescription') {
-                                debounce = true;
-                                const description = div.getElementsByClassName('description').item(0);
-                                if (description.style.display === 'none') {
-                                    description.style.display = 'inline-block';
-                                    button.innerText = 'Hide Description';
-                                } else {
-                                    description.style.display = 'none';
-                                    button.innerText = 'View Description';
-                                }
-                                setTimeout(() => {
-                                    debounce = false;
-                                }, 1000);
-                            } else {
-                                debounce = true;
-                                libs.cart.add(value.id);
-                                button.innerText = 'Added!';
-                                setTimeout(() => {
-                                    button.innerText = 'Add to Bag';
-                                    debounce = false;
-                                }, 1000);
-                            }
-                        });
-                    }
-                });
-        */
         })
         .catch(function (err) {
             const result = confirm(`Failed to load menu items, would you like to refresh the page?\n\nERR: ${err}`);

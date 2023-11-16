@@ -45,6 +45,15 @@
     margin-bottom: 5px;
     color: var(--secondaryBackground);
     font-size: large;
+    vertical-align: middle;
+}
+
+.item p svg {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+    float: left;
+    margin-right: 5px;
 }
 
 .item p b {

@@ -32,7 +32,7 @@
     --thirdAccentDarken: rgb(63, 137, 196);
     */
     --text: rgb(0, 0, 0);
-    --textTransparent: rgba(0, 0, 0, .2);
+    --textTransparent: rgba(0, 0, 0, 0.2);
     --header-font: SofiaSansExtraCondensed;
     --font: Gabarito;
     --moneyAccent: rgb(77, 173, 74);
