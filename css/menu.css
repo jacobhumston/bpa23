@@ -121,7 +121,7 @@
 
 .item hr {
     border: none;
-    background-color: var(--tertiaryAccent);
+    background-color: var(--textTransparent);
     height: 2px;
     border-radius: 360deg;
 }
@@ -186,4 +186,21 @@
     vertical-align: middle;
     width: 22px;
     height: 22px;
+}
+
+#itemCategories hr {
+    border: none;
+    background-color: var(--textTransparent);
+    height: 4px;
+}
+
+#itemCategories p {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    padding-left: 15px;
+    font-size: larger;
+    color: var(--background);
+    margin: 0px;
+    margin-bottom: 10px;
 }

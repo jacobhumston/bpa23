@@ -142,11 +142,11 @@ window.addEventListener('load', function () {
     libs.include.includeHeadCSS(document, 'css/footer.css', 'end');
     waitForElement('menuBar').then(updateMenuBar);
 
-    //setTimeout(() => {
-    //    if (shouldDisplayLoadingScreen) {
-    //        hideLoadingDivider(attachLoadingAnimation);
-    //    } else {
-    //        attachLoadingAnimation();
-    //    }
-    //}, 500);
+    setTimeout(() => {
+        if (shouldDisplayLoadingScreen) {
+            hideLoadingDivider(attachLoadingAnimation);
+        } else {
+            attachLoadingAnimation();
+        }
+    }, 500);
 });
