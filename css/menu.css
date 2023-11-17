@@ -294,6 +294,11 @@
     background-color: var(--secondaryAccentDarken);
 }
 
+.popupActionButton:disabled {
+    cursor: not-allowed;
+    background-color: var(--secondaryAccentDarken);
+}
+
 .popupActionButton svg {
     vertical-align: middle;
     width: 22px;

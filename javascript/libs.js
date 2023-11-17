@@ -47,11 +47,14 @@ libs.cart = {
     /** @type {cartItem[]} IDs of the items. */
     items: [],
 
+    /** @type {string} Name of the local storage key. */
+    key: 'cartData_v3',
+
     /**
      * Save all items in cart.
      */
     save: function () {
-        storage.setItem('cartData_v3', JSON.stringify(this.items));
+        storage.setItem(this.key, JSON.stringify(this.items));
     },
 
     /**
@@ -89,11 +92,25 @@ libs.cart = {
         this.items = [];
         this.save();
     },
+
+    /**
+     * Sync with the currently saved.
+     */
+    sync: function () {
+        let data = storage.getItem(this.key) ?? '[]';
+        try {
+            this.items = JSON.parse(data);
+        } catch {
+            this.items = [];
+        }
+        if (!Array.isArray(this.items)) this.items = [];
+    },
 };
 
-if (storage.getItem('cartData_v3') !== null) {
-    libs.cart.items = JSON.parse(storage.getItem('cartData_v3'));
-}
+libs.cart.sync();
+setInterval(() => {
+    libs.cart.sync();
+}, 2000);
 
 /**
  * Function to parse JSONC.
@@ -118,3 +135,19 @@ const sortObjectByKeys = (object, { desc = false } = {}) =>
  * Function to wait a certain amount of time. (in ms)
  */
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Function to check if an HTML element is in the current viewport.
+ * SOURCE: https://stackoverflow.com/a/7557433/12588803
+ * @param {HTMLElement} el
+ * @returns
+ */
+function isElementInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) /* or $(window).height() */ &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+    );
+}

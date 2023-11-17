@@ -11,18 +11,35 @@
  */
 
 async function main() {
+    // location.hash = '';
+
+    let lastWindowPositionBeforePopup = 0;
+
     /**
      * @param {string} title
      * @param {string} message
      * @param {{ type: 'button'|'input', text: string, onclick: function?, inputType: string?, textChanged: function? }[]} actions
+     * @param {Function} callback
      */
-    async function displayPopup(title, message, actions) {
+    async function displayPopup(title, message, actions, callback) {
+        lastWindowPositionBeforePopup =
+            window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        await new Promise(async function (resolve) {
+            while (window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0 !== 0) {
+                await wait();
+            }
+            resolve();
+        });
+
         const popup = document.getElementById('popup');
         const popupTitle = document.getElementById('popupTitle');
         const popupCloseButton = document.getElementById('popupCloseButton');
         const popupBackground = document.getElementById('popupBackground');
         const popupDescription = document.getElementById('popupDescription');
         const popupActionContainer = document.getElementById('popupActionContainer');
+        const popupCloseSeparator = document.getElementById('popupCloseSeparator');
 
         document.documentElement.style.overflow = 'hidden';
         popupTitle.innerText = title;
@@ -59,11 +76,22 @@ async function main() {
             }
         }
 
-        await wait(0);
+        if (actions.length === 0) {
+            popupCloseButton.innerText = 'Close';
+            popupCloseSeparator.style.display = 'none';
+        } else {
+            popupCloseButton.innerText = 'Cancel';
+            popupCloseSeparator.style.display = 'block';
+        }
+
+        await wait(100);
         popup.style.transform = 'scale(1)';
         popupBackground.style.opacity = '1';
 
-        popupCloseButton.addEventListener('click', hidePopup);
+        popupCloseButton.onclick = function () {
+            hidePopup();
+            if (callback) setTimeout(callback, 100);
+        };
 
         return elements;
     }
@@ -80,6 +108,7 @@ async function main() {
         await wait(1000);
         popup.style.display = 'none';
         popupBackground.style.display = 'none';
+        window.scrollTo({ top: lastWindowPositionBeforePopup, behavior: 'smooth' });
     }
 
     fetch('./data/menu-items.jsonc')
@@ -140,6 +169,7 @@ async function main() {
 
                     const div = document.createElement('div');
                     div.classList.add('item');
+                    div.id = `itemDiv${Math.floor(Math.random() * 999999999999999)}`;
 
                     const title = document.createElement('p');
                     title.innerHTML = `<b>${new Intl.NumberFormat('en-US', {
@@ -200,29 +230,65 @@ async function main() {
 
                     if (item.canBeMeal || item.isDrink) {
                         button.innerHTML = `${optionsIcon}<span class="text">Show Options</span>`;
+                        button.addEventListener('click', async () => {
+                            if (libs.cart.items.length > 30) {
+                                return displayPopup(
+                                    'Oh no!',
+                                    'You can only have up to 30 different items in your bag at once.\nPlease checkout or remove an item.',
+                                    []
+                                );
+                            }
+                            
+                        });
                     } else {
                         button.addEventListener('click', async () => {
                             let amount = 0;
-                            const elements = await displayPopup('Amount', 'How many would you like to add to your bag?', [
-                                {
-                                    inputType: "number",
-                                    text: "Amount",
-                                    type: "input",
-                                    textChanged: (value) => {
-                                        amount = value ?? 0;
-                                        elements[1].innerText = `Submit x${amount}`
-                                    }
-                                },
-                                {
-                                    text: "Submit",
-                                    type: "button",
-                                    onclick: () => {
-                                        if (amount === 0) return;
-                                        libs.cart.add(item.id, `${item.name}${amount > 1 ? ` x${amount}` : ''}`);
-                                        hidePopup();
-                                    }
-                                }
-                            ])
+                            if (libs.cart.items.length > 30) {
+                                return displayPopup(
+                                    'Oh no!',
+                                    'You can only have up to 30 different items in your bag at once.\nPlease checkout or remove an item.',
+                                    []
+                                );
+                            }
+                            const elements = await displayPopup(
+                                'Amount',
+                                'How many would you like to add to your bag?',
+                                [
+                                    {
+                                        inputType: 'number',
+                                        text: 'Amount',
+                                        type: 'input',
+                                        textChanged: (value) => {
+                                            let number = value ?? 0;
+                                            if (number > 10) {
+                                                elements[0].value = 10;
+                                                number = 10;
+                                            } else if (0 >= number) {
+                                                elements[0].value = '';
+                                                amount = 0;
+                                                elements[1].innerHTML = 'Insert an amount above.';
+                                                elements[1].disabled = true;
+                                                return;
+                                            }
+                                            amount = number;
+                                            elements[1].innerText = `Submit x${amount}`;
+                                            elements[1].disabled = false;
+                                        },
+                                    },
+                                    {
+                                        text: 'Submit',
+                                        type: 'button',
+                                        onclick: () => {
+                                            if (amount === 0) return;
+                                            libs.cart.add(item.id, `${item.name}${amount > 1 ? ` x${amount}` : ''}`);
+                                            hidePopup();
+                                        },
+                                    },
+                                ]
+                            );
+                            elements[1].innerHTML = 'Insert an amount above.';
+                            elements[1].disabled = true;
+                            elements[0].focus();
                         });
                     }
 
@@ -235,14 +301,29 @@ async function main() {
                     itemsDiv.insertAdjacentElement('beforeend', div);
 
                     div.style.transform = 'scale(0)';
-                    setTimeout(
-                        () => {
-                            div.style.transform = 'scale(1)';
-                        },
-                        100 + currentIndex * 100
-                    );
+                    if (isElementInViewport(div)) {
+                        setTimeout(
+                            () => {
+                                div.style.transform = 'scale(1)';
+                            },
+                            100 + currentIndex * 100
+                        );
+                    } else {
+                        setTimeout(async function () {
+                            await new Promise(async function (resolve) {
+                                while (!isElementInViewport(div)) {
+                                    await wait(0);
+                                }
+                                resolve();
+                            });
+                            setTimeout(function () {
+                                div.style.transform = 'scale(1)';
+                            }, 100);
+                        }, 0);
+                    }
                 }
 
+                toggleDescriptions();
                 await wait(1000);
 
                 displayItemsDebounce = false;
