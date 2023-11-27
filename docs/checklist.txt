@@ -2,5 +2,5 @@ COMPLETED? (✅❌) | TASK --------------<|LINE LIMIT|>
 
 ❌ add meta/alt tags to images/web page
 ✅ favicon
-❌ grammar check 
+✅ grammar check 
 ❌ site sources and make powerpoint

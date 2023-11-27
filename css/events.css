@@ -1,23 +1,4 @@
-/*
-.eventDivRight {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.eventPosterLeft {
-    margin-left: 10px;
-    margin-top: 10px;
-    width: 400px;
-    float: left;
-}
-
-.eventTextRight {
-    padding-right: 20px;
-    padding-top: 20%;
-    float: right;
-}
-*/
 
 #eventText {
     color: var(--accent);

@@ -18,7 +18,7 @@ async function main() {
     /**
      * @param {string} title
      * @param {string} message
-     * @param {{ type: 'button'|'input', text: string, onclick: function?, inputType: string?, textChanged: function? }[]} actions
+     * @param {{ type: 'button'|'input'|'select', options: string[]?, text: string, onclick: function?, inputType: string?, textChanged: function? }[]} actions
      * @param {Function} callback
      */
     async function displayPopup(title, message, actions, callback) {
@@ -73,6 +73,23 @@ async function main() {
                     });
                 popupActionContainer.insertAdjacentElement('beforeend', input);
                 elements.push(input);
+            } else if (action.type === 'select') {
+                console.log(action);
+                const select = document.createElement('select');
+                select.classList.add('popupActionSelect');
+                for (const option of action.options) {
+                    const optionElement = document.createElement('option');
+                    optionElement.innerText = option;
+                    select.insertAdjacentElement('beforeend', optionElement);
+                }
+                if (action.textChanged)
+                    select.addEventListener('input', () => {
+                        let value = select.value;
+                        if (value === '') value = null;
+                        action.textChanged(value);
+                    });
+                popupActionContainer.insertAdjacentElement('beforeend', select);
+                elements.push(select);
             }
         }
 
@@ -119,6 +136,7 @@ async function main() {
 
             /** @type {item[]} */
             const items = parseJSONC(rawResponse);
+            const allItems = parseJSONC(rawResponse);
 
             /** @type {Object.<string, Array<item>>} */
             let categories = {};
@@ -128,6 +146,7 @@ async function main() {
 
             const icons = items[0].icons;
             items.shift();
+            allItems.shift();
 
             const toggleDescriptionFunctions = [];
 
@@ -238,7 +257,231 @@ async function main() {
                                     []
                                 );
                             }
-                            
+                            if (item.isDrink) {
+                                let currentSize = 'small';
+                                const buttons = await displayPopup('Size', 'What size drink would you like?', [
+                                    {
+                                        text: 'Small <i>(current)</i>',
+                                        type: 'button',
+                                        onclick: () => {
+                                            currentSize = 'small';
+                                            buttons[0].innerHTML = 'Small <i>(current)</i>';
+                                            buttons[1].innerHTML = 'Medium (+$0.25)';
+                                            buttons[2].innerHTML = 'Large (+$0.50)';
+                                        },
+                                    },
+                                    {
+                                        text: 'Medium (+$0.25)',
+                                        type: 'button',
+                                        onclick: () => {
+                                            currentSize = 'medium';
+                                            buttons[0].innerHTML = 'Small';
+                                            buttons[1].innerHTML = 'Medium <i>(current)</i> (+$0.25)';
+                                            buttons[2].innerHTML = 'Large (+$0.50)';
+                                        },
+                                    },
+                                    {
+                                        text: 'Large (+$0.50)',
+                                        type: 'button',
+                                        onclick: () => {
+                                            currentSize = 'large';
+                                            buttons[0].innerHTML = 'Small';
+                                            buttons[1].innerHTML = 'Medium (+$0.25)';
+                                            buttons[2].innerHTML = 'Large <i>(current)</i> (+$0.50)';
+                                        },
+                                    },
+                                    {
+                                        text: 'Submit',
+                                        type: 'button',
+                                        onclick: async () => {
+                                            const elements = await displayPopup(
+                                                'Amount',
+                                                'How many would you like to add to your bag?',
+                                                [
+                                                    {
+                                                        inputType: 'number',
+                                                        text: 'Amount',
+                                                        type: 'input',
+                                                        textChanged: (value) => {
+                                                            let number = value ?? 0;
+                                                            if (number > 10) {
+                                                                elements[0].value = 10;
+                                                                number = 10;
+                                                            } else if (0 >= number) {
+                                                                elements[0].value = '';
+                                                                amount = 0;
+                                                                elements[1].innerHTML = 'Insert an amount above.';
+                                                                elements[1].disabled = true;
+                                                                return;
+                                                            }
+                                                            amount = number;
+                                                            elements[1].innerText = `Submit x${amount}`;
+                                                            elements[1].disabled = false;
+                                                        },
+                                                    },
+                                                    {
+                                                        text: 'Submit',
+                                                        type: 'button',
+                                                        onclick: () => {
+                                                            if (amount === 0) return;
+                                                            libs.cart.add(
+                                                                item.id,
+                                                                `${item.name} (${currentSize})${
+                                                                    amount > 1 ? ` x${amount}` : ''
+                                                                }`
+                                                            );
+                                                            hidePopup();
+                                                        },
+                                                    },
+                                                ]
+                                            );
+                                            elements[1].innerHTML = 'Insert an amount above.';
+                                            elements[1].disabled = true;
+                                            elements[0].focus();
+                                        },
+                                    },
+                                ]);
+                            } else {
+                                await displayPopup('Meal', 'Would you like to make this a meal?', [
+                                    {
+                                        text: 'Yes',
+                                        type: 'button',
+                                        onclick: async () => {
+                                            let side1 = allItems
+                                                .filter((item) => item.category === 'Sides')
+                                                .map((item) => item.name)[0];
+                                            let side2 = allItems
+                                                .filter((item) => item.category === 'Sides')
+                                                .map((item) => item.name)[0];
+                                            await displayPopup(
+                                                'Meal',
+                                                'Select the two sides you would like to include in your meal.',
+                                                [
+                                                    {
+                                                        type: 'select',
+                                                        options: allItems
+                                                            .filter((item) => item.category === 'Sides')
+                                                            .map((item) => item.name),
+                                                        textChanged: (value) => {
+                                                            side1 = value;
+                                                        },
+                                                    },
+                                                    {
+                                                        type: 'select',
+                                                        options: allItems
+                                                            .filter((item) => item.category === 'Sides')
+                                                            .map((item) => item.name),
+                                                        textChanged: (value) => {
+                                                            side2 = value;
+                                                        },
+                                                    },
+                                                    {
+                                                        text: 'Submit',
+                                                        type: 'button',
+                                                        onclick: async () => {
+                                                            const elements = await displayPopup(
+                                                                'Amount',
+                                                                'How many would you like to add to your bag?',
+                                                                [
+                                                                    {
+                                                                        inputType: 'number',
+                                                                        text: 'Amount',
+                                                                        type: 'input',
+                                                                        textChanged: (value) => {
+                                                                            let number = value ?? 0;
+                                                                            if (number > 10) {
+                                                                                elements[0].value = 10;
+                                                                                number = 10;
+                                                                            } else if (0 >= number) {
+                                                                                elements[0].value = '';
+                                                                                amount = 0;
+                                                                                elements[1].innerHTML =
+                                                                                    'Insert an amount above.';
+                                                                                elements[1].disabled = true;
+                                                                                return;
+                                                                            }
+                                                                            amount = number;
+                                                                            elements[1].innerText = `Submit x${amount}`;
+                                                                            elements[1].disabled = false;
+                                                                        },
+                                                                    },
+                                                                    {
+                                                                        text: 'Submit',
+                                                                        type: 'button',
+                                                                        onclick: () => {
+                                                                            if (amount === 0) return;
+                                                                            libs.cart.add(
+                                                                                item.id,
+                                                                                `${
+                                                                                    item.name
+                                                                                } (Meal: ${side1}, ${side2})${
+                                                                                    amount > 1 ? ` x${amount}` : ''
+                                                                                }`
+                                                                            );
+                                                                            hidePopup();
+                                                                        },
+                                                                    },
+                                                                ]
+                                                            );
+                                                            elements[1].innerHTML = 'Insert an amount above.';
+                                                            elements[1].disabled = true;
+                                                            elements[0].focus();
+                                                        },
+                                                    },
+                                                ]
+                                            );
+                                        },
+                                    },
+                                    {
+                                        text: 'No',
+                                        type: 'button',
+                                        onclick: async () => {
+                                            const elements = await displayPopup(
+                                                'Amount',
+                                                'How many would you like to add to your bag?',
+                                                [
+                                                    {
+                                                        inputType: 'number',
+                                                        text: 'Amount',
+                                                        type: 'input',
+                                                        textChanged: (value) => {
+                                                            let number = value ?? 0;
+                                                            if (number > 10) {
+                                                                elements[0].value = 10;
+                                                                number = 10;
+                                                            } else if (0 >= number) {
+                                                                elements[0].value = '';
+                                                                amount = 0;
+                                                                elements[1].innerHTML = 'Insert an amount above.';
+                                                                elements[1].disabled = true;
+                                                                return;
+                                                            }
+                                                            amount = number;
+                                                            elements[1].innerText = `Submit x${amount}`;
+                                                            elements[1].disabled = false;
+                                                        },
+                                                    },
+                                                    {
+                                                        text: 'Submit',
+                                                        type: 'button',
+                                                        onclick: () => {
+                                                            if (amount === 0) return;
+                                                            libs.cart.add(
+                                                                item.id,
+                                                                `${item.name}${amount > 1 ? ` x${amount}` : ''}`
+                                                            );
+                                                            hidePopup();
+                                                        },
+                                                    },
+                                                ]
+                                            );
+                                            elements[1].innerHTML = 'Insert an amount above.';
+                                            elements[1].disabled = true;
+                                            elements[0].focus();
+                                        },
+                                    },
+                                ]);
+                            }
                         });
                     } else {
                         button.addEventListener('click', async () => {
