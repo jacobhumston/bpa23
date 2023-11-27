@@ -4,3 +4,4 @@ COMPLETED? (✅❌) | TASK --------------<|LINE LIMIT|>
 ✅ favicon
 ✅ grammar check 
 ❌ site sources and make powerpoint
+❌ note that all the images are AI 

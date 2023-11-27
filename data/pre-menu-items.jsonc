@@ -16,7 +16,7 @@
     {
         "name": "Game Day Burger",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/gdgBurger.png",
         "price": 8.35,
         "category": "Mains",
         "description": "Our Game Day Burger is our unique take on a classic burger. Doused with our specialty sauce, it's sure to leave you feeling like a winner. \n Make it a meal and get two sides of your choosing.",
@@ -25,7 +25,7 @@
     {
         "name": "Cheeseburger",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/cheeseburger.png",
         "price": 3.99,
         "category": "Mains",
         "description": "A good old-fashioned cheeseburger. \n Make it a meal and get two sides of your choosing.",
@@ -34,7 +34,7 @@
     {
         "name": "Bacon Burger",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/baconBurger.png",
         "price": 4.1,
         "category": "Mains",
         "description": "Game Day Grill's fan favorite BLT style burger. \n Make it a meal and get two sides of your choosing.",
@@ -43,7 +43,7 @@
     {
         "name": "Sloppy Joe",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/sloppyJoe.png",
         "price": 3.99,
         "category": "Mains",
         "description": "Our sloppy joe's are derived from late Richard Harley's very own recipe. \n Make it a meal and get two sides of your choosing.",
@@ -52,7 +52,7 @@
     {
         "name": "Double Trouble Burger",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/doubleTrouble.png",
         "price": 4.5,
         "category": "Mains",
         "description": "Our Double Trouble Burger is exactly what the name implies. A classic cheeseburger with an additional bun and patty is the perfect way to celebrate that team victory. \n Make it a meal and get two sides of your choosing.",
@@ -61,7 +61,7 @@
     {
         "name": "Hotdog",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/hotdog.png",
         "price": 1.5,
         "category": "Mains",
         "description": "Our grilled Hotdogs will make you feel like you are there in the stadium with your favorite teams. \n Make it a meal and get two sides of your choosing.",
@@ -70,7 +70,7 @@
     {
         "name": "Chili Hotdog",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/chiliDog.png",
         "price": 1.75,
         "category": "Mains",
         "description": "Our Chili Hotdogs will give you that boost of flavor that will help you cheer on your favorite teams. \n Make it a meal and get two sides of your choosing.",
@@ -80,17 +80,17 @@
     {
         "name": "Loaded Hotdog",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/loadedHotdog.png",
         "price": 1.75,
         "category": "Mains",
-        "description": "Our Loaded Hotdogs are blessed by an assortment of toppings that make you feel like you're hitting that hom. \n Make it a meal and get two sides of your choosing.",
+        "description": "Our Loaded Hotdogs are blessed by an assortment of toppings that make you feel like you're hitting that winning ball. \n Make it a meal and get two sides of your choosing.",
         "canBeMeal": true
     },
 
     {
         "name": "Steak",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/steak.png",
         "price": 12.99,
         "category": "Mains",
         "description": "Try our mouth-watering take on your favorite cut of steak. \n Make it a meal and get two sides of your choosing.",
@@ -99,7 +99,7 @@
     {
         "name": "1/2 Rack Ribs",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/halfRibs.png",
         "price": 9.99,
         "category": "Mains",
         "description": "Half the ribs, all the yum! Our ribs are coated with out signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
@@ -108,7 +108,7 @@
     {
         "name": "Full Rack Ribs",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/fullRibs.png",
         "price": 17.99,
         "category": "Mains",
         "description": "Try our Full Back Ribs. Our ribs are coated with our signature dry rub, so you aren't gonna find flavor like this anywhere else. \n Make it a meal and get two sides of your choosing.",
@@ -117,7 +117,7 @@
     {
         "name": "Grilled Chicken",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/grilledChicken.png",
         "price": 5.99,
         "category": "Mains",
         "description": "Try our Grilled Chicken, where expertly seasoned chicken meets the grill for a mouthwatering experience. \n Make it a meal and get two sides of your choosing.",
@@ -126,7 +126,7 @@
     {
         "name": "Grilled Chicken Salad",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/gcSalad.png",
         "price": 7.2,
         "category": "Mains",
         "description": "Experience the freshness of our Grilled Chicken Salad, where tender grilled chicken meets crisp greens for a delightful dining experience. \n Make it a meal and get two sides of your choosing.",
@@ -135,7 +135,7 @@
     {
         "name": "Chicken Tenders",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/cTenders.png",
         "price": 5.99,
         "category": "Mains",
         "description": "Try our Chicken Tenders - golden, crispy perfection paired with your favorite dipping sauces for a satisfying and flavorful meal. \n Make it a meal and get two sides of your choosing.",
@@ -144,7 +144,7 @@
     {
         "name": "Chicken Wings",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/cWings.png",
         "price": 7.99,
         "category": "Mains",
         "description": "Crispy, succulent wings tossed in an array of irresistible sauces designed to make you feel like a winner. \n Make it a meal and get two sides of your choosing.",
@@ -153,7 +153,7 @@
     {
         "name": "Chicken Breast",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/cBreast.png",
         "price": 5.99,
         "category": "Mains",
         "description": "Savor the experience of eating our famous Chicken Breasts. Made of premium, perfectly seasoned chicken they are sure to leave you craving more. \n Make it a meal and get two sides of your choosing.",
@@ -162,7 +162,7 @@
     {
         "name": "Chicken Sandwich",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/cSandwich.png",
         "price": 3.99,
         "category": "Mains",
         "description": "Try our Chicken Sandwich, which features tender, perfectly grilled chicken nestled in a soft bun, accompanied by a medley of fresh, mouthwatering toppings. \n Make it a meal and get two sides of your choosing.",
@@ -171,7 +171,7 @@
     {
         "name": "BBQ Chicken",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/BBQchicken.png",
         "price": 5.99,
         "category": "Mains",
         "description": "Indulge in the smoky allure of our BBQ Chicken, where succulent grilled chicken doused in rich, flavorful barbecue sauce promises a taste journey beyond compare. \n Make it a meal and get two sides of your choosing.",
@@ -180,7 +180,7 @@
     {
         "name": "Pork Tenderloin",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/pTenderloins.png",
         "price": 7.99,
         "category": "Mains",
         "description": "Indulge in culinary perfection with our Pork Tenderloins, featuring succulent, expertly seasoned pork tenderloin cooked to perfection. \n Make it a meal and get two sides of your choosing.",
@@ -189,7 +189,7 @@
     {
         "name": "Pork Chop",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/mains/pChops.png",
         "price": 8.99,
         "category": "Mains",
         "description": "Juicy Pork Chops grilled to perfection and infused with delectable flavors. \n Make it a meal and get two sides of your choosing.",
@@ -199,7 +199,7 @@
     {
         "name": "Fries",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/fries.png",
         "price": 2.4,
         "category": "Sides",
         "description": "A basket of fries seasoned with salt. \n Suitable for four people."
@@ -207,7 +207,7 @@
     {
         "name": "Home-Style Fries",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/homeFries.png",
         "price": 2.4,
         "category": "Sides",
         "description": "A savory side dish of home-style fries. Baked with fresh potatoes. "
@@ -215,7 +215,7 @@
     {
         "name": "Hash Browns",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/hashbrowns.png",
         "price": 2.8,
         "category": "Sides",
         "description": "A crispy side dish containing two salted hash browns."
@@ -223,7 +223,7 @@
     {
         "name": "Baked Potato",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/bakedPotato.png",
         "price": 2.4,
         "category": "Sides",
         "description": "A large baked potato topped with butter and salt."
@@ -231,7 +231,7 @@
     {
         "name": "Mashed Potatoes",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/mashedPotatoes.png",
         "price": 2.4,
         "category": "Sides",
         "description": "A savory side dish of mashed potatoes featuring real and fresh potatoes. "
@@ -239,7 +239,7 @@
     {
         "name": "Mac and Cheese",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/macAndCheese.png",
         "price": 2.4,
         "category": "Sides",
         "description": "A fun and cheesy side of macaroni and cheese."
@@ -247,7 +247,7 @@
     {
         "name": "Coleslaw",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/coleslaw.png",
         "price": 2.4,
         "category": "Sides",
         "description": "A familiar side dish of coleslaw."
@@ -255,7 +255,7 @@
     {
         "name": "Baked Beans",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/bakedBeans.png",
         "price": 2.4,
         "category": "Sides",
         "description": "A homely side dish of fresh baked beans."
@@ -263,7 +263,7 @@
     {
         "name": "Corn on the Cob",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/cornOnCob.png",
         "price": 3.1,
         "category": "Sides",
         "description": "A buttery side dish consisting of two mid-sized cobs of cooked and salted corn."
@@ -271,7 +271,7 @@
     {
         "name": "Asparagus",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/asparagus.png",
         "price": 2.4,
         "category": "Sides",
         "description": "A delicious side dish of Oven-Roasted Asparagus."
@@ -279,7 +279,7 @@
     {
         "name": "Broccoli and Cheese",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/sides/brocAndCheese.png",
         "price": 2.4,
         "category": "Sides",
         "description": "A delicious side dish of cooked brocoli drizzled in a beautiful nacho cheese."
@@ -289,7 +289,7 @@
     {
         "name": "Loaded Fry Basket",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/appetizers/loadedFries.png",
         "price": 4.99,
         "category": "Appetizers",
         "description": "Get a huge bowl of french fries covered in beef, cheese, peppers, and/or peppers.  \n Suitable for four people.  "
@@ -297,7 +297,7 @@
     {
         "name": "Fried Pickles with Ranch",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/appetizers/friedPickles.png",
         "price": 5.15,
         "category": "Appetizers",
         "description": "Experience pickles like you never had before by getting 12 fried up by our masterful chefs here at Game Day Grill. A side of ranch is included.  \n Suitable for four people. "
@@ -305,7 +305,7 @@
     {
         "name": "Salad",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/appetizers/salad.png",
         "price": 3.99,
         "category": "Appetizers",
         "description": "lalalal \n lallala"
@@ -313,7 +313,7 @@
     {
         "name": "Cheese Curds",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/appetizers/cheeseCurds.jpg",
         "price": 4.99,
         "category": "Appetizers",
         "description": "lalalal \n lallala"
@@ -321,7 +321,7 @@
     {
         "name": "Mozzarella Sticks",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/appetizers/mozzSticks.png",
         "price": 5.15,
         "category": "Appetizers",
         "description": "Get a bowl of 12 supremely cheesy mozzarella sticks."
@@ -329,7 +329,7 @@
     {
         "name": "Nachos",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/appetizers/nachos.png",
         "price": 3.99,
         "category": "Appetizers",
         "description": "Get a huge bowl of chips topped with nacho cheese. They can also be customized to your liking with the addition of meat, peppers, etc.  \n Perfect for up to four people."
@@ -337,7 +337,7 @@
     {
         "name": "Chips and Salsa/+ Guac",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/appetizers/chipSalsa.png",
         "price": 3.99,
         "category": "Appetizers",
         "description": "Get a huge bowl of chips with a side of salsa and/or guacamole.  \n Perfect for up to four people."
@@ -348,7 +348,7 @@
     {
         "name": "Chocolate Cake Slice",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/chocCake.png",
         "price": 3.15,
         "category": "Desserts",
         "description": "Get a deluxe slice of a chocolate cake topped with chocolate buttercream icing."
@@ -356,15 +356,15 @@
     {
         "name": "Vanilla Cake Slice",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/vanCake.png",
         "price": 2.99,
         "category": "Desserts",
         "description": "Get a deluxe slice of a vanilla cake topped with vanilla buttercream icing."
     },
     {
-        "name": "Marbled Cake Slice",
+        "name": "Marble Cake Slice",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/marbleCake.png",
         "price": 2.99,
         "category": "Desserts",
         "description": "Get a deluxe slice of a marbled cake topped with half vanilla and half chocolate buttercream icing. "
@@ -372,7 +372,7 @@
     {
         "name": "Cheesecake Slice",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/cheeseCake.png",
         "price": 3.15,
         "category": "Desserts",
         "description": "lalalal \n lallala"
@@ -380,7 +380,7 @@
     {
         "name": "Vanilla Soft Serve",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/vanIcecream.png",
         "price": 2.5,
         "category": "Desserts",
         "description": "Get that nice vanilla ice cream flavor partnered with a deluxe texture. All on top of a sweet sugar cone or in a bowl."
@@ -388,7 +388,7 @@
     {
         "name": "Chocolate Soft Serve",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/chocIcecream.png",
         "price": 10,
         "category": "Desserts",
         "description": "Get that nice chocolate ice cream flavor partnered with a deluxe texture. All on top of a sweet sugar cone or in a bowl."
@@ -396,7 +396,7 @@
     {
         "name": "Chocolate and Vanilla Sundae",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/sundae.png",
         "price": 6.78,
         "category": "Desserts",
         "description": "Get two huge scoops of chocolate and vanilla ice cream topped off by a delicious chocolate syrup and even a cherry on top."
@@ -404,7 +404,7 @@
     {
         "name": "Fried Ice Cream",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/friedIcecream.png",
         "price": 3.15,
         "category": "Desserts",
         "description": "Experience ice cream like you never had before by getting a few scoops fried up by our masterful chefs here at Game Day Grill."
@@ -412,7 +412,7 @@
     {
         "name": "Fried Cookies and Cream Cookie",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/friedCookie.png",
         "price": 3.15,
         "category": "Desserts",
         "description": "Experience cookies like you never had before by getting one fried up by our masterful chefs here at Game Day Grill."
@@ -420,7 +420,7 @@
     {
         "name": "Cinnamon Rolls",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/cinRolls.png",
         "price": 4.69,
         "category": "Desserts",
         "description": "Our mouthwatering cinnamon rolls are a delicious blend between cinnamon, sugar, and yeast-leavened dough. An order of cinnamon rolls comes with four 1 1/2'' cinnamon rolls. "
@@ -428,7 +428,7 @@
     {
         "name": "Chocolate Milkshake",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/chocShake.png",
         "price": 10,
         "category": "Desserts",
         "description": "Our magnificent chocolate milkshake is blasted with flavor and complimented with a delightful consistency.",
@@ -438,7 +438,7 @@
     {
         "name": "Strawberry Milkshake",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/desserts/strawShake.png",
         "price": 10,
         "category": "Desserts",
         "description": "Our magnificent strawberry milkshake is blasted with flavor and complimented with a delightful consistency.",
@@ -450,7 +450,7 @@
     {
         "name": "Water",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/drinks/water.png",
         "price": 10,
         "category": "Drinks",
         "description": "lalalal \n lallala",
@@ -459,7 +459,7 @@
     {
         "name": "Sweet Tea",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/drinks/swTea.png",
         "price": 10,
         "category": "Drinks",
         "description": "lalalal \n lallala",
@@ -468,7 +468,7 @@
     {
         "name": "Unsweetened Tea",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/drinks/tea.png",
         "price": 10,
         "category": "Drinks",
         "description": "lalalal \n lallala",
@@ -477,7 +477,7 @@
     {
         "name": "Lemonade",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/drinks/lemonade.png",
         "price": 10,
         "category": "Drinks",
         "description": "lalalal \n lallala",
@@ -486,25 +486,43 @@
     {
         "name": "Strawberry Lemonade",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/drinks/strawLemonade.png",
         "price": 10,
         "category": "Drinks",
         "description": "lalalal \n lallala",
         "isDrink": true
     },
     {
-        "name": "Fountain Drink",
+        "name": "Nurse Reaper",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/drinks/nurseReaper.png",
         "price": 10,
         "category": "Drinks",
         "description": "lalalal \n lallala",
         "isDrink": true
     },
     {
-        "name": "Fountain Drink",
+        "name": "Pop-Off",
         "id": "{ID}",
-        "image": "./assets/images/burgermain.png",
+        "image": "./assets/images/food/drinks/popOff.png",
+        "price": 10,
+        "category": "Drinks",
+        "description": "lalalal \n lallala",
+        "isDrink": true
+    },
+    {
+        "name": "Orange Splash",
+        "id": "{ID}",
+        "image": "./assets/images/food/drinks/orangeSplash.png",
+        "price": 10,
+        "category": "Drinks",
+        "description": "lalalal \n lallala",
+        "isDrink": true
+    },
+    {
+        "name": "Fizzy Jr.",
+        "id": "{ID}",
+        "image": "./assets/images/food/drinks/fizzyJr.png",
         "price": 10,
         "category": "Drinks",
         "description": "lalalal \n lallala",

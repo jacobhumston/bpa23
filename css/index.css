@@ -20,7 +20,7 @@
 
 
 #mainImageBackground {
-    background-image: url('../assets/images/burger2.png');
+    background-image: url('../assets/images/burgermain.png');
     background-size: cover;
     filter: blur(15px);
     overflow: hidden;
