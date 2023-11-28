@@ -1,17 +1,14 @@
-#details
-{
+#details {
     text-align: center;
     margin-top: 70px;
 }
 
-#details svg
-{
+#details svg {
     vertical-align: bottom;
     color: var(--accent);
 }
 
-#items
-{
+#items {
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
@@ -27,8 +24,7 @@
     margin-left: 250px;
 }
 
-.item
-{
+.item {
     width: 300px;
     height: auto;
     background-color: var(--backgroundPop2);
@@ -41,21 +37,18 @@
 
 .item img,
 .item p,
-.item button
-{
+.item button {
     margin: 0px;
 }
 
-.item p
-{
+.item p {
     margin-bottom: 5px;
     color: var(--secondaryBackground);
     font-size: large;
     vertical-align: middle;
 }
 
-.item p svg
-{
+.item p svg {
     vertical-align: middle;
     height: 22px;
     width: 22px;
@@ -63,15 +56,13 @@
     margin-right: 5px;
 }
 
-.item p b
-{
+.item p b {
     color: var(--accent);
     font-size: larger;
     float: right;
 }
 
-.item img
-{
+.item img {
     /* width: 300px; */
     width: auto;
     height: 143px;
@@ -82,13 +73,11 @@
     display: block;
 }
 
-.item:hover
-{
+.item:hover {
     transform: scale(1.05);
 }
 
-.item button
-{
+.item button {
     width: 300px;
     height: 35px;
     border: none;
@@ -101,35 +90,30 @@
     transition: all 0.5s ease;
 }
 
-.item button .text
-{
+.item button .text {
     margin-left: -22px;
 }
 
-.item button svg
-{
+.item button svg {
     vertical-align: middle;
     height: 22px;
     width: 22px;
     float: left;
 }
 
-.description
-{
+.description {
     text-align: left;
     font-size: 0px;
     transition: all 0.5s ease;
     display: inline-block;
 }
 
-.item button:hover
-{
+.item button:hover {
     background-color: var(--secondaryAccentDarken);
     cursor: pointer;
 }
 
-.item button[id='viewDescription']
-{
+.item button[id='viewDescription'] {
     background-color: var(--secondaryBackground);
     color: var(--background);
     font-size: medium;
@@ -139,14 +123,12 @@
     display: block;
 }
 
-.item button[id='viewDescription']:hover
-{
+.item button[id='viewDescription']:hover {
     background-color: var(--accent);
     transition: all 0.5s ease;
 }
 
-.item hr
-{
+.item hr {
     border: none;
     background-color: var(--textTransparent);
     height: 2px;
@@ -159,13 +141,11 @@
 }
 */
 
-.item .lastButton
-{
+.item .lastButton {
     margin-bottom: -2px;
 }
 
-#itemCategories
-{
+#itemCategories {
     display: inline-block;
     position: absolute;
     width: 250px;
@@ -180,8 +160,7 @@
     vertical-align: bottom;
 }
 
-#itemCategories button
-{
+#itemCategories button {
     display: inline-block;
     width: 90%;
     height: 30px;
@@ -198,8 +177,7 @@
     transition: all 0.5s ease;
 }
 
-#itemCategories button:hover
-{
+#itemCategories button:hover {
     width: 95%;
     height: 35px;
     background-color: var(--secondaryAccent);
@@ -207,29 +185,25 @@
     transition: all 0.5s ease;
 }
 
-#itemCategories .current
-{
+#itemCategories .current {
     background-color: var(--secondaryAccent);
     width: 95%;
     height: 35px;
 }
 
-#itemCategories button svg
-{
+#itemCategories button svg {
     vertical-align: middle;
     width: 22px;
     height: 22px;
 }
 
-#itemCategories hr
-{
+#itemCategories hr {
     border: none;
     background-color: var(--textTransparent);
     height: 4px;
 }
 
-#itemCategories p
-{
+#itemCategories p {
     display: inline-block;
     width: 100%;
     text-align: left;
@@ -240,8 +214,7 @@
     margin-bottom: 10px;
 }
 
-#popup
-{
+#popup {
     z-index: 999;
     position: relative;
     display: inline-block;
@@ -258,15 +231,13 @@
     transition: all 1s ease;
 }
 
-#popupTitle
-{
+#popupTitle {
     font-family: var(--font);
     margin-bottom: 5px;
     margin-top: 0px;
 }
 
-#popupBackground
-{
+#popupBackground {
     z-index: 998;
     position: absolute;
     width: 100%;
@@ -277,8 +248,7 @@
     transition: all 1s ease;
 }
 
-#popupCloseButton
-{
+#popupCloseButton {
     background-color: var(--text);
     color: var(--background);
     border: none;
@@ -289,20 +259,17 @@
     border-radius: 20px;
 }
 
-#popupCloseButton:hover
-{
+#popupCloseButton:hover {
     cursor: pointer;
     background-color: var(--textTransparent);
     color: var(--text);
 }
 
-#popupDescription
-{
+#popupDescription {
     margin: 0px;
 }
 
-#popupActionContainer
-{
+#popupActionContainer {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -311,8 +278,7 @@
     row-gap: 10px;
 }
 
-.popupActionButton
-{
+.popupActionButton {
     background-color: var(--secondaryAccent);
     color: var(--background);
     border: none;
@@ -323,20 +289,17 @@
     border-radius: 15px;
 }
 
-.popupActionButton:hover
-{
+.popupActionButton:hover {
     cursor: pointer;
     background-color: var(--secondaryAccentDarken);
 }
 
-.popupActionButton:disabled
-{
+.popupActionButton:disabled {
     cursor: not-allowed;
     background-color: var(--secondaryAccentDarken);
 }
 
-.popupActionButton svg
-{
+.popupActionButton svg {
     vertical-align: middle;
     width: 22px;
     height: 22px;
@@ -345,8 +308,7 @@
 }
 
 .popupActionInput,
-.popupActionSelect
-{
+.popupActionSelect {
     width: 100%;
     height: 35px;
     border: none;
@@ -362,13 +324,11 @@
 }
 
 .popupActionInput:focus,
-.popupActionSelect:focus
-{
+.popupActionSelect:focus {
     outline: none;
 }
 
-#popup hr
-{
+#popup hr {
     border: none;
     max-width: 80%;
     height: 4px;
