@@ -308,7 +308,7 @@
         "image": "./assets/images/food/appetizers/salad.png",
         "price": 3.99,
         "category": "Appetizers",
-        "description": ""
+        "description": "A refreshing bowl of romaine lettuce topped with an assortment of carrots, cucumbers, tomatoes, onions, croutons, and ranch. \n Suitable for four people."
     },
     {
         "name": "Cheese Curds",
@@ -316,7 +316,7 @@
         "image": "./assets/images/food/appetizers/cheeseCurds.jpg",
         "price": 4.99,
         "category": "Appetizers",
-        "description": ""
+        "description": "Get all the cheesy goodness with none of the mess! Get a bowl of 12 delicious cheese curds. \n Suitable for four people. "
     },
     {
         "name": "Mozzarella Sticks",
@@ -375,7 +375,7 @@
         "image": "./assets/images/food/desserts/cheeseCake.png",
         "price": 3.15,
         "category": "Desserts",
-        "description": ""
+        "description": "Made with the finest cream cheese fresh in our restaurant. A sweet treat you will remember. "
     },
     {
         "name": "Vanilla Soft Serve",
@@ -453,7 +453,7 @@
         "image": "./assets/images/food/drinks/water.png",
         "price": 10,
         "category": "Drinks",
-        "description": "",
+        "description": "Indulge in a refreshing wave of ice-cold water.",
         "isDrink": true
     },
     {
@@ -462,7 +462,7 @@
         "image": "./assets/images/food/drinks/swTea.png",
         "price": 10,
         "category": "Drinks",
-        "description": "",
+        "description": "Your taste buds will be delighted by the sensation of this oh-so-sweet tea!",
         "isDrink": true
     },
     {
@@ -471,7 +471,7 @@
         "image": "./assets/images/food/drinks/tea.png",
         "price": 10,
         "category": "Drinks",
-        "description": "",
+        "description": "Get soothed by the calming, yet tasty nature of our unsweetened tea.",
         "isDrink": true
     },
     {
@@ -480,7 +480,7 @@
         "image": "./assets/images/food/drinks/lemonade.png",
         "price": 10,
         "category": "Drinks",
-        "description": "",
+        "description": "An oasis of sweetness on any hot day that is sure to reinvigorate your body. Tastes nice on cold days as well. ",
         "isDrink": true
     },
     {
@@ -489,7 +489,7 @@
         "image": "./assets/images/food/drinks/strawLemonade.png",
         "price": 10,
         "category": "Drinks",
-        "description": "",
+        "description": "A familiar drink with a new pink twist! Rule the seasons with style.",
         "isDrink": true
     },
     {
@@ -498,7 +498,7 @@
         "image": "./assets/images/food/drinks/nurseReaper.png",
         "price": 10,
         "category": "Drinks",
-        "description": "",
+        "description": "A caffeinated soda with a nice taste that will push you to win the game. ",
         "isDrink": true
     },
     {
@@ -507,7 +507,7 @@
         "image": "./assets/images/food/drinks/popOff.png",
         "price": 10,
         "category": "Drinks",
-        "description": "",
+        "description": "A delicious caffeinated soda with a stunning color that matches the elegant taste.",
         "isDrink": true
     },
     {
@@ -516,7 +516,7 @@
         "image": "./assets/images/food/drinks/orangeSplash.png",
         "price": 10,
         "category": "Drinks",
-        "description": "",
+        "description": "Dip into your big win with this decaffeinated soda with an orange taste!",
         "isDrink": true
     },
     {
@@ -525,7 +525,7 @@
         "image": "./assets/images/food/drinks/fizzyJr.png",
         "price": 10,
         "category": "Drinks",
-        "description": "",
+        "description": "You are sure to win the league with this caffeinated soda!",
         "isDrink": true
     }
 ]

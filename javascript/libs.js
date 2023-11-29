@@ -40,6 +40,8 @@ libs.include = {
  * @typedef {Object} cartItem Represents an item in the cart/bag.
  * @property {string} id ID of this item.
  * @property {string} displayName Display name of this item.
+ * @property {number} amount Amount of this item.
+ * @property {number} priceIncrease Price increase of this item.
  */
 
 // Library to add and remove items from the shopping cart.
@@ -55,15 +57,18 @@ libs.cart = {
      */
     save: function () {
         storage.setItem(this.key, JSON.stringify(this.items));
+        if (window.updateCheckout) window.updateCheckout();
     },
 
     /**
      * Add an item to the cart.
      * @param {string} id The ID of the item to add.
      * @param {string} displayName Display name of the item to add.
+     * @param {number} amount Amount of the item to add.
+     * @param {number} [priceIncrease] Price increase of the item to add.
      */
-    add: function (id, displayName) {
-        this.items.push({ id: id, displayName: displayName });
+    add: function (id, displayName, amount, priceIncrease) {
+        this.items.push({ id: id, displayName: displayName, amount: amount, priceIncrease: priceIncrease ?? 0 });
         this.save();
     },
 

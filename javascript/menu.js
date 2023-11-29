@@ -18,7 +18,7 @@ async function main() {
     /**
      * @param {string} title
      * @param {string} message
-     * @param {{ type: 'button'|'input'|'select'|'secondaryButton', options: string[]?, text: string, onclick: function?, inputType: string?, textChanged: function? }[]} actions
+     * @param {{ type: 'button'|'input'|'select'|'secondaryButton'|'br'|'hr', svg: string, options: string[]?, text: string, onclick: function?, inputType: string?, textChanged: function? }[]} actions
      * @param {Function} callback
      */
     async function displayPopup(title, message, actions, callback) {
@@ -55,6 +55,7 @@ async function main() {
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.innerHTML = action.text;
+                if (action.svg) button.innerHTML = `${action.svg}<span class="text">${action.text}</span>`;
                 button.classList.add('popupActionButton');
                 button.addEventListener('click', () => action.onclick());
                 popupActionContainer.insertAdjacentElement('beforeend', button);
@@ -63,6 +64,7 @@ async function main() {
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.innerHTML = action.text;
+                if (action.svg) button.innerHTML = `${action.svg}<span class="text">${action.text}</span>`;
                 button.classList.add('popupActionButtonSecondary');
                 button.addEventListener('click', () => action.onclick());
                 popupActionContainer.insertAdjacentElement('beforeend', button);
@@ -98,6 +100,13 @@ async function main() {
                     });
                 popupActionContainer.insertAdjacentElement('beforeend', select);
                 elements.push(select);
+            } else if (action.type === 'br') {
+                const br = document.createElement('br');
+                popupActionContainer.insertAdjacentElement('beforeend', br);
+            } else if (action.type === 'hr') {
+                const hr = document.createElement('hr');
+                hr.classList.add('popupActionSeparator');
+                popupActionContainer.insertAdjacentElement('beforeend', hr);
             }
         }
 
@@ -130,524 +139,578 @@ async function main() {
         popup.style.transform = 'scale(0)';
         popupBackground.style.opacity = '0';
 
-        await wait(1000);
+        await wait(400);
         popup.style.display = 'none';
         popupBackground.style.display = 'none';
         window.scrollTo({ top: lastWindowPositionBeforePopup, behavior: 'smooth' });
     }
 
-    fetch('./data/menu-items.jsonc')
-        .then(async function (response) {
-            const itemsDiv = document.getElementById('items');
-            const itemCategoriesDiv = document.getElementById('itemCategories');
-            const rawResponse = await response.text();
+    fetch('./data/menu-items.jsonc').then(async function (response) {
+        const itemsDiv = document.getElementById('items');
+        const itemCategoriesDiv = document.getElementById('itemCategories');
+        const rawResponse = await response.text();
 
-            /** @type {item[]} */
-            const items = parseJSONC(rawResponse);
-            const allItems = parseJSONC(rawResponse);
+        /** @type {item[]} */
+        const items = parseJSONC(rawResponse);
+        const allItems = parseJSONC(rawResponse);
 
-            /** @type {Object.<string, Array<item>>} */
-            let categories = {};
+        /** @type {Object.<string, Array<item>>} */
+        let categories = {};
 
-            /** @type {Object.<string, HTMLButtonElement>} */
-            const categoriesButtons = {};
+        /** @type {Object.<string, HTMLButtonElement>} */
+        const categoriesButtons = {};
 
-            const icons = items[0].icons;
-            items.shift();
-            allItems.shift();
+        const icons = items[0].icons;
+        items.shift();
+        allItems.shift();
 
-            const toggleDescriptionFunctions = [];
+        const toggleDescriptionFunctions = [];
 
-            items.forEach(function (item) {
-                if (!categories[item.category]) categories[item.category] = [];
-                categories[item.category].push(item);
-            });
+        items.forEach(function (item) {
+            if (!categories[item.category]) categories[item.category] = [];
+            categories[item.category].push(item);
+        });
 
-            // categories = sortObjectByKeys(categories);
-            let displayItemsDebounce = false;
+        // categories = sortObjectByKeys(categories);
+        let displayItemsDebounce = false;
 
-            /**
-             * @param {item[]} items
-             * @param {boolean|undefined} isAll
-             */
-            async function displayItems(items, isAll) {
-                if (displayItemsDebounce === true) return;
-                displayItemsDebounce = true;
+        function updateCheckout() {
+            const checkoutItems = document.getElementById('checkoutItems');
+            const checkoutTotal = document.getElementById('checkoutTotal');
+            const checkoutButton = document.getElementById('checkoutButton');
 
-                for (const [_, button] of Object.entries(categoriesButtons)) {
-                    button.classList.remove('current');
-                    if (isAll === true) {
-                        if (button.innerText.split(' ')[0] === 'All') button.classList.add('current');
-                    } else {
-                        if (items[0].category === button.innerText.split(' ')[0]) button.classList.add('current');
-                    }
-                }
+            checkoutItems.innerHTML = '';
+            let total = 0;
+            for (const item of libs.cart.items) {
+                const div = document.createElement('div');
+                div.classList.add('checkoutItem');
 
-                for (const div of itemsDiv.children) {
-                    div.style.transform = 'scale(0)';
-                }
-
-                await wait(500);
-                itemsDiv.innerHTML = '';
-
-                let currentIndex = -1;
-                for (const item of items) {
-                    currentIndex++;
-
-                    const div = document.createElement('div');
-                    div.classList.add('item');
-                    div.id = `itemDiv${Math.floor(Math.random() * 999999999999999)}`;
-
-                    const title = document.createElement('p');
-                    title.innerHTML = `<b>${new Intl.NumberFormat('en-US', {
+                const name = document.createElement('p');
+                name.innerHTML = item.displayName;
+                name.insertAdjacentHTML(
+                    'afterbegin',
+                    `<span class="amount">x${item.amount}</span> <span class="price">${new Intl.NumberFormat('en-US', {
                         style: 'currency',
                         currency: 'USD',
-                    }).format(parseFloat(item.price))}</b> ${item.name}`;
-                    if (isAll) title.insertAdjacentHTML('afterbegin', ` ${icons[item.category]}`);
+                    }).format(
+                        items.find((i) => i.id === item.id).price + item.amount + item.priceIncrease * item.amount
+                    )}</span> `
+                );
 
-                    const image = document.createElement('img');
-                    image.src = item.image;
-                    image.alt = item.name;
+                div.insertAdjacentElement('beforeend', name);
+                checkoutItems.insertAdjacentElement('beforeend', div);
 
-                    const description = document.createElement('p');
-                    description.classList.add('description');
+                total += items.find((i) => i.id === item.id).price * item.amount + item.priceIncrease * item.amount;
+            }
+
+            checkoutTotal.innerHTML = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            }).format(total);
+
+            console.log(total);
+
+            if (libs.cart.items.length === 0) {
+                checkoutButton.disabled = true;
+                checkoutButton.innerText = 'Checkout';
+            } else {
+                checkoutButton.disabled = false;
+                checkoutButton.innerText = `Checkout (${libs.cart.items.length})`;
+            }
+        }
+
+        window.updateCheckout = updateCheckout;
+        updateCheckout();
+
+        /**
+         * @param {item[]} items
+         * @param {boolean|undefined} isAll
+         */
+        async function displayItems(items, isAll) {
+            if (displayItemsDebounce === true) return;
+            displayItemsDebounce = true;
+
+            for (const [_, button] of Object.entries(categoriesButtons)) {
+                button.classList.remove('current');
+                if (isAll === true) {
+                    if (button.innerText.split(' ')[0] === 'All') button.classList.add('current');
+                } else {
+                    if (items[0].category === button.innerText.split(' ')[0]) button.classList.add('current');
+                }
+            }
+
+            for (const div of itemsDiv.children) {
+                div.style.transform = 'scale(0)';
+            }
+
+            await wait(500);
+            itemsDiv.innerHTML = '';
+
+            let currentIndex = -1;
+            for (const item of items) {
+                currentIndex++;
+
+                const div = document.createElement('div');
+                div.classList.add('item');
+                div.id = `itemDiv${Math.floor(Math.random() * 999999999999999)}`;
+
+                const title = document.createElement('p');
+                title.innerHTML = `<b>${new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                }).format(parseFloat(item.price))}</b> ${item.name}`;
+                if (isAll) title.insertAdjacentHTML('afterbegin', ` ${icons[item.category]}`);
+
+                const image = document.createElement('img');
+                image.src = item.image;
+                image.alt = item.name;
+
+                const description = document.createElement('p');
+                description.classList.add('description');
+                description.dataset.state = 'none';
+                description.style.fontSize = '0px';
+                description.innerHTML = `&nbsp;&nbsp;&nbsp;&nbsp;${(
+                    item.description || 'No description available.'
+                ).replace('\n', '<br>&nbsp;&nbsp;&nbsp;&nbsp;')}`;
+
+                const descriptionButton = document.createElement('button');
+                descriptionButton.innerHTML = 'View Description';
+                descriptionButton.id = 'viewDescription';
+                descriptionButton.style.marginTop = '-17px';
+
+                function hideDescription() {
                     description.dataset.state = 'none';
                     description.style.fontSize = '0px';
-                    description.innerHTML = `&nbsp;&nbsp;&nbsp;&nbsp;${(
-                        item.description || 'No description available.'
-                    ).replace('\n', '<br>&nbsp;&nbsp;&nbsp;&nbsp;')}`;
-
-                    const descriptionButton = document.createElement('button');
-                    descriptionButton.innerHTML = 'View Description';
-                    descriptionButton.id = 'viewDescription';
+                    descriptionButton.innerText = 'View Description';
                     descriptionButton.style.marginTop = '-17px';
+                }
 
-                    function hideDescription() {
-                        description.dataset.state = 'none';
-                        description.style.fontSize = '0px';
-                        descriptionButton.innerText = 'View Description';
-                        descriptionButton.style.marginTop = '-17px';
+                function showDescription() {
+                    description.style.fontSize = 'medium';
+                    description.dataset.state = 'inline-block';
+                    descriptionButton.innerText = 'Hide Description';
+                    descriptionButton.style.marginTop = '0px';
+                }
+
+                descriptionButton.addEventListener('click', () => {
+                    if (description.dataset.state === 'none') {
+                        showDescription();
+                    } else {
+                        hideDescription();
                     }
+                });
 
-                    function showDescription() {
-                        description.style.fontSize = 'medium';
-                        description.dataset.state = 'inline-block';
-                        descriptionButton.innerText = 'Hide Description';
-                        descriptionButton.style.marginTop = '0px';
-                    }
+                toggleDescriptionFunctions.push({ hide: hideDescription, show: showDescription });
 
-                    descriptionButton.addEventListener('click', () => {
-                        if (description.dataset.state === 'none') {
-                            showDescription();
-                        } else {
-                            hideDescription();
+                const bagIcon =
+                    '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/></svg>';
+                const optionsIcon =
+                    "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/></svg>";
+
+                const button = document.createElement('button');
+                button.innerHTML = `${bagIcon}<span class="text">Add to Bag<span>`;
+                button.classList.add('lastButton');
+
+                if (item.canBeMeal || item.isDrink) {
+                    button.innerHTML = `${optionsIcon}<span class="text">Show Options</span>`;
+                    button.addEventListener('click', async () => {
+                        if (libs.cart.items.length > 30) {
+                            return displayPopup(
+                                'Oh no!',
+                                'You can only have up to 30 different items in your bag at once.\nPlease checkout or remove an item.',
+                                []
+                            );
                         }
-                    });
-
-                    toggleDescriptionFunctions.push({ hide: hideDescription, show: showDescription });
-
-                    const bagIcon =
-                        '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/></svg>';
-                    const optionsIcon =
-                        "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/></svg>";
-
-                    const button = document.createElement('button');
-                    button.innerHTML = `${bagIcon}<span class="text">Add to Bag<span>`;
-                    button.classList.add('lastButton');
-
-                    if (item.canBeMeal || item.isDrink) {
-                        button.innerHTML = `${optionsIcon}<span class="text">Show Options</span>`;
-                        button.addEventListener('click', async () => {
-                            if (libs.cart.items.length > 30) {
-                                return displayPopup(
-                                    'Oh no!',
-                                    'You can only have up to 30 different items in your bag at once.\nPlease checkout or remove an item.',
-                                    []
-                                );
-                            }
-                            if (item.isDrink) {
-                                let currentSize = 'small';
-                                const buttons = await displayPopup('Size', 'What size drink would you like?', [
-                                    {
-                                        text: 'Small <i>(selected)</i>',
-                                        type: 'secondaryButton',
-                                        onclick: () => {
-                                            currentSize = 'small';
-                                            buttons[0].innerHTML = 'Small <i>(selected)</i>';
-                                            buttons[1].innerHTML = 'Medium (+$0.25)';
-                                            buttons[2].innerHTML = 'Large (+$0.50)';
-                                        },
+                        if (item.isDrink) {
+                            let currentSize = 'small';
+                            let priceIncrease = 0;
+                            const buttons = await displayPopup('Size', 'What size drink would you like?', [
+                                {
+                                    text: 'Small <i>(selected)</i>',
+                                    type: 'secondaryButton',
+                                    onclick: () => {
+                                        currentSize = 'small';
+                                        priceIncrease = 0;
+                                        buttons[0].innerHTML = 'Small <i>(selected)</i>';
+                                        buttons[1].innerHTML = 'Medium (+$0.25)';
+                                        buttons[2].innerHTML = 'Large (+$0.50)';
                                     },
-                                    {
-                                        text: 'Medium (+$0.25)',
-                                        type: 'secondaryButton',
-                                        onclick: () => {
-                                            currentSize = 'medium';
-                                            buttons[0].innerHTML = 'Small';
-                                            buttons[1].innerHTML = 'Medium <i>(selected)</i> (+$0.25)';
-                                            buttons[2].innerHTML = 'Large (+$0.50)';
-                                        },
+                                },
+                                {
+                                    text: 'Medium (+$0.25)',
+                                    type: 'secondaryButton',
+                                    onclick: () => {
+                                        currentSize = 'medium';
+                                        priceIncrease = 0.25;
+                                        buttons[0].innerHTML = 'Small';
+                                        buttons[1].innerHTML = 'Medium <i>(selected)</i> (+$0.25)';
+                                        buttons[2].innerHTML = 'Large (+$0.50)';
                                     },
-                                    {
-                                        text: 'Large (+$0.50)',
-                                        type: 'secondaryButton',
-                                        onclick: () => {
-                                            currentSize = 'large';
-                                            buttons[0].innerHTML = 'Small';
-                                            buttons[1].innerHTML = 'Medium (+$0.25)';
-                                            buttons[2].innerHTML = 'Large <i>(selected)</i> (+$0.50)';
-                                        },
+                                },
+                                {
+                                    text: 'Large (+$0.50)',
+                                    type: 'secondaryButton',
+                                    onclick: () => {
+                                        currentSize = 'large';
+                                        priceIncrease = 0.5;
+                                        buttons[0].innerHTML = 'Small';
+                                        buttons[1].innerHTML = 'Medium (+$0.25)';
+                                        buttons[2].innerHTML = 'Large <i>(selected)</i> (+$0.50)';
                                     },
-                                    {
-                                        text: 'Next',
-                                        type: 'button',
-                                        onclick: async () => {
-                                            const elements = await displayPopup(
-                                                'Amount',
-                                                'How many would you like to add to your bag?',
-                                                [
-                                                    {
-                                                        inputType: 'number',
-                                                        text: 'Amount',
-                                                        type: 'input',
-                                                        textChanged: (value) => {
-                                                            let number = value ?? 0;
-                                                            if (number > 10) {
-                                                                elements[0].value = 10;
-                                                                number = 10;
-                                                            } else if (0 >= number) {
-                                                                elements[0].value = '';
-                                                                amount = 0;
-                                                                elements[1].innerHTML = 'Insert an amount above.';
-                                                                elements[1].disabled = true;
-                                                                return;
-                                                            }
-                                                            amount = number;
-                                                            elements[1].innerText = `Submit x${amount}`;
-                                                            elements[1].disabled = false;
-                                                        },
-                                                    },
-                                                    {
-                                                        text: 'Submit',
-                                                        type: 'button',
-                                                        onclick: () => {
-                                                            if (amount === 0) return;
-                                                            libs.cart.add(
-                                                                item.id,
-                                                                `${item.name} (${currentSize})${
-                                                                    amount > 1 ? ` x${amount}` : ''
-                                                                }`
-                                                            );
-                                                            hidePopup();
-                                                        },
-                                                    },
-                                                ]
-                                            );
-                                            elements[1].innerHTML = 'Insert an amount above.';
-                                            elements[1].disabled = true;
-                                            elements[0].focus();
-                                        },
-                                    },
-                                ]);
-                            } else {
-                                await displayPopup('Meal', 'Would you like to make this a meal?', [
-                                    {
-                                        text: 'Yes',
-                                        type: 'button',
-                                        onclick: async () => {
-                                            let side1 = allItems
-                                                .filter((item) => item.category === 'Sides')
-                                                .map((item) => item.name)[0];
-                                            let side2 = allItems
-                                                .filter((item) => item.category === 'Sides')
-                                                .map((item) => item.name)[0];
-                                            await displayPopup(
-                                                'Meal',
-                                                'Select the two sides you would like to include in your meal.',
-                                                [
-                                                    {
-                                                        type: 'select',
-                                                        options: allItems
-                                                            .filter((item) => item.category === 'Sides')
-                                                            .map((item) => item.name),
-                                                        textChanged: (value) => {
-                                                            side1 = value;
-                                                        },
-                                                    },
-                                                    {
-                                                        type: 'select',
-                                                        options: allItems
-                                                            .filter((item) => item.category === 'Sides')
-                                                            .map((item) => item.name),
-                                                        textChanged: (value) => {
-                                                            side2 = value;
-                                                        },
-                                                    },
-                                                    {
-                                                        text: 'Next',
-                                                        type: 'button',
-                                                        onclick: async () => {
-                                                            const elements = await displayPopup(
-                                                                'Amount',
-                                                                'How many would you like to add to your bag?',
-                                                                [
-                                                                    {
-                                                                        inputType: 'number',
-                                                                        text: 'Amount',
-                                                                        type: 'input',
-                                                                        textChanged: (value) => {
-                                                                            let number = value ?? 0;
-                                                                            if (number > 10) {
-                                                                                elements[0].value = 10;
-                                                                                number = 10;
-                                                                            } else if (0 >= number) {
-                                                                                elements[0].value = '';
-                                                                                amount = 0;
-                                                                                elements[1].innerHTML =
-                                                                                    'Insert an amount above.';
-                                                                                elements[1].disabled = true;
-                                                                                return;
-                                                                            }
-                                                                            amount = number;
-                                                                            elements[1].innerText = `Submit x${amount}`;
-                                                                            elements[1].disabled = false;
-                                                                        },
-                                                                    },
-                                                                    {
-                                                                        text: 'Submit',
-                                                                        type: 'button',
-                                                                        onclick: () => {
-                                                                            if (amount === 0) return;
-                                                                            libs.cart.add(
-                                                                                item.id,
-                                                                                `${
-                                                                                    item.name
-                                                                                } (Meal: ${side1}, ${side2})${
-                                                                                    amount > 1 ? ` x${amount}` : ''
-                                                                                }`
-                                                                            );
-                                                                            hidePopup();
-                                                                        },
-                                                                    },
-                                                                ]
-                                                            );
+                                },
+                                {
+                                    type: 'hr',
+                                },
+                                {
+                                    text: 'Next',
+                                    type: 'button',
+                                    svg: "<svg xmlns='http://www.w3.org/2000/svg' enable-background='new 0 0 20 20' height='48px' viewBox='0 0 20 20' width='48px' fill='currentColor'><g><g><rect fill='none' height='20' width='20'/></g></g><g><polygon points='4.59,16.59 6,18 14,10 6,2 4.59,3.41 11.17,10'/></g></svg>",
+                                    onclick: async () => {
+                                        const elements = await displayPopup(
+                                            'Amount',
+                                            'How many would you like to add to your bag?',
+                                            [
+                                                {
+                                                    inputType: 'number',
+                                                    text: 'Amount',
+                                                    type: 'input',
+                                                    textChanged: (value) => {
+                                                        let number = value ?? 0;
+                                                        if (number > 10) {
+                                                            elements[0].value = 10;
+                                                            number = 10;
+                                                        } else if (0 >= number) {
+                                                            elements[0].value = '';
+                                                            amount = 0;
                                                             elements[1].innerHTML = 'Insert an amount above.';
                                                             elements[1].disabled = true;
-                                                            elements[0].focus();
-                                                        },
+                                                            return;
+                                                        }
+                                                        amount = number;
+                                                        elements[1].innerText = `Submit x${amount}`;
+                                                        elements[1].disabled = false;
                                                     },
-                                                ]
-                                            );
-                                        },
-                                    },
-                                    {
-                                        text: 'No',
-                                        type: 'button',
-                                        onclick: async () => {
-                                            const elements = await displayPopup(
-                                                'Amount',
-                                                'How many would you like to add to your bag?',
-                                                [
-                                                    {
-                                                        inputType: 'number',
-                                                        text: 'Amount',
-                                                        type: 'input',
-                                                        textChanged: (value) => {
-                                                            let number = value ?? 0;
-                                                            if (number > 10) {
-                                                                elements[0].value = 10;
-                                                                number = 10;
-                                                            } else if (0 >= number) {
-                                                                elements[0].value = '';
-                                                                amount = 0;
-                                                                elements[1].innerHTML = 'Insert an amount above.';
-                                                                elements[1].disabled = true;
-                                                                return;
-                                                            }
-                                                            amount = number;
-                                                            elements[1].innerText = `Submit x${amount}`;
-                                                            elements[1].disabled = false;
-                                                        },
+                                                },
+                                                {
+                                                    text: 'Submit',
+                                                    type: 'button',
+                                                    onclick: () => {
+                                                        if (amount === 0) return;
+                                                        libs.cart.add(
+                                                            item.id,
+                                                            `${item.name} (${currentSize})`,
+                                                            amount,
+                                                            priceIncrease
+                                                        );
+                                                        hidePopup();
                                                     },
-                                                    {
-                                                        text: 'Submit',
-                                                        type: 'button',
-                                                        onclick: () => {
-                                                            if (amount === 0) return;
-                                                            libs.cart.add(
-                                                                item.id,
-                                                                `${item.name}${amount > 1 ? ` x${amount}` : ''}`
-                                                            );
-                                                            hidePopup();
-                                                        },
+                                                },
+                                            ]
+                                        );
+                                        elements[1].innerHTML = 'Insert an amount above.';
+                                        elements[1].disabled = true;
+                                        elements[0].focus();
+                                    },
+                                },
+                            ]);
+                        } else {
+                            await displayPopup('Meal', 'Would you like to make this a meal?', [
+                                {
+                                    text: 'Yes',
+                                    type: 'button',
+                                    svg: "<svg xmlns='http://www.w3.org/2000/svg' height='48px' viewBox='0 0 24 24' width='48px' fill='currentColor'><path d='M0 0h24v24H0z' fill='none'/><path d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z'/></svg>",
+                                    onclick: async () => {
+                                        let side1 = allItems
+                                            .filter((item) => item.category === 'Sides')
+                                            .map((item) => item.name)[0];
+                                        let side2 = allItems
+                                            .filter((item) => item.category === 'Sides')
+                                            .map((item) => item.name)[0];
+                                        await displayPopup(
+                                            'Meal',
+                                            'Select the two sides you would like to include in your meal.',
+                                            [
+                                                {
+                                                    type: 'select',
+                                                    options: allItems
+                                                        .filter((item) => item.category === 'Sides')
+                                                        .map((item) => item.name),
+                                                    textChanged: (value) => {
+                                                        side1 = value;
                                                     },
-                                                ]
-                                            );
-                                            elements[1].innerHTML = 'Insert an amount above.';
-                                            elements[1].disabled = true;
-                                            elements[0].focus();
-                                        },
+                                                },
+                                                {
+                                                    type: 'select',
+                                                    options: allItems
+                                                        .filter((item) => item.category === 'Sides')
+                                                        .map((item) => item.name),
+                                                    textChanged: (value) => {
+                                                        side2 = value;
+                                                    },
+                                                },
+                                                {
+                                                    type: 'hr',
+                                                },
+                                                {
+                                                    text: 'Next',
+                                                    type: 'button',
+                                                    svg: "<svg xmlns='http://www.w3.org/2000/svg' enable-background='new 0 0 20 20' height='48px' viewBox='0 0 20 20' width='48px' fill='currentColor'><g><g><rect fill='none' height='20' width='20'/></g></g><g><polygon points='4.59,16.59 6,18 14,10 6,2 4.59,3.41 11.17,10'/></g></svg>",
+                                                    onclick: async () => {
+                                                        const elements = await displayPopup(
+                                                            'Amount',
+                                                            'How many would you like to add to your bag?',
+                                                            [
+                                                                {
+                                                                    inputType: 'number',
+                                                                    text: 'Amount',
+                                                                    type: 'input',
+                                                                    textChanged: (value) => {
+                                                                        let number = value ?? 0;
+                                                                        if (number > 10) {
+                                                                            elements[0].value = 10;
+                                                                            number = 10;
+                                                                        } else if (0 >= number) {
+                                                                            elements[0].value = '';
+                                                                            amount = 0;
+                                                                            elements[1].innerHTML =
+                                                                                'Insert an amount above.';
+                                                                            elements[1].disabled = true;
+                                                                            return;
+                                                                        }
+                                                                        amount = number;
+                                                                        elements[1].innerText = `Submit x${amount}`;
+                                                                        elements[1].disabled = false;
+                                                                    },
+                                                                },
+                                                                {
+                                                                    text: 'Submit',
+                                                                    type: 'button',
+                                                                    onclick: () => {
+                                                                        if (amount === 0) return;
+                                                                        libs.cart.add(
+                                                                            item.id,
+                                                                            `${item.name} (Meal: ${side1}, ${side2})`,
+                                                                            amount
+                                                                        );
+                                                                        hidePopup();
+                                                                    },
+                                                                },
+                                                            ]
+                                                        );
+                                                        elements[1].innerHTML = 'Insert an amount above.';
+                                                        elements[1].disabled = true;
+                                                        elements[0].focus();
+                                                    },
+                                                },
+                                            ]
+                                        );
                                     },
-                                ]);
-                            }
-                        });
-                    } else {
-                        button.addEventListener('click', async () => {
-                            let amount = 0;
-                            if (libs.cart.items.length > 30) {
-                                return displayPopup(
-                                    'Oh no!',
-                                    'You can only have up to 30 different items in your bag at once.\nPlease checkout or remove an item.',
-                                    []
-                                );
-                            }
-                            const elements = await displayPopup(
-                                'Amount',
-                                'How many would you like to add to your bag?',
-                                [
-                                    {
-                                        inputType: 'number',
-                                        text: 'Amount',
-                                        type: 'input',
-                                        textChanged: (value) => {
-                                            let number = value ?? 0;
-                                            if (number > 10) {
-                                                elements[0].value = 10;
-                                                number = 10;
-                                            } else if (0 >= number) {
-                                                elements[0].value = '';
-                                                amount = 0;
-                                                elements[1].innerHTML = 'Insert an amount above.';
-                                                elements[1].disabled = true;
-                                                return;
-                                            }
-                                            amount = number;
-                                            elements[1].innerText = `Submit x${amount}`;
-                                            elements[1].disabled = false;
-                                        },
+                                },
+                                {
+                                    text: 'No',
+                                    type: 'button',
+                                    svg: "<svg xmlns='http://www.w3.org/2000/svg' height='48px' viewBox='0 0 24 24' width='48px' fill='currentColor'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>",
+                                    onclick: async () => {
+                                        const elements = await displayPopup(
+                                            'Amount',
+                                            'How many would you like to add to your bag?',
+                                            [
+                                                {
+                                                    inputType: 'number',
+                                                    text: 'Amount',
+                                                    type: 'input',
+                                                    textChanged: (value) => {
+                                                        let number = value ?? 0;
+                                                        if (number > 10) {
+                                                            elements[0].value = 10;
+                                                            number = 10;
+                                                        } else if (0 >= number) {
+                                                            elements[0].value = '';
+                                                            amount = 0;
+                                                            elements[1].innerHTML = 'Insert an amount above.';
+                                                            elements[1].disabled = true;
+                                                            return;
+                                                        }
+                                                        amount = number;
+                                                        elements[1].innerText = `Submit x${amount}`;
+                                                        elements[1].disabled = false;
+                                                    },
+                                                },
+                                                {
+                                                    text: 'Submit',
+                                                    type: 'button',
+                                                    onclick: () => {
+                                                        if (amount === 0) return;
+                                                        libs.cart.add(item.id, item.name, amount);
+                                                        hidePopup();
+                                                    },
+                                                },
+                                            ]
+                                        );
+                                        elements[1].innerHTML = 'Insert an amount above.';
+                                        elements[1].disabled = true;
+                                        elements[0].focus();
                                     },
-                                    {
-                                        text: 'Submit',
-                                        type: 'button',
-                                        onclick: () => {
-                                            if (amount === 0) return;
-                                            libs.cart.add(item.id, `${item.name}${amount > 1 ? ` x${amount}` : ''}`);
-                                            hidePopup();
-                                        },
-                                    },
-                                ]
-                            );
-                            elements[1].innerHTML = 'Insert an amount above.';
-                            elements[1].disabled = true;
-                            elements[0].focus();
-                        });
-                    }
-
-                    div.insertAdjacentElement('beforeend', title);
-                    div.insertAdjacentElement('beforeend', image);
-                    div.insertAdjacentElement('beforeend', description);
-                    div.insertAdjacentElement('beforeend', descriptionButton);
-                    div.insertAdjacentHTML('beforeend', '<hr>');
-                    div.insertAdjacentElement('beforeend', button);
-                    itemsDiv.insertAdjacentElement('beforeend', div);
-
-                    div.style.transform = 'scale(0)';
-                    if (isElementInViewport(div)) {
-                        setTimeout(
-                            () => {
-                                div.style.transform = 'scale(1)';
-                            },
-                            100 + currentIndex * 100
-                        );
-                    } else {
-                        setTimeout(async function () {
-                            await new Promise(async function (resolve) {
-                                while (!isElementInViewport(div)) {
-                                    await wait(0);
-                                }
-                                resolve();
-                            });
-                            setTimeout(function () {
-                                div.style.transform = 'scale(1)';
-                            }, 100);
-                        }, 0);
-                    }
-                }
-
-                toggleDescriptions();
-                await wait(1000);
-
-                displayItemsDebounce = false;
-            }
-
-            const toggleOnIcon =
-                "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>";
-            const toggleOffIcon =
-                "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>";
-
-            const toggleDescriptionsButton = document.createElement('button');
-            toggleDescriptionsButton.id = 'toggleDescriptions';
-            toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOffIcon}`;
-
-            let descriptionsShowed = true;
-            function toggleDescriptions() {
-                if (descriptionsShowed === true) {
-                    for (const toggleDescriptionFunction of toggleDescriptionFunctions) {
-                        toggleDescriptionFunction.hide();
-                    }
+                                },
+                            ]);
+                        }
+                    });
                 } else {
-                    for (const toggleDescriptionFunction of toggleDescriptionFunctions) {
-                        toggleDescriptionFunction.show();
-                    }
+                    button.addEventListener('click', async () => {
+                        let amount = 0;
+                        if (libs.cart.items.length > 30) {
+                            return displayPopup(
+                                'Oh no!',
+                                'You can only have up to 30 different items in your bag at once.\nPlease checkout or remove an item.',
+                                []
+                            );
+                        }
+                        const elements = await displayPopup('Amount', 'How many would you like to add to your bag?', [
+                            {
+                                inputType: 'number',
+                                text: 'Amount',
+                                type: 'input',
+                                textChanged: (value) => {
+                                    let number = value ?? 0;
+                                    if (number > 10) {
+                                        elements[0].value = 10;
+                                        number = 10;
+                                    } else if (0 >= number) {
+                                        elements[0].value = '';
+                                        amount = 0;
+                                        elements[1].innerHTML = 'Insert an amount above.';
+                                        elements[1].disabled = true;
+                                        return;
+                                    }
+                                    amount = number;
+                                    elements[1].innerText = `Submit x${amount}`;
+                                    elements[1].disabled = false;
+                                },
+                            },
+                            {
+                                text: 'Submit',
+                                type: 'button',
+                                onclick: () => {
+                                    if (amount === 0) return;
+                                    libs.cart.add(item.id, item.name, amount);
+                                    hidePopup();
+                                },
+                            },
+                        ]);
+                        elements[1].innerHTML = 'Insert an amount above.';
+                        elements[1].disabled = true;
+                        elements[0].focus();
+                    });
+                }
+
+                div.insertAdjacentElement('beforeend', title);
+                div.insertAdjacentElement('beforeend', image);
+                div.insertAdjacentElement('beforeend', description);
+                div.insertAdjacentElement('beforeend', descriptionButton);
+                div.insertAdjacentHTML('beforeend', '<hr>');
+                div.insertAdjacentElement('beforeend', button);
+                itemsDiv.insertAdjacentElement('beforeend', div);
+
+                div.style.transform = 'scale(0)';
+                if (isElementInViewport(div)) {
+                    setTimeout(
+                        () => {
+                            div.style.transform = 'scale(1)';
+                        },
+                        100 + currentIndex * 100
+                    );
+                } else {
+                    setTimeout(async function () {
+                        await new Promise(async function (resolve) {
+                            while (!isElementInViewport(div)) {
+                                await wait(0);
+                            }
+                            resolve();
+                        });
+                        setTimeout(function () {
+                            div.style.transform = 'scale(1)';
+                        }, 100);
+                    }, 0);
                 }
             }
 
-            toggleDescriptionsButton.addEventListener('click', () => {
-                descriptionsShowed = !descriptionsShowed;
-                descriptionsShowed === true
-                    ? (toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOffIcon}`)
-                    : (toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOnIcon}`);
-                toggleDescriptions();
-            });
-
-            const categoriesTitle = document.createElement('p');
-            categoriesTitle.innerHTML = '<b>Categories</b>';
-            itemCategoriesDiv.insertAdjacentElement('beforeend', categoriesTitle);
-
-            const allCategoriesButton = document.createElement('button');
-            allCategoriesButton.type = 'button';
-            allCategoriesButton.innerHTML = `All ${icons.All}`;
-            allCategoriesButton.classList.add('categoryButton');
-            categoriesButtons.All = allCategoriesButton;
-            allCategoriesButton.addEventListener('click', () => {
-                displayItems(items, true);
-                toggleDescriptions();
-            });
-            itemCategoriesDiv.insertAdjacentElement('beforeend', allCategoriesButton);
-
-            for (const category of Object.keys(categories)) {
-                const button = document.createElement('button');
-                button.type = 'button';
-                button.innerHTML = `${category} ${icons[category]}`;
-                button.classList.add('categoryButton');
-                categoriesButtons[category] = button;
-                button.addEventListener('click', () => {
-                    displayItems(categories[category]);
-                    toggleDescriptions();
-                });
-                itemCategoriesDiv.insertAdjacentElement('beforeend', button);
-            }
-
-            itemCategoriesDiv.insertAdjacentHTML('beforeend', '<br><br><p><b>Actions</b></p>');
-            itemCategoriesDiv.insertAdjacentElement('beforeend', toggleDescriptionsButton);
-
-            displayItems(categories[Object.keys(categories)[0]]);
             toggleDescriptions();
-        })
+            await wait(1000);
+
+            displayItemsDebounce = false;
+        }
+
+        const toggleOnIcon =
+            "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>";
+        const toggleOffIcon =
+            "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></svg>";
+
+        const toggleDescriptionsButton = document.createElement('button');
+        toggleDescriptionsButton.id = 'toggleDescriptions';
+        toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOffIcon}`;
+
+        let descriptionsShowed = true;
+        function toggleDescriptions() {
+            if (descriptionsShowed === true) {
+                for (const toggleDescriptionFunction of toggleDescriptionFunctions) {
+                    toggleDescriptionFunction.hide();
+                }
+            } else {
+                for (const toggleDescriptionFunction of toggleDescriptionFunctions) {
+                    toggleDescriptionFunction.show();
+                }
+            }
+        }
+
+        toggleDescriptionsButton.addEventListener('click', () => {
+            descriptionsShowed = !descriptionsShowed;
+            descriptionsShowed === true
+                ? (toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOffIcon}`)
+                : (toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOnIcon}`);
+            toggleDescriptions();
+        });
+
+        const categoriesTitle = document.createElement('p');
+        categoriesTitle.innerHTML = '<b>Categories</b>';
+        itemCategoriesDiv.insertAdjacentElement('beforeend', categoriesTitle);
+
+        const allCategoriesButton = document.createElement('button');
+        allCategoriesButton.type = 'button';
+        allCategoriesButton.innerHTML = `All ${icons.All}`;
+        allCategoriesButton.classList.add('categoryButton');
+        categoriesButtons.All = allCategoriesButton;
+        allCategoriesButton.addEventListener('click', () => {
+            displayItems(items, true);
+            toggleDescriptions();
+        });
+        itemCategoriesDiv.insertAdjacentElement('beforeend', allCategoriesButton);
+
+        for (const category of Object.keys(categories)) {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.innerHTML = `${category} ${icons[category]}`;
+            button.classList.add('categoryButton');
+            categoriesButtons[category] = button;
+            button.addEventListener('click', () => {
+                displayItems(categories[category]);
+                toggleDescriptions();
+            });
+            itemCategoriesDiv.insertAdjacentElement('beforeend', button);
+        }
+
+        itemCategoriesDiv.insertAdjacentHTML('beforeend', '<br><br><p><b>Actions</b></p>');
+        itemCategoriesDiv.insertAdjacentElement('beforeend', toggleDescriptionsButton);
+
+        displayItems(categories[Object.keys(categories)[0]]);
+        toggleDescriptions();
+    });
+    /** 
         .catch(function (err) {
+            console.error(`${err}`, err);
             const result = confirm(`Failed to load menu items, would you like to refresh the page?\n\nERR: ${err}`);
             if (result) document.location.reload();
         });
+        */
 }
 
 window.addEventListener('load', main);

@@ -40,7 +40,22 @@ footer {
     padding-top: 1%;
 }
 
-.tooltip {
+.toolTip .toolTipText {
+    background-color: var(--accent);
+    color: var(--background);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 200px;
+    text-align: center;
+    border-radius: 360px;
+    position: absolute;
+    visibility: hidden;
+}
+
+.toolTip:hover .toolTipText {
+    visibility: visible;
 }
 
 @media screen and (max-width: 964px) {

@@ -5,6 +5,20 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Menu</title>
+        <!-- META TAGS START -->
+        <meta property="og:title" content="Game Day Grill" />
+        <meta property="og:site_name" content="Game Day Grill" />
+        <meta property="og:url" content="https://github.com/jacobhumston/bpa23/tree/main" />
+        <meta
+            property="og:description"
+            content="Game Day Grill is a restaurant that was crafted by a family of hard workers, sports watchers, and cookout lovers. Our goal is to serve this country with burgers, fries, and those sweet home runs. And while we keep that good Game Day taste in mouths across the tri-state, Game Day Grill has a humble, country-folk beginning."
+        />
+        <meta property="og:type" content="restaurant" />
+        <meta
+            property="og:image"
+            content="https://raw.githubusercontent.com/jacobhumston/bpa23/main/assets/images/logo.png"
+        />
+        <!-- META TAGS END -->
         <link rel="stylesheet" href="css/all.css" />
         <link rel="stylesheet" href="css/menu.css" />
         <script src="javascript/libs.js"></script>
@@ -33,6 +47,13 @@
         </p>
         <br /><br />
         <br />
+        <div id="checkout">
+            <h1>Your Items</h1>
+            <p>These are the items currently in your cart.<br />You can click/tap on an item to remove it.</p>
+            <div id="checkoutItems"></div>
+            <div id="checkoutTotal"></div>
+            <button type="button" id="checkoutButton">Checkout</button>
+        </div>
         <div id="itemCategories"></div>
         <div id="items"></div>
         <br /><br />
