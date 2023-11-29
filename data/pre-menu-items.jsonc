@@ -308,7 +308,7 @@
         "image": "./assets/images/food/appetizers/salad.png",
         "price": 3.99,
         "category": "Appetizers",
-        "description": "lalalal \n lallala"
+        "description": ""
     },
     {
         "name": "Cheese Curds",
@@ -316,7 +316,7 @@
         "image": "./assets/images/food/appetizers/cheeseCurds.jpg",
         "price": 4.99,
         "category": "Appetizers",
-        "description": "lalalal \n lallala"
+        "description": ""
     },
     {
         "name": "Mozzarella Sticks",
@@ -375,7 +375,7 @@
         "image": "./assets/images/food/desserts/cheeseCake.png",
         "price": 3.15,
         "category": "Desserts",
-        "description": "lalalal \n lallala"
+        "description": ""
     },
     {
         "name": "Vanilla Soft Serve",
@@ -453,7 +453,7 @@
         "image": "./assets/images/food/drinks/water.png",
         "price": 10,
         "category": "Drinks",
-        "description": "lalalal \n lallala",
+        "description": "",
         "isDrink": true
     },
     {
@@ -462,7 +462,7 @@
         "image": "./assets/images/food/drinks/swTea.png",
         "price": 10,
         "category": "Drinks",
-        "description": "lalalal \n lallala",
+        "description": "",
         "isDrink": true
     },
     {
@@ -471,7 +471,7 @@
         "image": "./assets/images/food/drinks/tea.png",
         "price": 10,
         "category": "Drinks",
-        "description": "lalalal \n lallala",
+        "description": "",
         "isDrink": true
     },
     {
@@ -480,7 +480,7 @@
         "image": "./assets/images/food/drinks/lemonade.png",
         "price": 10,
         "category": "Drinks",
-        "description": "lalalal \n lallala",
+        "description": "",
         "isDrink": true
     },
     {
@@ -489,7 +489,7 @@
         "image": "./assets/images/food/drinks/strawLemonade.png",
         "price": 10,
         "category": "Drinks",
-        "description": "lalalal \n lallala",
+        "description": "",
         "isDrink": true
     },
     {
@@ -498,7 +498,7 @@
         "image": "./assets/images/food/drinks/nurseReaper.png",
         "price": 10,
         "category": "Drinks",
-        "description": "lalalal \n lallala",
+        "description": "",
         "isDrink": true
     },
     {
@@ -507,7 +507,7 @@
         "image": "./assets/images/food/drinks/popOff.png",
         "price": 10,
         "category": "Drinks",
-        "description": "lalalal \n lallala",
+        "description": "",
         "isDrink": true
     },
     {
@@ -516,7 +516,7 @@
         "image": "./assets/images/food/drinks/orangeSplash.png",
         "price": 10,
         "category": "Drinks",
-        "description": "lalalal \n lallala",
+        "description": "",
         "isDrink": true
     },
     {
@@ -525,7 +525,7 @@
         "image": "./assets/images/food/drinks/fizzyJr.png",
         "price": 10,
         "category": "Drinks",
-        "description": "lalalal \n lallala",
+        "description": "",
         "isDrink": true
     }
 ]

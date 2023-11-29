@@ -18,7 +18,7 @@ async function main() {
     /**
      * @param {string} title
      * @param {string} message
-     * @param {{ type: 'button'|'input'|'select', options: string[]?, text: string, onclick: function?, inputType: string?, textChanged: function? }[]} actions
+     * @param {{ type: 'button'|'input'|'select'|'secondaryButton', options: string[]?, text: string, onclick: function?, inputType: string?, textChanged: function? }[]} actions
      * @param {Function} callback
      */
     async function displayPopup(title, message, actions, callback) {
@@ -56,6 +56,14 @@ async function main() {
                 button.type = 'button';
                 button.innerHTML = action.text;
                 button.classList.add('popupActionButton');
+                button.addEventListener('click', () => action.onclick());
+                popupActionContainer.insertAdjacentElement('beforeend', button);
+                elements.push(button);
+            } else if (action.type === 'secondaryButton') {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.innerHTML = action.text;
+                button.classList.add('popupActionButtonSecondary');
                 button.addEventListener('click', () => action.onclick());
                 popupActionContainer.insertAdjacentElement('beforeend', button);
                 elements.push(button);
@@ -261,37 +269,37 @@ async function main() {
                                 let currentSize = 'small';
                                 const buttons = await displayPopup('Size', 'What size drink would you like?', [
                                     {
-                                        text: 'Small <i>(current)</i>',
-                                        type: 'button',
+                                        text: 'Small <i>(selected)</i>',
+                                        type: 'secondaryButton',
                                         onclick: () => {
                                             currentSize = 'small';
-                                            buttons[0].innerHTML = 'Small <i>(current)</i>';
+                                            buttons[0].innerHTML = 'Small <i>(selected)</i>';
                                             buttons[1].innerHTML = 'Medium (+$0.25)';
                                             buttons[2].innerHTML = 'Large (+$0.50)';
                                         },
                                     },
                                     {
                                         text: 'Medium (+$0.25)',
-                                        type: 'button',
+                                        type: 'secondaryButton',
                                         onclick: () => {
                                             currentSize = 'medium';
                                             buttons[0].innerHTML = 'Small';
-                                            buttons[1].innerHTML = 'Medium <i>(current)</i> (+$0.25)';
+                                            buttons[1].innerHTML = 'Medium <i>(selected)</i> (+$0.25)';
                                             buttons[2].innerHTML = 'Large (+$0.50)';
                                         },
                                     },
                                     {
                                         text: 'Large (+$0.50)',
-                                        type: 'button',
+                                        type: 'secondaryButton',
                                         onclick: () => {
                                             currentSize = 'large';
                                             buttons[0].innerHTML = 'Small';
                                             buttons[1].innerHTML = 'Medium (+$0.25)';
-                                            buttons[2].innerHTML = 'Large <i>(current)</i> (+$0.50)';
+                                            buttons[2].innerHTML = 'Large <i>(selected)</i> (+$0.50)';
                                         },
                                     },
                                     {
-                                        text: 'Submit',
+                                        text: 'Next',
                                         type: 'button',
                                         onclick: async () => {
                                             const elements = await displayPopup(
@@ -376,7 +384,7 @@ async function main() {
                                                         },
                                                     },
                                                     {
-                                                        text: 'Submit',
+                                                        text: 'Next',
                                                         type: 'button',
                                                         onclick: async () => {
                                                             const elements = await displayPopup(
