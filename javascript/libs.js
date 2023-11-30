@@ -42,6 +42,7 @@ libs.include = {
  * @property {string} displayName Display name of this item.
  * @property {number} amount Amount of this item.
  * @property {number} priceIncrease Price increase of this item.
+ * @property {string} bagId Bag ID of this item.
  */
 
 // Library to add and remove items from the shopping cart.
@@ -68,25 +69,22 @@ libs.cart = {
      * @param {number} [priceIncrease] Price increase of the item to add.
      */
     add: function (id, displayName, amount, priceIncrease) {
-        this.items.push({ id: id, displayName: displayName, amount: amount, priceIncrease: priceIncrease ?? 0 });
+        this.items.push({
+            id: id,
+            displayName: displayName,
+            amount: amount,
+            priceIncrease: priceIncrease ?? 0,
+            bagId: `${Date.now()}${Math.floor(Math.random() * 100000)}`,
+        });
         this.save();
     },
 
     /**
      * Remove an item from the cart.
-     * @param {string} displayName The displayName of the item to remove.
+     * @param {bagId} displayName The bag ID of this item.
      */
-    remove: function (displayName) {
-        let removed = false;
-        this.items.forEach((value, index) => {
-            if (value !== null && removed == false) {
-                if (value.displayName === displayName) {
-                    removed = true;
-                    this.items.splice(index);
-                }
-            }
-        });
-        if (removed === false) throw 'Item not found.';
+    remove: function (bagId) {
+        this.items = this.items.filter((item) => item.bagId !== bagId);
         this.save();
     },
 

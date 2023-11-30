@@ -220,6 +220,7 @@
     display: inline-block;
     width: auto;
     height: auto;
+    max-width: -moz-fit-content;
     max-width: fit-content;
     background-color: var(--backgroundPop);
     border-radius: 15px;
@@ -370,7 +371,8 @@
 }
 
 #checkout {
-    display: block;
+    display: none;
+    max-width: -moz-fit-content;
     max-width: fit-content;
     margin-right: auto;
     margin-left: auto;
@@ -381,6 +383,7 @@
     transition: all 1s ease;
     text-align: center;
     color: var(--background);
+    border-radius: 25px;
 }
 
 #checkout h1 {
@@ -391,17 +394,91 @@
 
 .checkoutItem {
     display: inline;
-    text-align: left;
+    vertical-align: middle;
 }
 
 .checkoutItem .price {
     font-weight: bold;
     font-size: larger;
     color: var(--accent);
+    float: right;
+    vertical-align: middle;
 }
 
 .checkoutItem .amount {
     font-weight: bold;
     font-size: larger;
     color: var(--secondaryAccent);
+    float: left;
+    vertical-align: middle;
+}
+
+.checkoutItem .name {
+    float: left;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.checkoutItem .name:hover {
+    border-bottom-style: dashed;
+    border-bottom-width: 3px;
+    border-bottom-color: var(--secondaryAccent);
+    cursor: pointer;
+}
+
+#checkoutButton {
+    background-color: var(--secondaryAccent);
+    color: var(--background);
+    border: none;
+    font-size: larger;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    min-width: 80%;
+    font-weight: bold;
+}
+
+#checkoutButton:hover {
+    cursor: pointer;
+    background-color: var(--secondaryAccentDarken);
+}
+
+#checkoutButton:disabled {
+    cursor: not-allowed;
+    background-color: var(--secondaryAccentDarken);
+}
+
+#checkoutTotal {
+    font-size: larger;
+    margin-bottom: 5px;
+}
+
+#checkoutTotal .total {
+    font-weight: bold;
+    font-size: x-large;
+    color: var(--accent);
+}
+
+#backToMenu {
+    background-color: var(--accent);
+    color: var(--background);
+    border: none;
+    font-size: large;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    min-width: 80%;
+    margin-top: 5px;
+}
+
+#backToMenu .tiny {
+    font-size: small;
+}
+
+#backToMenu:hover {
+    cursor: pointer;
+    background-color: var(--accentDarken);
 }

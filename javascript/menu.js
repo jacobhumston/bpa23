@@ -75,16 +75,17 @@ async function main() {
                 input.placeholder = action.text;
                 input.required = true;
                 input.classList.add('popupActionInput');
-                if (action.textChanged)
+                if (action.textChanged) {
                     input.addEventListener('input', () => {
                         let value = input.value;
                         if (value === '') value = null;
                         action.textChanged(value);
                     });
+                }
                 popupActionContainer.insertAdjacentElement('beforeend', input);
                 elements.push(input);
             } else if (action.type === 'select') {
-                console.log(action);
+                // console.log(action);
                 const select = document.createElement('select');
                 select.classList.add('popupActionSelect');
                 for (const option of action.options) {
@@ -92,12 +93,13 @@ async function main() {
                     optionElement.innerText = option;
                     select.insertAdjacentElement('beforeend', optionElement);
                 }
-                if (action.textChanged)
+                if (action.textChanged) {
                     select.addEventListener('input', () => {
                         let value = select.value;
                         if (value === '') value = null;
                         action.textChanged(value);
                     });
+                }
                 popupActionContainer.insertAdjacentElement('beforeend', select);
                 elements.push(select);
             } else if (action.type === 'br') {
@@ -185,37 +187,51 @@ async function main() {
                 const div = document.createElement('div');
                 div.classList.add('checkoutItem');
 
-                const name = document.createElement('p');
-                name.innerHTML = item.displayName;
-                name.insertAdjacentHTML(
+                const itemPrice =
+                    items.find((i) => i.id === item.id).price * item.amount + item.priceIncrease * item.amount;
+
+                const p = document.createElement('p');
+                p.insertAdjacentHTML(
                     'afterbegin',
-                    `<span class="amount">x${item.amount}</span> <span class="price">${new Intl.NumberFormat('en-US', {
+                    `<span class="amount">${item.amount}x&nbsp;&nbsp;</span> <span class="name">${item.displayName
+                    }</span> <span class="price">&nbsp;&nbsp;...&nbsp;${new Intl.NumberFormat('en-US', {
                         style: 'currency',
                         currency: 'USD',
-                    }).format(
-                        items.find((i) => i.id === item.id).price + item.amount + item.priceIncrease * item.amount
-                    )}</span> `
+                    }).format(itemPrice)}</span> `
                 );
 
-                div.insertAdjacentElement('beforeend', name);
-                checkoutItems.insertAdjacentElement('beforeend', div);
+                p.getElementsByClassName('name')
+                    .item(0)
+                    .addEventListener('click', function () {
+                        libs.cart.remove(item.bagId);
+                    });
 
-                total += items.find((i) => i.id === item.id).price * item.amount + item.priceIncrease * item.amount;
+                div.insertAdjacentElement('beforeend', p);
+                checkoutItems.insertAdjacentElement('beforeend', div);
+                checkoutItems.insertAdjacentElement('beforeend', document.createElement('br'));
+
+                total += itemPrice;
             }
 
-            checkoutTotal.innerHTML = new Intl.NumberFormat('en-US', {
+            checkoutItems.insertAdjacentElement('beforeend', document.createElement('br'));
+
+            checkoutTotal.innerHTML = `Your total is <span class="total">${new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
-            }).format(total);
+            }).format(total)}</span>.`;
 
-            console.log(total);
+            // console.log(total);
 
             if (libs.cart.items.length === 0) {
                 checkoutButton.disabled = true;
                 checkoutButton.innerText = 'Checkout';
+                checkoutTotal.innerHTML = '';
+                checkoutButton.hidden = true;
+                checkoutItems.innerHTML = '<p><b>Please add an item to your bag before checking out!</b></p>';
             } else {
                 checkoutButton.disabled = false;
-                checkoutButton.innerText = `Checkout (${libs.cart.items.length})`;
+                checkoutButton.hidden = false;
+                checkoutButton.innerText = `Checkout`;
             }
         }
 
@@ -407,9 +423,9 @@ async function main() {
                                                 },
                                             ]
                                         );
-                                        elements[1].innerHTML = 'Insert an amount above.';
-                                        elements[1].disabled = true;
                                         elements[0].focus();
+                                        elements[0].value = '1';
+                                        amount = 1;
                                     },
                                 },
                             ]);
@@ -497,9 +513,9 @@ async function main() {
                                                                 },
                                                             ]
                                                         );
-                                                        elements[1].innerHTML = 'Insert an amount above.';
-                                                        elements[1].disabled = true;
                                                         elements[0].focus();
+                                                        elements[0].value = '1';
+                                                        amount = 1;
                                                     },
                                                 },
                                             ]
@@ -541,15 +557,15 @@ async function main() {
                                                     type: 'button',
                                                     onclick: () => {
                                                         if (amount === 0) return;
-                                                        libs.cart.add(item.id, item.name, amount);
+                                                        libs.cart.add(item.id, item.name, Number(amount));
                                                         hidePopup();
                                                     },
                                                 },
                                             ]
                                         );
-                                        elements[1].innerHTML = 'Insert an amount above.';
-                                        elements[1].disabled = true;
                                         elements[0].focus();
+                                        elements[0].value = '1';
+                                        amount = 1;
                                     },
                                 },
                             ]);
@@ -597,9 +613,9 @@ async function main() {
                                 },
                             },
                         ]);
-                        elements[1].innerHTML = 'Insert an amount above.';
-                        elements[1].disabled = true;
                         elements[0].focus();
+                        elements[0].value = '1';
+                        amount = 1;
                     });
                 }
 
@@ -648,6 +664,25 @@ async function main() {
         const toggleDescriptionsButton = document.createElement('button');
         toggleDescriptionsButton.id = 'toggleDescriptions';
         toggleDescriptionsButton.innerHTML = `Toggle Descriptions ${toggleOffIcon}`;
+        toggleDescriptionsButton.type = 'button';
+
+        const checkoutOpenButton = document.createElement('button');
+        checkoutOpenButton.id = 'checkoutOpenButton';
+        checkoutOpenButton.innerHTML =
+            'Checkout <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/></svg>';
+        checkoutOpenButton.type = 'button';
+
+        checkoutOpenButton.addEventListener('click', function () {
+            document.getElementById('checkout').style.display = 'block';
+            itemCategoriesDiv.style.display = 'none';
+            itemsDiv.style.display = 'none';
+        });
+
+        document.getElementById('backToMenu').addEventListener('click', function () {
+            document.getElementById('checkout').style.display = 'none';
+            itemCategoriesDiv.style.display = 'inline-block';
+            itemsDiv.style.display = 'inline-flex';
+        });
 
         let descriptionsShowed = true;
         function toggleDescriptions() {
@@ -699,6 +734,7 @@ async function main() {
         }
 
         itemCategoriesDiv.insertAdjacentHTML('beforeend', '<br><br><p><b>Actions</b></p>');
+        itemCategoriesDiv.insertAdjacentElement('beforeend', checkoutOpenButton);
         itemCategoriesDiv.insertAdjacentElement('beforeend', toggleDescriptionsButton);
 
         displayItems(categories[Object.keys(categories)[0]]);

@@ -38,6 +38,7 @@ footer {
     color: var(--background);
     padding-left: 2%;
     padding-top: 1%;
+    margin: 0px;
 }
 
 .toolTip .toolTipText {
