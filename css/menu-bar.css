@@ -82,6 +82,10 @@
     display: none;
 }
 
+#menuBarMobile #index {
+    display: none;
+}
+
 @media screen and (max-width: 650px) {
     #menuBar {
         display: none;
@@ -93,7 +97,11 @@
 }
 
 @media screen and (max-width: 420px) {
-    #menuBarMobile .menuBarIconMain img {
+    #menuBarMobile .menuBarIconMain {
         display: none;
+    }
+
+    #menuBarMobile #index {
+        display: inline-block;
     }
 }

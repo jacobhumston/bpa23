@@ -389,7 +389,7 @@
         "name": "Chocolate Soft Serve",
         "id": "{ID}",
         "image": "./assets/images/food/desserts/chocIcecream.png",
-        "price": 10,
+        "price": 2.5,
         "category": "Desserts",
         "description": "Get that nice chocolate ice cream flavor partnered with a deluxe texture. All on top of a sweet sugar cone or in a bowl."
     },
@@ -429,7 +429,7 @@
         "name": "Chocolate Milkshake",
         "id": "{ID}",
         "image": "./assets/images/food/desserts/chocShake.png",
-        "price": 10,
+        "price": 2.5,
         "category": "Desserts",
         "description": "Our magnificent chocolate milkshake is blasted with flavor and complimented with a delightful consistency.",
         "isDrink": true
@@ -439,7 +439,7 @@
         "name": "Strawberry Milkshake",
         "id": "{ID}",
         "image": "./assets/images/food/desserts/strawShake.png",
-        "price": 10,
+        "price": 2.5,
         "category": "Desserts",
         "description": "Our magnificent strawberry milkshake is blasted with flavor and complimented with a delightful consistency.",
         "isDrink": true
@@ -451,7 +451,7 @@
         "name": "Water",
         "id": "{ID}",
         "image": "./assets/images/food/drinks/water.png",
-        "price": 10,
+        "price": 0.5,
         "category": "Drinks",
         "description": "Indulge in a refreshing wave of ice-cold water.",
         "isDrink": true
@@ -460,7 +460,7 @@
         "name": "Sweet Tea",
         "id": "{ID}",
         "image": "./assets/images/food/drinks/swTea.png",
-        "price": 10,
+        "price": 1.25,
         "category": "Drinks",
         "description": "Your taste buds will be delighted by the sensation of this oh-so-sweet tea!",
         "isDrink": true
@@ -469,7 +469,7 @@
         "name": "Unsweetened Tea",
         "id": "{ID}",
         "image": "./assets/images/food/drinks/tea.png",
-        "price": 10,
+        "price": 1.25,
         "category": "Drinks",
         "description": "Get soothed by the calming, yet tasty nature of our unsweetened tea.",
         "isDrink": true
@@ -478,7 +478,7 @@
         "name": "Lemonade",
         "id": "{ID}",
         "image": "./assets/images/food/drinks/lemonade.png",
-        "price": 10,
+        "price": 1.25,
         "category": "Drinks",
         "description": "An oasis of sweetness on any hot day that is sure to reinvigorate your body. Tastes nice on cold days as well. ",
         "isDrink": true
@@ -487,7 +487,7 @@
         "name": "Strawberry Lemonade",
         "id": "{ID}",
         "image": "./assets/images/food/drinks/strawLemonade.png",
-        "price": 10,
+        "price": 1.25,
         "category": "Drinks",
         "description": "A familiar drink with a new pink twist! Rule the seasons with style.",
         "isDrink": true
@@ -496,7 +496,7 @@
         "name": "Nurse Reaper",
         "id": "{ID}",
         "image": "./assets/images/food/drinks/nurseReaper.png",
-        "price": 10,
+        "price": 1.25,
         "category": "Drinks",
         "description": "A caffeinated soda with a nice taste that will push you to win the game. ",
         "isDrink": true
@@ -505,7 +505,7 @@
         "name": "Pop-Off",
         "id": "{ID}",
         "image": "./assets/images/food/drinks/popOff.png",
-        "price": 10,
+        "price": 1.25,
         "category": "Drinks",
         "description": "A delicious caffeinated soda with a stunning color that matches the elegant taste.",
         "isDrink": true
@@ -514,7 +514,7 @@
         "name": "Orange Splash",
         "id": "{ID}",
         "image": "./assets/images/food/drinks/orangeSplash.png",
-        "price": 10,
+        "price": 1.25,
         "category": "Drinks",
         "description": "Dip into your big win with this decaffeinated soda with an orange taste!",
         "isDrink": true
@@ -523,7 +523,7 @@
         "name": "Fizzy Jr.",
         "id": "{ID}",
         "image": "./assets/images/food/drinks/fizzyJr.png",
-        "price": 10,
+        "price": 1.25,
         "category": "Drinks",
         "description": "You are sure to win the league with this caffeinated soda!",
         "isDrink": true

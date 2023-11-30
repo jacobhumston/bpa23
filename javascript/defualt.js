@@ -108,6 +108,7 @@ function attachLoadingAnimation() {
     for (const link of links) {
         if (!link.href) continue;
         if (!link.href.includes('bpa')) continue;
+        if (!link.href.includes('html')) continue;
         const destination = link.href;
         link.dataset.href = destination;
         link.href = 'javascript:;';

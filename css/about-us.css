@@ -20,3 +20,11 @@
     width: 12%;
     border-radius: 360px;
 }
+
+.infoTextBPDiv {
+    text-align: center;
+}
+
+.infoTextBP {
+    font-size: 12px;
+}
