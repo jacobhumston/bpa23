@@ -142,7 +142,6 @@ window.addEventListener('load', function () {
     libs.include.includeHeadCSS(document, 'css/footer.css', 'end');
     waitForElement('menuBar').then(updateMenuBar);
 
-    /**
     setTimeout(() => {
         if (shouldDisplayLoadingScreen) {
             hideLoadingDivider(attachLoadingAnimation);
@@ -150,5 +149,4 @@ window.addEventListener('load', function () {
             attachLoadingAnimation();
         }
     }, 500);
-    **/
 });
