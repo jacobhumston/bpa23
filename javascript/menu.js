@@ -55,7 +55,8 @@ async function main() {
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.innerHTML = action.text;
-                if (action.svg) button.innerHTML = `${action.svg}<span class="text">${action.text}</span>`;
+                if (action.svg)
+                    button.innerHTML = `${action.svg}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">${action.text}</span>`;
                 button.classList.add('popupActionButton');
                 button.addEventListener('click', () => action.onclick());
                 popupActionContainer.insertAdjacentElement('beforeend', button);
@@ -64,7 +65,8 @@ async function main() {
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.innerHTML = action.text;
-                if (action.svg) button.innerHTML = `${action.svg}<span class="text">${action.text}</span>`;
+                if (action.svg)
+                    button.innerHTML = `${action.svg}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">${action.text}</span>`;
                 button.classList.add('popupActionButtonSecondary');
                 button.addEventListener('click', () => action.onclick());
                 popupActionContainer.insertAdjacentElement('beforeend', button);
@@ -193,7 +195,8 @@ async function main() {
                 const p = document.createElement('p');
                 p.insertAdjacentHTML(
                     'afterbegin',
-                    `<span class="amount">${item.amount}x&nbsp;&nbsp;</span> <span class="name">${item.displayName
+                    `<span class="amount">${item.amount}x&nbsp;&nbsp;</span> <span class="name">${
+                        item.displayName
                     }</span> <span class="price">&nbsp;&nbsp;...&nbsp;${new Intl.NumberFormat('en-US', {
                         style: 'currency',
                         currency: 'USD',
@@ -432,7 +435,7 @@ async function main() {
                         } else {
                             await displayPopup('Meal', 'Would you like to make this a meal?', [
                                 {
-                                    text: 'Yes',
+                                    text: 'Yes (+$4.00)',
                                     type: 'button',
                                     svg: "<svg xmlns='http://www.w3.org/2000/svg' height='48px' viewBox='0 0 24 24' width='48px' fill='currentColor'><path d='M0 0h24v24H0z' fill='none'/><path d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z'/></svg>",
                                     onclick: async () => {
@@ -506,7 +509,8 @@ async function main() {
                                                                         libs.cart.add(
                                                                             item.id,
                                                                             `${item.name} (Meal: ${side1}, ${side2})`,
-                                                                            amount
+                                                                            amount,
+                                                                            4
                                                                         );
                                                                         hidePopup();
                                                                     },
