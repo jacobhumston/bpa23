@@ -61,7 +61,7 @@ function insertLoadingDivider(tween, tweenCallback) {
     const divider = document.createElement('div');
     divider.id = 'loadingDiv';
     const img = document.createElement('img');
-    img.src = './assets/images/logo.png';
+    img.src = '/assets/images/logo.png';
     if (tween) img.classList.add('no-anim');
     divider.insertAdjacentElement('afterbegin', img);
     document.documentElement.insertAdjacentElement('beforeEnd', divider);
