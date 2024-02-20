@@ -91,10 +91,21 @@ a:hover {
 }
 
 .basic-text {
-    padding-left: 30%;
-    padding-right: 30%;
-    padding-top: 2%;
+    display: block;
+    position: relative;
+    max-width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
     text-indent: 4%;
+}
+
+@media screen and (width < 500px) {
+    .basic-text {
+        max-width: 90%;
+        min-width: 90%;
+        width: 90%;
+    }
 }
 
 #loadingDiv {

@@ -1,4 +1,8 @@
 #mapImage {
     display: block;
-    text-align: center;
+    height: 90%;
+    max-height: 300px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
