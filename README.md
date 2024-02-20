@@ -1,1 +1,1 @@
--   Information files can be found in [docs/](docs/).
+-   Information files can be found in [docs/](src/client/docs/).
