@@ -10,6 +10,7 @@
           "rotate"
         ]
       }
-    ]
+    ],
+    "no-inline-styles": "off"
   }
 }
