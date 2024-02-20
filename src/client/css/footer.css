@@ -2,98 +2,44 @@ footer {
     position: absolute;
     top: 100%;
     width: 100%;
-}
-
-.footerBox {
     background-color: var(--secondaryBackground);
-    height: 250px;
+    padding: 25px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
-.footerLogo {
-    width: 150px;
+#footerLogoImage {
+    height: 100px;
+    width: auto;
+    display: inline;
+    margin-left: 20px;
+}
+
+#footerLogo {
+    display: inline;
     float: right;
-    margin-top: 50px;
-    margin-right: 50px;
 }
 
-.footerLinksDiv {
+#footerLinksDiv {
+    display: inline;
+}
+
+.footerLink {
+    margin-left: 15px;
+    font-size: larger;
+    margin-top: 10px;
+    white-space: nowrap;
     display: inline-block;
-    float: right;
-    margin-top: 6%;
+    border-bottom: solid var(--accent) 3px;
+    padding-bottom: 3px;
 }
 
-.footerLinks {
-    padding: 7px;
-    margin-right: 35px;
+.footerLink:hover {
+    border-bottom: solid var(--secondaryAccent) 3px;
 }
 
-.copyrightText {
+#copyrightText {
     color: var(--background);
-    float: left;
-    margin-top: 11%;
-    margin-left: 2%;
-}
-
-.aiInfoText {
-    color: var(--background);
-    padding-left: 2%;
-    padding-top: 1%;
-    margin: 0px;
-}
-
-.schoolInfoText {
-    color: var(--background);
-    padding-left: 2%;
-    margin: 0px;
-}
-
-.toolTip .toolTipText {
-    background-color: var(--accent);
-    color: var(--background);
+    margin-top: 30px;
     padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 300px;
-    text-align: center;
-    border-radius: 80px;
-    position: absolute;
-    visibility: hidden;
-}
-
-.toolTip:hover .toolTipText {
-    visibility: visible;
-}
-
-@media screen and (max-width: 964px) {
-    .footerBox {
-        margin-top: 200px;
-        background-color: var(--secondaryBackground);
-        height: 250px;
-    }
-
-    .footerLogo {
-        width: 100px;
-        float: right;
-        margin-top: 50px;
-        margin-right: 50px;
-    }
-
-    .footerLinksDiv {
-        display: inline-block;
-        float: right;
-        margin-top: 6%;
-    }
-
-    .footerLinks {
-        padding: 1px;
-        margin-right: 35px;
-    }
-
-    .copyrightText {
-        color: var(--background);
-        float: left;
-        margin-top: 11%;
-        margin-left: 2%;
-    }
 }

@@ -22,6 +22,7 @@
     transition: all 0.5s ease;
     margin-left: 0px;
     margin-left: 250px;
+    box-sizing: border-box;
 }
 
 .item {
@@ -230,6 +231,8 @@
     margin-top: 80px;
     text-align: center;
     transition: all 1s ease;
+    max-height: 75%;
+    overflow-y: auto;
 }
 
 #popupTitle {
@@ -474,6 +477,37 @@
     margin-top: 5px;
 }
 
+@media screen and (width < 750px) {
+    .checkoutItem .price,
+    .checkoutItem .amount,
+    .checkoutItem .name {
+        float: none;
+    }
+
+    #checkout {
+        width: 100%;
+        min-width: 100%;
+        border-radius: 0px;
+        position: relative;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+    .checkoutItem {
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .checkoutItem p {
+        margin: 0px;
+    }
+
+    #backToMenu,
+    #checkoutButton {
+        min-width: 100%;
+    }
+}
+
 #backToMenu .tiny {
     font-size: small;
 }
@@ -491,6 +525,8 @@
     #itemCategories {
         z-index: 10;
         display: none;
+        position: fixed;
+        top: 50px;
     }
 
     #categoriesButtonMobile {
@@ -514,7 +550,28 @@
     #items {
         margin: 0px;
         width: 100%;
+        max-width: 100%;
+        min-width: 100%;
         display: flex;
         padding: 10px;
     }
+
+    .item {
+        margin-right: 0px;
+    }
+}
+
+.categoryHeader {
+    width: 90%;
+    margin: 0px;
+    margin-top: 10px;
+    font-size: xx-large;
+    color: var(--accent);
+    border-bottom: solid 5px var(--accent);
+}
+
+.categoryHeader svg {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
 }

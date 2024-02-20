@@ -250,6 +250,7 @@ async function main() {
                 const checkoutItems = document.getElementById('checkoutItems');
                 const checkoutTotal = document.getElementById('checkoutTotal');
                 const checkoutButton = document.getElementById('checkoutButton');
+                const checkoutInfo = document.getElementById('checkoutInfo');
 
                 // Modify the checkout list, reset it, and then add the current items.
                 checkoutItems.innerHTML = '';
@@ -305,10 +306,12 @@ async function main() {
                     checkoutTotal.innerHTML = '';
                     checkoutButton.hidden = true;
                     checkoutItems.innerHTML = '<p><b>Please add an item to your bag before checking out!</b></p>';
+                    checkoutInfo.hidden = true;
                 } else {
                     checkoutButton.disabled = false;
                     checkoutButton.hidden = false;
                     checkoutButton.innerText = `Checkout`;
+                    checkoutInfo.hidden = false;
                 }
             }
 
@@ -327,6 +330,9 @@ async function main() {
                 // Add a little debounce, just to make sure things don't get too mixed up.
                 if (displayItemsDebounce === true) return;
                 displayItemsDebounce = true;
+
+                // Displayed categories.
+                const displayedCategories = {};
 
                 // Loop over the array of buttons and remove the current class from all of them except the current category.
                 for (const [_, button] of Object.entries(categoriesButtons)) {
@@ -749,6 +755,18 @@ async function main() {
                         });
                     }
 
+                    // For the all "category" we display section headers.
+                    // Check if we already displayed this section, if not, we will add the header.
+                    if (isAll) {
+                        if (displayedCategories[item.category] !== true) {
+                            displayedCategories[item.category] = true;
+                            const header = document.createElement('h1');
+                            header.innerHTML = `${icons[item.category]} ${item.category}`;
+                            header.classList.add('categoryHeader');
+                            itemsDiv.insertAdjacentElement('beforeend', header);
+                        }
+                    }
+
                     // Insert all the elements we created.
                     div.insertAdjacentElement('beforeend', title);
                     div.insertAdjacentElement('beforeend', image);
@@ -899,6 +917,13 @@ async function main() {
             // Display the first category and update the state of all descriptions.
             displayItems(items, true, true);
             toggleDescriptions();
+
+            // Display checkout on page load if the checkout param is found in the url.
+            if (new URLSearchParams(window.location.search).has('checkout')) {
+                document.getElementById('checkout').style.display = 'block';
+                itemCategoriesDiv.style.display = 'none';
+                itemsDiv.style.display = 'none';
+            }
 
             // Listen for clicks on the checkout button.
             document.getElementById('checkoutButton').addEventListener('click', function () {

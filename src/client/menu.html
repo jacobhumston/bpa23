@@ -16,7 +16,7 @@
         <meta property="og:type" content="restaurant" />
         <meta
             property="og:image"
-            content="https://raw.githubusercontent.com/jacobhumston/bpa23/main/assets/images/logo.png"
+            content="https://raw.githubusercontent.com/jacobhumston/bpa23/main/src/client/assets/images/logo.png"
         />
         <!-- META TAGS END -->
         <link rel="stylesheet" href="css/all.css" />
@@ -52,7 +52,9 @@
         <br />
         <div id="checkout">
             <h1>Your Items</h1>
-            <p>These are the items currently in your bag.<br />You can click/tap on an item to remove it.</p>
+            <p id="checkoutInfo">
+                These are the items currently in your bag.<br />You can click/tap on an item's name to remove it.
+            </p>
             <div id="checkoutItems"></div>
             <hr />
             <div id="checkoutTotal"></div>
