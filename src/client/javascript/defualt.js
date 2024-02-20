@@ -107,7 +107,7 @@ function attachLoadingAnimation() {
     const links = document.getElementsByTagName('a');
     for (const link of links) {
         if (!link.href) continue;
-        if (link.href.includes('.')) continue;
+        if (new URL(link.href).pathname.includes('.')) continue;
         const destination = link.href;
         link.dataset.href = destination;
         link.href = 'javascript:;';
