@@ -1,38 +1,16 @@
--- FOLDERS --
-
-.vscode - VSCode workspace settings and such.
-
-assets - Assets (images/etc) need for the site.
-    images - Images directory.
-    videos - Videos directory.
-    fonts - Fonts directory.
-
-css - Style sheets.
-
-docs - Information files. (*.txt)
-
-includes - HTML files which may be included in multiple files. (Via include library. -> javascript/lib/include.js)
-
-javascript - Javascript files.
-
-node_modules - Node.js modules.
-
-data - Data files, such as JSON.
-
-
--- FILES --
-
-.prettierrc.json - Plugin configuration.
-
-.README.md - README file.
-
-<any-name*>.html - Page file.
-
-package.json - Node.js configuration.
-
-package-lock.json - Node.js lockfile for package.json.
-
-<any-dir*>/.htaccess - Apache directory configuration.
-
-node-server.js - Node.js server, incase apache isn't available.
-
+.github/ - Github folder.
+    workflows/ - Github actions.
+.vscode/ - Visual Studio Code files.
+node_modules/ - Node modules/dependencies.
+src/ - Source code.
+    client/ - Client source code.
+        assets/ - Static assets.
+            fonts/ - Static fonts.
+            images/ - Static images.
+            videos/ - Static videos.
+        css/ - Style sheets.
+        data/ - Data files.
+        docs/ - Documentation.
+        includes/ - HTML dynamic includes.
+        javascript/ - Scripts.
+    server/ - Server source code.
