@@ -1,7 +1,7 @@
--> assets/fonts/Heebo
+-> src/client/assets/fonts/Heebo
     -> Open Source; License: assets/fonts/Heebo/OFL.txt
 
--> assets/images/icons/
+-> src/client/assets/images/icons/
     -> Open Source; License: https://www.apache.org/licenses/LICENSE-2.0.txt
 
 -> EVERYTHING ELSE THAT IS NOT LISTED HERE:
