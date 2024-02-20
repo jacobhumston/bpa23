@@ -15,7 +15,7 @@
     // MEALS
     {
         "name": "Game Day Burger",
-        "id": "f5c784e8-7caf-4374-a58b-e5542775f598",
+        "id": "f883227e-c2eb-4530-9f9f-43183afcf66b",
         "image": "./assets/images/food/mains/gdgBurger.png",
         "price": 8.35,
         "category": "Mains",
@@ -24,7 +24,7 @@
     },
     {
         "name": "Cheeseburger",
-        "id": "ca2efd0c-0a76-4c7b-b223-ab18e99186c6",
+        "id": "9e6380e1-8cd6-4125-a4d6-1376bf0de4ec",
         "image": "./assets/images/food/mains/cheeseburger.png",
         "price": 3.99,
         "category": "Mains",
@@ -33,7 +33,7 @@
     },
     {
         "name": "Bacon Burger",
-        "id": "6545108d-7498-453a-9856-490ccd68d912",
+        "id": "0d086e3f-8383-4419-bbb0-3415f3b5de34",
         "image": "./assets/images/food/mains/baconBurger.png",
         "price": 4.1,
         "category": "Mains",
@@ -42,7 +42,7 @@
     },
     {
         "name": "Sloppy Joe",
-        "id": "1bc0accf-7a2c-4d01-a5a3-f0b45f916f03",
+        "id": "ed85e554-10eb-4bf9-9a06-58db0ff37744",
         "image": "./assets/images/food/mains/sloppyJoe.png",
         "price": 3.99,
         "category": "Mains",
@@ -51,7 +51,7 @@
     },
     {
         "name": "Double Trouble Burger",
-        "id": "966ee036-b5b6-4d09-82be-e95271624816",
+        "id": "fd6db732-c80c-4a4b-8ab8-4979fd42cc58",
         "image": "./assets/images/food/mains/doubleTrouble.png",
         "price": 4.5,
         "category": "Mains",
@@ -60,7 +60,7 @@
     },
     {
         "name": "Hotdog",
-        "id": "38bfe4ad-126b-420f-be72-00f8fb3579f4",
+        "id": "0383645a-93a5-40c0-a86b-e1c6691b73c2",
         "image": "./assets/images/food/mains/hotdog.png",
         "price": 1.5,
         "category": "Mains",
@@ -69,7 +69,7 @@
     },
     {
         "name": "Chili Hotdog",
-        "id": "ad3630af-15fd-4fcd-b5b5-b60a740b7fa5",
+        "id": "607b8bab-e3bd-490a-a910-296f9907eab1",
         "image": "./assets/images/food/mains/chiliDog.png",
         "price": 1.75,
         "category": "Mains",
@@ -78,7 +78,7 @@
     },
     {
         "name": "Loaded Hotdog",
-        "id": "f292c24e-fcfc-4ba0-ad9d-5869e41b7d70",
+        "id": "8cb3a2bf-23d7-47ed-bdc2-23957c3f9c2f",
         "image": "./assets/images/food/mains/loadedHotdog.png",
         "price": 1.75,
         "category": "Mains",
@@ -87,7 +87,7 @@
     },
     {
         "name": "Steak",
-        "id": "75961029-76cc-4a8b-b488-aabf82081cfa",
+        "id": "5c59fd9e-574d-4aca-92ee-e9f23693f39d",
         "image": "./assets/images/food/mains/steak.png",
         "price": 12.99,
         "category": "Mains",
@@ -96,7 +96,7 @@
     },
     {
         "name": "1/2 Rack Ribs",
-        "id": "8a7a95d5-bc74-4287-a328-bf64598c172a",
+        "id": "4ed0fc79-a679-4cbe-b9b3-5de7872933c3",
         "image": "./assets/images/food/mains/halfRibs.png",
         "price": 9.99,
         "category": "Mains",
@@ -105,7 +105,7 @@
     },
     {
         "name": "Full Rack Ribs",
-        "id": "1bfdfec9-76f5-45a4-830c-9ebf244ddebe",
+        "id": "5ebf0bb4-8e5e-4689-ae50-0d9de983117c",
         "image": "./assets/images/food/mains/fullRibs.png",
         "price": 17.99,
         "category": "Mains",
@@ -114,7 +114,7 @@
     },
     {
         "name": "Grilled Chicken",
-        "id": "bfd22f49-5ad1-48ee-a851-bceea6174f21",
+        "id": "cbc7e2a3-eeb9-47e1-a4d4-e54c796f789c",
         "image": "./assets/images/food/mains/grilledChicken.png",
         "price": 5.99,
         "category": "Mains",
@@ -123,7 +123,7 @@
     },
     {
         "name": "Grilled Chicken Salad",
-        "id": "de4be96e-c69b-41cd-afc6-fbdac4cf4671",
+        "id": "ffdd0e18-fd7b-46fe-bc34-217c30010e33",
         "image": "./assets/images/food/mains/gcSalad.png",
         "price": 7.2,
         "category": "Mains",
@@ -132,7 +132,7 @@
     },
     {
         "name": "Chicken Tenders",
-        "id": "0e248d13-14fe-439f-b448-03de76475ef0",
+        "id": "b0578c7c-5afc-4455-9004-9922f3ea9688",
         "image": "./assets/images/food/mains/cTenders.png",
         "price": 5.99,
         "category": "Mains",
@@ -141,7 +141,7 @@
     },
     {
         "name": "Chicken Wings",
-        "id": "fd706b17-691a-4b39-a5a0-13927476475e",
+        "id": "f0bdb43f-4975-488e-ab46-82e7188856ed",
         "image": "./assets/images/food/mains/cWings.png",
         "price": 7.99,
         "category": "Mains",
@@ -150,7 +150,7 @@
     },
     {
         "name": "Chicken Breast",
-        "id": "de5cc526-cf0b-41da-a65c-114f73e46bfe",
+        "id": "1f126af7-d570-42bc-9366-7ce49606e3bd",
         "image": "./assets/images/food/mains/cBreast.png",
         "price": 5.99,
         "category": "Mains",
@@ -159,7 +159,7 @@
     },
     {
         "name": "Chicken Sandwich",
-        "id": "d2d4e309-f744-447b-9644-627cb281d08a",
+        "id": "3628af30-debd-45ea-a91b-2d84c18d64c8",
         "image": "./assets/images/food/mains/cSandwich.png",
         "price": 3.99,
         "category": "Mains",
@@ -168,7 +168,7 @@
     },
     {
         "name": "BBQ Chicken",
-        "id": "9b02e8fe-b503-45e1-848f-66d95d226e3d",
+        "id": "ac340ab2-307d-4c0c-b540-660cb783aa5a",
         "image": "./assets/images/food/mains/BBQchicken.png",
         "price": 5.99,
         "category": "Mains",
@@ -177,7 +177,7 @@
     },
     {
         "name": "Pork Tenderloin",
-        "id": "1293214e-3e68-45e0-8b09-48748a3ae102",
+        "id": "6d7a2fa2-4ca0-4e32-9117-df82c471f27d",
         "image": "./assets/images/food/mains/pTenderloins.png",
         "price": 7.99,
         "category": "Mains",
@@ -186,7 +186,7 @@
     },
     {
         "name": "Pork Chop",
-        "id": "b7e6247b-6983-4e63-8058-62ddcfd544b7",
+        "id": "d5c3d1c3-63e7-4a6b-88c0-98f1a00462ff",
         "image": "./assets/images/food/mains/pChops.png",
         "price": 8.99,
         "category": "Mains",
@@ -196,7 +196,7 @@
     // SIDES
     {
         "name": "Fries",
-        "id": "ee6eb2fa-1d56-4af2-a5e9-d8b7462bd79b",
+        "id": "fc0a8812-6428-42de-98cc-71689b48577e",
         "image": "./assets/images/food/sides/fries.png",
         "price": 2.4,
         "category": "Sides",
@@ -204,7 +204,7 @@
     },
     {
         "name": "Home-Style Fries",
-        "id": "743c0eaf-1b63-4e01-8793-d3a46999d404",
+        "id": "f0990982-d4b8-4e1a-a60d-93047c44eab6",
         "image": "./assets/images/food/sides/homeFries.png",
         "price": 2.4,
         "category": "Sides",
@@ -212,7 +212,7 @@
     },
     {
         "name": "Hash Browns",
-        "id": "557b6b9d-f7d1-4afb-96dd-6cebf54c1450",
+        "id": "75bfeaea-7c8f-4797-baf9-fab80959a120",
         "image": "./assets/images/food/sides/hashbrowns.png",
         "price": 2.8,
         "category": "Sides",
@@ -220,7 +220,7 @@
     },
     {
         "name": "Baked Potato",
-        "id": "6554248e-1931-4d22-ae0c-35b9e7ca5669",
+        "id": "4a193231-b46a-47a0-b97e-aba60beec485",
         "image": "./assets/images/food/sides/bakedPotato.png",
         "price": 2.4,
         "category": "Sides",
@@ -228,7 +228,7 @@
     },
     {
         "name": "Mashed Potatoes",
-        "id": "a1f3a43d-9c57-4327-be2e-32c2abd15406",
+        "id": "c0403cca-c4fb-4093-967e-e62b92042bcf",
         "image": "./assets/images/food/sides/mashedPotatoes.png",
         "price": 2.4,
         "category": "Sides",
@@ -236,7 +236,7 @@
     },
     {
         "name": "Mac and Cheese",
-        "id": "8e9fc340-e721-4b7e-8492-c29ece913986",
+        "id": "c32d0d30-a603-46ff-af61-3690b3f98183",
         "image": "./assets/images/food/sides/macAndCheese.png",
         "price": 2.4,
         "category": "Sides",
@@ -244,7 +244,7 @@
     },
     {
         "name": "Coleslaw",
-        "id": "26b2ed10-6666-4cf0-8681-28808a7bcbe4",
+        "id": "c23219a0-40ae-4551-bc7b-3b0667feee19",
         "image": "./assets/images/food/sides/coleslaw.png",
         "price": 2.4,
         "category": "Sides",
@@ -252,7 +252,7 @@
     },
     {
         "name": "Baked Beans",
-        "id": "e2fea071-3c23-4690-97e8-4b674f892abf",
+        "id": "454db3ca-3f34-4bf3-a8f4-98929b04bbe9",
         "image": "./assets/images/food/sides/bakedBeans.png",
         "price": 2.4,
         "category": "Sides",
@@ -260,7 +260,7 @@
     },
     {
         "name": "Corn on the Cob",
-        "id": "ae719a7c-cea9-4b8d-8419-43a77106c246",
+        "id": "1c42ca91-ed97-4dbc-9f6b-7602a46ff947",
         "image": "./assets/images/food/sides/cornOnCob.png",
         "price": 3.1,
         "category": "Sides",
@@ -268,7 +268,7 @@
     },
     {
         "name": "Asparagus",
-        "id": "1a6b1f2d-5316-4ca9-8be5-0f9a152f6191",
+        "id": "4f32e2f6-5c42-44af-9a8d-f2aceecea55a",
         "image": "./assets/images/food/sides/asparagus.png",
         "price": 2.4,
         "category": "Sides",
@@ -276,7 +276,7 @@
     },
     {
         "name": "Broccoli and Cheese",
-        "id": "53c729e1-b412-4160-bdd3-c25541dd25fa",
+        "id": "bda44057-6804-411b-9492-f9f4e2932211",
         "image": "./assets/images/food/sides/brocAndCheese.png",
         "price": 2.4,
         "category": "Sides",
@@ -286,7 +286,7 @@
     // APPETIZERS
     {
         "name": "Loaded Fry Basket",
-        "id": "5c424ef6-e17c-4ab8-bd21-c96d6f9e761d",
+        "id": "a7cdbfdf-c8db-4579-ac71-c3cfc58c8863",
         "image": "./assets/images/food/appetizers/loadedFries.png",
         "price": 4.99,
         "category": "Appetizers",
@@ -294,7 +294,7 @@
     },
     {
         "name": "Fried Pickles with Ranch",
-        "id": "81a8883f-4ee1-46e6-ac3f-e306e85bef54",
+        "id": "1af57cee-8a73-4e2b-80d9-e73cdaec4ba0",
         "image": "./assets/images/food/appetizers/friedPickles.png",
         "price": 5.15,
         "category": "Appetizers",
@@ -302,7 +302,7 @@
     },
     {
         "name": "Salad",
-        "id": "a5ccd8d5-7736-4d2e-b4f7-a3a9ea9c42af",
+        "id": "860a7062-e07b-4984-8c41-b88083b9e491",
         "image": "./assets/images/food/appetizers/salad.png",
         "price": 3.99,
         "category": "Appetizers",
@@ -310,7 +310,7 @@
     },
     {
         "name": "Cheese Curds",
-        "id": "0a94fb25-0145-483a-8a64-1ada7eb20bb6",
+        "id": "9b2cfa17-6adf-4684-84a6-3afd7c75a6af",
         "image": "./assets/images/food/appetizers/cheeseCurds.jpg",
         "price": 4.99,
         "category": "Appetizers",
@@ -318,7 +318,7 @@
     },
     {
         "name": "Mozzarella Sticks",
-        "id": "1d714062-2c0d-477d-a10e-edaae74d53cb",
+        "id": "c0f1f92a-984c-46cd-8d3e-4cc652d1ea2c",
         "image": "./assets/images/food/appetizers/mozzSticks.png",
         "price": 5.15,
         "category": "Appetizers",
@@ -326,7 +326,7 @@
     },
     {
         "name": "Nachos",
-        "id": "c1b3c209-229a-4cb7-8b07-bc67c7c5f14b",
+        "id": "38e93359-4cb6-45a5-8ee2-e1c25b771055",
         "image": "./assets/images/food/appetizers/nachos.png",
         "price": 3.99,
         "category": "Appetizers",
@@ -334,7 +334,7 @@
     },
     {
         "name": "Chips and Salsa/+ Guac",
-        "id": "204a7cee-f2e3-4e07-a856-4ca18d814758",
+        "id": "7cb7f2cb-776f-4b46-80f7-308b8dff9ff1",
         "image": "./assets/images/food/appetizers/chipSalsa.png",
         "price": 3.99,
         "category": "Appetizers",
@@ -345,7 +345,7 @@
 
     {
         "name": "Chocolate Cake Slice",
-        "id": "a871db17-8ce5-4647-a79f-b208a06790b7",
+        "id": "94907611-b3e2-48d9-8f37-33049a8e33c4",
         "image": "./assets/images/food/desserts/chocCake.png",
         "price": 3.15,
         "category": "Desserts",
@@ -353,7 +353,7 @@
     },
     {
         "name": "Vanilla Cake Slice",
-        "id": "ba80def2-2bb9-470f-b8d6-1661f5843624",
+        "id": "259b0b6d-2652-460a-8466-31b908db76b5",
         "image": "./assets/images/food/desserts/vanCake.png",
         "price": 2.99,
         "category": "Desserts",
@@ -361,7 +361,7 @@
     },
     {
         "name": "Marble Cake Slice",
-        "id": "ee105b3b-2ea0-4e95-a64a-f4aca6d271a5",
+        "id": "09973078-551b-40ab-a44e-1ec6df73abf5",
         "image": "./assets/images/food/desserts/marbleCake.png",
         "price": 2.99,
         "category": "Desserts",
@@ -369,7 +369,7 @@
     },
     {
         "name": "Cheesecake Slice",
-        "id": "c6307ed1-3468-406f-92cc-c2c9373ba367",
+        "id": "0a31dd1f-f7f7-480a-908a-dbf8c45edb79",
         "image": "./assets/images/food/desserts/cheeseCake.png",
         "price": 3.15,
         "category": "Desserts",
@@ -377,7 +377,7 @@
     },
     {
         "name": "Vanilla Soft Serve",
-        "id": "107a98d8-5db7-4d4c-be89-a8038a17beac",
+        "id": "74207fde-9395-46b2-b7e0-4862433d8de9",
         "image": "./assets/images/food/desserts/vanIcecream.png",
         "price": 2.5,
         "category": "Desserts",
@@ -385,7 +385,7 @@
     },
     {
         "name": "Chocolate Soft Serve",
-        "id": "6cc97d5d-05ba-41fc-8cf1-871cf7c16805",
+        "id": "711302cf-eae6-473f-9320-f86785fe9183",
         "image": "./assets/images/food/desserts/chocIcecream.png",
         "price": 2.5,
         "category": "Desserts",
@@ -393,7 +393,7 @@
     },
     {
         "name": "Chocolate and Vanilla Sundae",
-        "id": "8aa53e9f-cbcd-45a0-ab73-ec0876d8c322",
+        "id": "ebbd623d-88cb-4c45-848b-23f676d4b4ba",
         "image": "./assets/images/food/desserts/sundae.png",
         "price": 6.78,
         "category": "Desserts",
@@ -401,7 +401,7 @@
     },
     {
         "name": "Fried Ice Cream",
-        "id": "4bd4e750-b874-4753-9c67-b9632096f179",
+        "id": "e9c26de7-ab8f-4598-85d5-1299012f9c39",
         "image": "./assets/images/food/desserts/friedIcecream.png",
         "price": 3.15,
         "category": "Desserts",
@@ -409,7 +409,7 @@
     },
     {
         "name": "Fried Cookies and Cream Cookie",
-        "id": "7eb3734a-7961-4107-ab76-9c477895f524",
+        "id": "6f2e3881-a502-4fe8-a8c2-e67ca01a023e",
         "image": "./assets/images/food/desserts/friedCookie.png",
         "price": 3.15,
         "category": "Desserts",
@@ -417,7 +417,7 @@
     },
     {
         "name": "Cinnamon Rolls",
-        "id": "5dd05bd5-4bbb-4537-9b80-d0c7ef51296c",
+        "id": "b400ae30-79c4-4d06-9237-dd3efd01bb92",
         "image": "./assets/images/food/desserts/cinRolls.png",
         "price": 4.69,
         "category": "Desserts",
@@ -425,7 +425,7 @@
     },
     {
         "name": "Chocolate Milkshake",
-        "id": "b37ece25-f77c-41f1-b064-680326942027",
+        "id": "61294bf9-fa90-4d0b-96a0-01d9deca42c5",
         "image": "./assets/images/food/desserts/chocShake.png",
         "price": 2.5,
         "category": "Desserts",
@@ -435,7 +435,7 @@
 
     {
         "name": "Strawberry Milkshake",
-        "id": "a1ac6859-8dfb-4d4b-a0c8-cbc4f25b8899",
+        "id": "aa23843e-e1d5-4ca1-a231-9ead371e29be",
         "image": "./assets/images/food/desserts/strawShake.png",
         "price": 2.5,
         "category": "Desserts",
@@ -447,7 +447,7 @@
 
     {
         "name": "Water",
-        "id": "1f259509-c8c3-4f47-9df3-176306f0096e",
+        "id": "84b3cafb-b65f-48c1-83ca-161dddfa0b4d",
         "image": "./assets/images/food/drinks/water.png",
         "price": 0.5,
         "category": "Drinks",
@@ -456,7 +456,7 @@
     },
     {
         "name": "Sweet Tea",
-        "id": "ac75cad1-7766-40ec-91a2-32a274014d47",
+        "id": "546f06be-b0e6-4226-a4fb-060fe7ac7046",
         "image": "./assets/images/food/drinks/swTea.png",
         "price": 1.25,
         "category": "Drinks",
@@ -465,7 +465,7 @@
     },
     {
         "name": "Unsweetened Tea",
-        "id": "a149ffa2-a9fc-4f4d-bea9-a47885031f5e",
+        "id": "9a8a5493-4d9f-4ffa-afe7-7affd2efebf0",
         "image": "./assets/images/food/drinks/tea.png",
         "price": 1.25,
         "category": "Drinks",
@@ -474,7 +474,7 @@
     },
     {
         "name": "Lemonade",
-        "id": "3a59d871-79eb-41a9-a87b-3606b82fbeaf",
+        "id": "9507efae-9d03-494e-8cee-8e8074a02eb5",
         "image": "./assets/images/food/drinks/lemonade.png",
         "price": 1.25,
         "category": "Drinks",
@@ -483,7 +483,7 @@
     },
     {
         "name": "Strawberry Lemonade",
-        "id": "27ef21a7-4dfd-4e3c-a5f7-13b86b3cedeb",
+        "id": "cc51a2a4-bc3d-4563-837e-aa5bbcac8b6d",
         "image": "./assets/images/food/drinks/strawLemonade.png",
         "price": 1.25,
         "category": "Drinks",
@@ -492,7 +492,7 @@
     },
     {
         "name": "Nurse Reaper",
-        "id": "89d3614c-de7a-4416-abf3-51afe397980c",
+        "id": "7a5eeec8-cf88-4ba8-90e5-3decc4503eff",
         "image": "./assets/images/food/drinks/nurseReaper.png",
         "price": 1.25,
         "category": "Drinks",
@@ -501,7 +501,7 @@
     },
     {
         "name": "Pop-Off",
-        "id": "067baa5a-5dcb-4aa6-8bc0-84de73cf620f",
+        "id": "4e7427d9-31ce-4e2b-9b17-07c789dc71b7",
         "image": "./assets/images/food/drinks/popOff.png",
         "price": 1.25,
         "category": "Drinks",
@@ -510,7 +510,7 @@
     },
     {
         "name": "Orange Splash",
-        "id": "47da143e-bfdc-48da-820f-d23d002508c0",
+        "id": "68467a47-071f-493c-9d4c-58b56da79af2",
         "image": "./assets/images/food/drinks/orangeSplash.png",
         "price": 1.25,
         "category": "Drinks",
@@ -519,7 +519,7 @@
     },
     {
         "name": "Fizzy Jr.",
-        "id": "728206df-500f-4b69-b416-1c167a333ed9",
+        "id": "2bd5940b-e4fd-45f7-a28c-a2261af48242",
         "image": "./assets/images/food/drinks/fizzyJr.png",
         "price": 1.25,
         "category": "Drinks",
