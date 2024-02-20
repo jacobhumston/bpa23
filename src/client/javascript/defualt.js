@@ -107,8 +107,7 @@ function attachLoadingAnimation() {
     const links = document.getElementsByTagName('a');
     for (const link of links) {
         if (!link.href) continue;
-        if (!link.href.includes('bpa')) continue;
-        if (!link.href.includes('html')) continue;
+        if (link.href.includes('.')) continue;
         const destination = link.href;
         link.dataset.href = destination;
         link.href = 'javascript:;';
@@ -135,19 +134,17 @@ if (shouldDisplayLoadingScreen) {
     document.body.removeAttribute('style');
 }
 
-window.addEventListener('load', function () {
-    changeTitle(document, document.title, 'Game Day Grill');
-    libs.include.includeBody(document, 'includes/menu-bar.html', 'start');
-    libs.include.includeBody(document, 'includes/footer.html', 'end');
-    libs.include.includeHeadCSS(document, 'css/menu-bar.css', 'end');
-    libs.include.includeHeadCSS(document, 'css/footer.css', 'end');
-    waitForElement('menuBar').then(updateMenuBar);
+changeTitle(document, document.title, 'Game Day Grill');
+libs.include.includeBody(document, 'includes/menu-bar.html', 'start');
+libs.include.includeBody(document, 'includes/footer.html', 'end');
+libs.include.includeHeadCSS(document, 'css/menu-bar.css', 'end');
+libs.include.includeHeadCSS(document, 'css/footer.css', 'end');
+waitForElement('menuBar').then(updateMenuBar);
 
-    setTimeout(() => {
-        if (shouldDisplayLoadingScreen) {
-            hideLoadingDivider(attachLoadingAnimation);
-        } else {
-            attachLoadingAnimation();
-        }
-    }, 500);
+window.addEventListener('load', function () {
+    if (shouldDisplayLoadingScreen) {
+        hideLoadingDivider(attachLoadingAnimation);
+    } else {
+        attachLoadingAnimation();
+    }
 });

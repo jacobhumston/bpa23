@@ -7,8 +7,8 @@
     },
     "scripts": {
         "format": "prettier ./ --write",
-        "server": "node node-server.js",
-        "gen-menu": "node gen-menu.js"
+        "server": "node src/server/main.js",
+        "gen-menu": "node other/gen-menu.cjs"
     },
     "type": "module"
 }

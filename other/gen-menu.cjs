@@ -3,7 +3,7 @@ const { v4: uuid } = require('uuid');
 
 console.log('Generating menu items IDs...');
 
-let preMenu = fs.readFileSync('data/pre-menu-items.jsonc').toString('utf-8');
+let preMenu = fs.readFileSync('src/client/data/pre-menu-items.jsonc').toString('utf-8');
 
 function replacer() {
     const id = uuid();
@@ -13,6 +13,6 @@ function replacer() {
 
 preMenu = preMenu.replaceAll('{ID}', replacer);
 
-fs.writeFileSync('data/menu-items.jsonc', preMenu);
+fs.writeFileSync('src/client/data/menu-items.jsonc', preMenu);
 
 console.log('Done!');

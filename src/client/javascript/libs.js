@@ -33,7 +33,7 @@ libs.include = {
         rel.rel = 'stylesheet';
         rel.href = url;
         document.head.insertAdjacentElement(finalPlace, rel);
-    },
+    }
 };
 
 /**
@@ -74,7 +74,7 @@ libs.cart = {
             displayName: displayName,
             amount: amount,
             priceIncrease: priceIncrease ?? 0,
-            bagId: `${Date.now()}${Math.floor(Math.random() * 100000)}`,
+            bagId: `${Date.now()}${Math.floor(Math.random() * 100000)}`
         });
         this.save();
     },
@@ -107,7 +107,7 @@ libs.cart = {
             this.items = [];
         }
         if (!Array.isArray(this.items)) this.items = [];
-    },
+    }
 };
 
 libs.cart.sync();
