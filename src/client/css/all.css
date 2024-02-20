@@ -116,6 +116,7 @@ a:hover {
     z-index: 999;
     top: 0;
     left: 0;
+    display: flex;
 }
 
 @keyframes rotate {
@@ -129,14 +130,17 @@ a:hover {
 }
 
 #loadingDiv img {
-    width: 25%;
-    height: auto;
-    margin-left: 37.5%;
-    margin-top: 10%;
+    width: 100px;
+    height: 100px;
     animation: rotate;
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-delay: 100ms;
+}
+
+#loadingDiv p {
+    color: var(--background);
+    font-size: xx-large;
 }
 
 #loadingDiv .no-anim {

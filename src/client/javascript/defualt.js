@@ -62,7 +62,10 @@ function insertLoadingDivider(tween, tweenCallback) {
     divider.id = 'loadingDiv';
     const img = document.createElement('img');
     img.src = '/assets/images/logo.png';
+    const details = document.createElement('p');
+    details.innerText = 'Loading...';
     if (tween) img.classList.add('no-anim');
+    divider.insertAdjacentElement('afterbegin', details);
     divider.insertAdjacentElement('afterbegin', img);
     document.documentElement.insertAdjacentElement('beforeEnd', divider);
     document.documentElement.style.overflowY = 'hidden';
