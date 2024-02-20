@@ -100,7 +100,7 @@ a:hover {
     text-indent: 4%;
 }
 
-@media screen and (width < 500px) {
+@media screen and (width < 900px) {
     .basic-text {
         max-width: 90%;
         min-width: 90%;
