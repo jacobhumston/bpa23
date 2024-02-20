@@ -135,10 +135,10 @@ if (shouldDisplayLoadingScreen) {
 }
 
 changeTitle(document, document.title, 'Game Day Grill');
-libs.include.includeBody(document, 'includes/menu-bar.html', 'start');
-libs.include.includeBody(document, 'includes/footer.html', 'end');
-libs.include.includeHeadCSS(document, 'css/menu-bar.css', 'end');
-libs.include.includeHeadCSS(document, 'css/footer.css', 'end');
+libs.include.includeBody(document, '/includes/menu-bar.html', 'start');
+libs.include.includeBody(document, '/includes/footer.html', 'end');
+libs.include.includeHeadCSS(document, '/css/menu-bar.css', 'end');
+libs.include.includeHeadCSS(document, '/css/footer.css', 'end');
 waitForElement('menuBar').then(updateMenuBar);
 
 window.addEventListener('load', function () {
