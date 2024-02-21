@@ -161,6 +161,11 @@
     vertical-align: bottom;
 }
 
+#itemCategoriesContainer {
+    position: sticky;
+    top: 20px;
+}
+
 #itemCategories button {
     display: inline-block;
     width: 90%;

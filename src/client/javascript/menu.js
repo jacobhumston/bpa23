@@ -203,7 +203,8 @@ async function main() {
         .then(async function (response) {
             // Get elements.
             const itemsDiv = document.getElementById('items');
-            const itemCategoriesDiv = document.getElementById('itemCategories');
+            const itemCategoriesDiv = document.getElementById('itemCategoriesContainer');
+            const itemCategoriesDivParent = document.getElementById('itemCategories');
             const rawResponse = await response.text();
 
             // Delete all the loading gif if it is found.
@@ -834,13 +835,14 @@ async function main() {
             // Add the event listeners to the buttons.
             checkoutOpenButton.addEventListener('click', function () {
                 document.getElementById('checkout').style.display = 'block';
-                itemCategoriesDiv.style.display = 'none';
+                itemCategoriesDivParent.style.display = 'none';
                 itemsDiv.style.display = 'none';
+                window.scrollTo(0, 0);
             });
 
             document.getElementById('backToMenu').addEventListener('click', function () {
                 document.getElementById('checkout').style.display = 'none';
-                itemCategoriesDiv.style.display = 'inline-block';
+                itemCategoriesDivParent.style.display = 'inline-block';
                 itemsDiv.style.display = 'inline-flex';
             });
 
@@ -907,10 +909,10 @@ async function main() {
             // Listen for category button mobile clicks and make the categories appear accordingly.
             const categoriesButtonMobile = document.getElementById('categoriesButtonMobile');
             categoriesButtonMobile.addEventListener('click', function () {
-                if (itemCategoriesDiv.style.display === 'inline-block') {
-                    itemCategoriesDiv.style.removeProperty('display');
+                if (itemCategoriesDivParent.style.display === 'inline-block') {
+                    itemCategoriesDivParent.style.removeProperty('display');
                 } else {
-                    itemCategoriesDiv.style.display = 'inline-block';
+                    itemCategoriesDivParent.style.display = 'inline-block';
                 }
             });
 
