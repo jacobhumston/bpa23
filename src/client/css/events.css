@@ -31,6 +31,9 @@
     width: 30%;
     height: auto;
     display: inline-block;
+    max-height: 700px;
+    max-width: 30%;
+    width: auto;
 }
 
 .textHeader {
@@ -38,7 +41,6 @@
     font-size: 30px;
     font-weight: bold;
 }
-
 
 @media screen and (width < 1000px) {
     .event img {
