@@ -906,6 +906,21 @@ async function main() {
             itemCategoriesDiv.insertAdjacentElement('beforeend', checkoutOpenButton);
             itemCategoriesDiv.insertAdjacentElement('beforeend', toggleDescriptionsButton);
 
+            // Create the search input.
+            const searchInput = document.createElement('input');
+            let lastSearchInput = null
+            let lastDisplayedSearchInput = null
+
+            // Listen for input and search accordingly.
+            searchInput.addEventListener('input', function () {
+                lastSearchInput = items.filter((item) =>
+                    item.name.toLowerCase().includes(searchInput.value.toLowerCase())
+                );
+            });
+
+            // Insert the search input.
+            itemCategoriesDiv.insertAdjacentElement('beforeend', searchInput);
+
             // Listen for category button mobile clicks and make the categories appear accordingly.
             const categoriesButtonMobile = document.getElementById('categoriesButtonMobile');
             categoriesButtonMobile.addEventListener('click', function () {
