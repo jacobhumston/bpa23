@@ -123,7 +123,7 @@ function attachLoadingAnimation() {
                     document.location.href = `${destination}?l`;
                     setTimeout(() => {
                         hideLoadingDivider();
-                    }, 10 * 1000);
+                    }, 5 * 1000);
                 });
             }
         });
