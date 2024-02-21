@@ -908,8 +908,8 @@ async function main() {
 
             // Create the search input.
             const searchInput = document.createElement('input');
-            let lastSearchInput = null
-            let lastDisplayedSearchInput = null
+            let lastSearchInput = null;
+            let lastDisplayedSearchInput = null;
 
             // Listen for input and search accordingly.
             searchInput.addEventListener('input', function () {
@@ -938,7 +938,7 @@ async function main() {
             // Display checkout on page load if the checkout param is found in the url.
             if (new URLSearchParams(window.location.search).has('checkout')) {
                 document.getElementById('checkout').style.display = 'block';
-                itemCategoriesDiv.style.display = 'none';
+                itemCategoriesDivParent.style.display = 'none';
                 itemsDiv.style.display = 'none';
             }
 
