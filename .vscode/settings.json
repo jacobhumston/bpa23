@@ -1,4 +1,14 @@
 {
     "css.format.braceStyle": "expand",
-    "cSpell.words": ["broc", "evenodd", "Gabarito", "Guac", "hashbrowns", "Icecream", "Kayden", "mozz"]
+    "cSpell.words": [
+        "broc",
+        "evenodd",
+        "Gabarito",
+        "Guac",
+        "hashbrowns",
+        "Icecream",
+        "Kayden",
+        "mozz",
+        "rgba"
+    ]
 }

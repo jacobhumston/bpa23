@@ -123,7 +123,7 @@ function attachLoadingAnimation() {
                     document.location.href = `${destination}?l`;
                     setTimeout(() => {
                         hideLoadingDivider();
-                    }, 30 * 1000);
+                    }, 10 * 1000);
                 });
             }
         });
@@ -145,8 +145,9 @@ libs.include.includeHeadCSS(document, '/css/menu-bar.css', 'end');
 libs.include.includeHeadCSS(document, '/css/footer.css', 'end');
 waitForElement('menuBar').then(updateMenuBar);
 
-window.addEventListener('load', function () {
+window.addEventListener('load', async function () {
     if (shouldDisplayLoadingScreen) {
+        await wait(500);
         hideLoadingDivider(attachLoadingAnimation);
     } else {
         attachLoadingAnimation();
