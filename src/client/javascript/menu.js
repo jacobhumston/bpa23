@@ -345,13 +345,15 @@ async function main() {
                     }
                 }
 
-                // This loops over the current items displayed and animates them out.
-                for (const div of itemsDiv.children) {
-                    div.style.transform = 'scale(0)';
-                }
+                if (!skipAnimation) {
+                    // This loops over the current items displayed and animates them out.
+                    for (const div of itemsDiv.children) {
+                        div.style.transform = 'scale(0)';
+                    }
 
-                // Wait a few milliseconds then wipe the items divider.
-                await wait(500);
+                    // Wait a few milliseconds then wipe the items divider.
+                    await wait(500);
+                }
                 itemsDiv.innerHTML = '';
 
                 // Iterate over each item and add and display it.
@@ -807,6 +809,16 @@ async function main() {
 
                 // Toggle all the descriptions so they align with the current state of the display all descriptions button.
                 toggleDescriptions();
+
+                // We will add a message if no items were loaded. (This can only happen when searching!)
+                if (items.length === 0) {
+                    const message = document.createElement('p');
+                    message.innerText = 'No items found! Try searching for a different term.';
+                    message.id = 'itemsNotFound';
+                    itemsDiv.insertAdjacentElement('beforeend', message);
+                }
+
+                // Debounce!
                 await wait(1000);
 
                 // We are done now, debounce over! :)
@@ -906,20 +918,56 @@ async function main() {
             itemCategoriesDiv.insertAdjacentElement('beforeend', checkoutOpenButton);
             itemCategoriesDiv.insertAdjacentElement('beforeend', toggleDescriptionsButton);
 
-            // Create the search input.
+            // Search and clear svg.
+            const searchSvg =
+                '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="#ffffff" d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>';
+
+            const clearSvg =
+                '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="#ffff" d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>';
+
+            // Create the search input and button.
             const searchInput = document.createElement('input');
-            let lastSearchInput = null;
-            let lastDisplayedSearchInput = null;
+            const searchButton = document.createElement('button');
+            const searchClearButton = document.createElement('button');
+            searchInput.id = 'searchInput';
+            searchInput.placeholder = 'Type here to search.';
+            searchButton.innerHTML = `Search ${searchSvg}`;
+            searchButton.type = 'button';
+            searchClearButton.type = 'button';
+            searchClearButton.id = 'searchClearButton';
+            searchClearButton.innerHTML = clearSvg;
 
             // Listen for input and search accordingly.
-            searchInput.addEventListener('input', function () {
-                lastSearchInput = items.filter((item) =>
+            const searchFunction = function () {
+                let foundItems = items.filter((item) =>
                     item.name.toLowerCase().includes(searchInput.value.toLowerCase())
                 );
+                if (!isNaN(parseFloat(searchInput.value.toLowerCase()))) {
+                    foundItems = items.filter((items) => items.price <= parseFloat(searchInput.value.toLowerCase()));
+                }
+                displayItems(foundItems, true, true);
+            };
+
+            searchButton.addEventListener('click', searchFunction);
+            searchInput.addEventListener('keyup', function (event) {
+                if (event.key === 'Enter') {
+                    searchFunction();
+                }
+            });
+            searchInput.addEventListener('blur', function () {
+                if (searchInput.value === '') searchFunction();
             });
 
-            // Insert the search input.
+            // Listen for clear button requests.
+            searchClearButton.addEventListener('click', function () {
+                searchInput.value = '';
+                searchFunction();
+            });
+
+            // Insert the search input and button.
             itemCategoriesDiv.insertAdjacentElement('beforeend', searchInput);
+            itemCategoriesDiv.insertAdjacentElement('beforeend', searchClearButton);
+            itemCategoriesDiv.insertAdjacentElement('beforeend', searchButton);
 
             // Listen for category button mobile clicks and make the categories appear accordingly.
             const categoriesButtonMobile = document.getElementById('categoriesButtonMobile');
@@ -931,16 +979,25 @@ async function main() {
                 }
             });
 
-            // Display the first category and update the state of all descriptions.
-            displayItems(items, true, true);
-            toggleDescriptions();
-
             // Display checkout on page load if the checkout param is found in the url.
             if (new URLSearchParams(window.location.search).has('checkout')) {
                 document.getElementById('checkout').style.display = 'block';
                 itemCategoriesDivParent.style.display = 'none';
                 itemsDiv.style.display = 'none';
             }
+
+            // Check for a search query, and search it if found.
+            if (new URLSearchParams(window.location.search).has('search')) {
+                const search = new URLSearchParams(window.location.search).get('search');
+                searchInput.value = search;
+                searchFunction();
+            } else {
+                // Display items if no search found.
+                displayItems(items, true, true);
+            }
+
+            // Update the state of all descriptions.
+            toggleDescriptions();
 
             // Listen for clicks on the checkout button.
             document.getElementById('checkoutButton').addEventListener('click', function () {

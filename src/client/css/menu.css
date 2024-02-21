@@ -238,6 +238,7 @@
     transition: all 1s ease;
     max-height: 75%;
     overflow-y: auto;
+    box-sizing: border-box;
 }
 
 #popupTitle {
@@ -579,4 +580,69 @@
     height: 30px;
     width: 30px;
     vertical-align: middle;
+}
+
+#itemsNotFound {
+    font-size: xx-large;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    padding: 30px;
+}
+
+#searchInput {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+    width: 90%;
+    border-bottom: solid var(--accent) 4px;
+    float: left;
+    vertical-align: middle;
+}
+
+#searchInput:not(:placeholder-shown) {
+    width: 75%;
+}
+
+#searchInput:focus {
+    outline: none;
+}
+
+#searchClearButton {
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    margin: 0px !important;
+    margin-right: 3px !important;
+    margin-top: 15px !important;
+    margin-left: 10px !important;
+    margin-right: 5px;
+    transition: all 0.2s;
+    float: left;
+    vertical-align: middle !important;
+    padding: 0px !important;
+    border-radius: 10px !important;
+}
+
+#searchClearButton:hover {
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+#searchInput:placeholder-shown + #searchClearButton {
+    display: none;
+}
+
+#searchClearButton svg {
+    min-width: 30px;
+    min-height: 30px;
 }
