@@ -909,6 +909,7 @@ async function main() {
                 button.addEventListener('click', () => {
                     displayItems(categories[category]);
                     toggleDescriptions();
+                    searchInput.value = '';
                 });
                 itemCategoriesDiv.insertAdjacentElement('beforeend', button);
             }
