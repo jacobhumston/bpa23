@@ -1053,7 +1053,7 @@ async function main() {
                                     libs.cart.clear();
                                     updateCheckout();
                                     document.getElementById('checkout').style.display = 'none';
-                                    itemCategoriesDiv.style.display = 'inline-block';
+                                    itemCategoriesDivParent.style.display = 'inline-block';
                                     itemsDiv.style.display = 'inline-flex';
                                 }
                             );
