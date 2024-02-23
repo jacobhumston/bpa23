@@ -7,7 +7,6 @@ src/ - Source code.
         assets/ - Static assets.
             fonts/ - Static fonts.
             images/ - Static images.
-            videos/ - Static videos.
         css/ - Style sheets.
         data/ - Data files.
         docs/ - Documentation.
