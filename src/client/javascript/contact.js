@@ -46,6 +46,42 @@ window.addEventListener('DOMContentLoaded', async function () {
 
         calender.innerHTML = '';
 
+        const calenderControls = document.createElement('div');
+        calenderControls.id = 'calenderControls';
+        calender.insertAdjacentElement('afterbegin', calenderControls);
+
+        const previousMonthButton = document.createElement('button');
+        previousMonthButton.id = 'calenderControlsPreviousMonth';
+        previousMonthButton.innerText = 'Previous';
+        calenderControls.insertAdjacentElement('beforeend', previousMonthButton);
+
+        const currentMonthText = document.createElement('p');
+        currentMonthText.id = 'calenderControlsCurrentMonthText';
+        calenderControls.insertAdjacentElement('beforeend', currentMonthText);
+
+        const nextMonthButton = document.createElement('button');
+        nextMonthButton.id = 'calenderControlsNextMonth';
+        nextMonthButton.innerText = 'Next';
+        calenderControls.insertAdjacentElement('beforeend', nextMonthButton);
+
+        currentMonthText.innerText = `${new Date(year, month - 1, 1).toLocaleDateString('us-en', { month: 'long' })} ${year}`;
+
+        previousMonthButton.addEventListener('click', function () {
+            if (month - 1 === 0) {
+                updateCalender(year - 1, 12);
+            } else {
+                updateCalender(year, month - 1);
+            }
+        });
+
+        nextMonthButton.addEventListener('click', function () {
+            if (month + 1 === 13) {
+                updateCalender(year + 1, 1);
+            } else {
+                updateCalender(year, month + 1);
+            }
+        });
+
         for (const day of dayWeekNames) {
             const dayNameElement = document.createElement('p');
             dayNameElement.classList.add('calenderDayName');
