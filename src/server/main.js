@@ -9,6 +9,9 @@ import express from 'express';
 import open from 'open';
 import getPort from 'get-port';
 
+// Before we do anything, let's clean the console.
+console.clear();
+
 // Create the app.
 const app = express();
 

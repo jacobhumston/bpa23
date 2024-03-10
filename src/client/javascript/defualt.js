@@ -146,6 +146,7 @@ libs.include.includeHeadCSS(document, '/css/footer.css', 'end');
 waitForElement('menuBar').then(updateMenuBar);
 
 window.addEventListener('load', async function () {
+    window.scrollTo(0, 0);
     if (shouldDisplayLoadingScreen) {
         await wait(500);
         hideLoadingDivider(attachLoadingAnimation);
