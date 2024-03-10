@@ -151,14 +151,6 @@
             {
                 "timeStart": "9am",
                 "timeEnd": "10am"
-            },
-            {
-                "timeStart": "1pm",
-                "timeEnd": "3pm"
-            },
-            {
-                "timeStart": "5pm",
-                "timeEnd": "7pm"
             }
         ]
     },
@@ -187,14 +179,6 @@
         "day": 22,
         "times": [
             {
-                "timeStart": "10am",
-                "timeEnd": "11am"
-            },
-            {
-                "timeStart": "3pm",
-                "timeEnd": "5pm"
-            },
-            {
                 "timeStart": "7pm",
                 "timeEnd": "8pm"
             }
@@ -210,10 +194,6 @@
                 "timeEnd": "11am"
             },
             {
-                "timeStart": "2pm",
-                "timeEnd": "4pm"
-            },
-            {
                 "timeStart": "6pm",
                 "timeEnd": "7pm"
             }
@@ -225,16 +205,8 @@
         "day": 15,
         "times": [
             {
-                "timeStart": "10am",
-                "timeEnd": "12pm"
-            },
-            {
                 "timeStart": "1pm",
                 "timeEnd": "3pm"
-            },
-            {
-                "timeStart": "5pm",
-                "timeEnd": "7pm"
             }
         ]
     }
