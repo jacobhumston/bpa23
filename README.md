@@ -1,2 +1,5 @@
--   Information files can be found in [docs/](src/client/docs/).
--   Website can be found at https://bpa.v2.lovelyjacob.com
+- Information files can be found in [docs/](src/client/docs/).
+- Website URLS:
+    - Nationals/v3: https://bpa.v3.lovelyjacob.com
+    - State/v2: https://bpa.v2.lovelyjacob.com (https://github.com/jacobhumston/bpa23-v2)
+    - Regionals/v1: https://bpa.lovelyjacob.com/bpa/ (https://github.com/jacobhumston-school/bpa.lovelyjacob.com)
