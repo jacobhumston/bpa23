@@ -71,7 +71,8 @@
     overflow-x: auto;
 }
 
-#calenderControls {
+#calenderControls,
+#mobileCalenderControls {
     width: 856px;
     background-color: var(--accent);
     color: var(--background);
@@ -85,7 +86,9 @@
 }
 
 #calenderControlsPreviousMonth,
-#calenderControlsNextMonth {
+#calenderControlsNextMonth,
+#mobileCalenderControlsPreviousMonth,
+#mobileCalenderControlsNextMonth {
     display: inline-block;
     border: none;
     border-radius: 15px;
@@ -96,12 +99,15 @@
 }
 
 #calenderControlsPreviousMonth:hover,
-#calenderControlsNextMonth:hover {
+#calenderControlsNextMonth:hover,
+#mobileCalenderControlsPreviousMonth:hover,
+#mobileCalenderControlsNextMonth:hover {
     background-color: var(--backgroundPop2);
     cursor: pointer;
 }
 
-#calenderControlsCurrentMonthText {
+#calenderControlsCurrentMonthText,
+#mobileCalenderControlsCurrentMonthText {
     display: inline-block;
     margin: 0px;
 }
@@ -156,4 +162,29 @@
 
 .calenderGhostDays {
     outline: 2px solid var(--backgroundPop2);
+}
+
+#mobileCalender {
+    display: none;
+    max-width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#mobileCalenderControls {
+    width: 100%;
+}
+
+@media screen and (width < 890px) {
+    #calender {
+        display: none;
+    }
+
+    #mobileCalender {
+        display: flex;
+    }
+}
+
+.timeText {
+    color: var(--accent);
 }

@@ -21,6 +21,7 @@ window.addEventListener('DOMContentLoaded', async function () {
      */
     const reservations = await (await fetch('/data/reservations.json')).json();
     const calender = document.getElementById('calender');
+    const mobileCalender = document.getElementById('mobileCalender');
     const dayWeekNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     /**
@@ -45,42 +46,75 @@ window.addEventListener('DOMContentLoaded', async function () {
         let days = new Date(year, month, 0).getDate();
 
         calender.innerHTML = '';
+        mobileCalender.innerHTML = '';
 
+        // Computer calender controls.
         const calenderControls = document.createElement('div');
         calenderControls.id = 'calenderControls';
         calender.insertAdjacentElement('afterbegin', calenderControls);
 
+        // Mobile calender controls.
+        const mobileCalenderControls = document.createElement('div');
+        mobileCalenderControls.id = 'mobileCalenderControls';
+        mobileCalender.insertAdjacentElement('afterbegin', mobileCalenderControls);
+
+        // Computer previous month.
         const previousMonthButton = document.createElement('button');
         previousMonthButton.id = 'calenderControlsPreviousMonth';
         previousMonthButton.innerText = 'Previous';
         calenderControls.insertAdjacentElement('beforeend', previousMonthButton);
 
+        // Mobile previous month.
+        const mobilePreviousMonthButton = document.createElement('button');
+        mobilePreviousMonthButton.id = 'mobileCalenderControlsPreviousMonth';
+        mobilePreviousMonthButton.innerText = 'Previous';
+        mobileCalenderControls.insertAdjacentElement('beforeend', mobilePreviousMonthButton);
+
+        // Computer current month.
         const currentMonthText = document.createElement('p');
         currentMonthText.id = 'calenderControlsCurrentMonthText';
         calenderControls.insertAdjacentElement('beforeend', currentMonthText);
 
+        // Mobile current month.
+        const mobileCurrentMonthText = document.createElement('p');
+        mobileCurrentMonthText.id = 'mobileCalenderControlsCurrentMonthText';
+        mobileCalenderControls.insertAdjacentElement('beforeend', mobileCurrentMonthText);
+
+        // Computer next month.
         const nextMonthButton = document.createElement('button');
         nextMonthButton.id = 'calenderControlsNextMonth';
         nextMonthButton.innerText = 'Next';
         calenderControls.insertAdjacentElement('beforeend', nextMonthButton);
 
-        currentMonthText.innerText = `${new Date(year, month - 1, 1).toLocaleDateString('us-en', { month: 'long' })} ${year}`;
+        // Mobile next month.
+        const mobileNextMonthButton = document.createElement('button');
+        mobileNextMonthButton.id = 'mobileCalenderControlsNextMonth';
+        mobileNextMonthButton.innerText = 'Next';
+        mobileCalenderControls.insertAdjacentElement('beforeend', mobileNextMonthButton);
 
-        previousMonthButton.addEventListener('click', function () {
+        currentMonthText.innerText = `${new Date(year, month - 1, 1).toLocaleDateString('us-en', { month: 'long' })} ${year}`;
+        mobileCurrentMonthText.innerText = currentMonthText.innerText;
+
+        const previousMonthFunction = function () {
             if (month - 1 === 0) {
                 updateCalender(year - 1, 12);
             } else {
                 updateCalender(year, month - 1);
             }
-        });
+        };
 
-        nextMonthButton.addEventListener('click', function () {
+        const nextMonthFunction = function () {
             if (month + 1 === 13) {
                 updateCalender(year + 1, 1);
             } else {
                 updateCalender(year, month + 1);
             }
-        });
+        };
+
+        previousMonthButton.addEventListener('click', previousMonthFunction);
+        mobilePreviousMonthButton.addEventListener('click', previousMonthFunction);
+        nextMonthButton.addEventListener('click', nextMonthFunction);
+        mobileNextMonthButton.addEventListener('click', nextMonthFunction);
 
         for (const day of dayWeekNames) {
             const dayNameElement = document.createElement('p');
@@ -118,6 +152,7 @@ window.addEventListener('DOMContentLoaded', async function () {
                         .map((time) => `${time.timeStart} - ${time.timeEnd}`)
                         .join('<br>');
                 }
+                mobileCalender.insertAdjacentText("beforeend", reservation)
             }
 
             if (dayReservationsText.innerText === '') {
