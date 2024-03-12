@@ -152,7 +152,6 @@ window.addEventListener('DOMContentLoaded', async function () {
                         .map((time) => `${time.timeStart} - ${time.timeEnd}`)
                         .join('<br>');
                 }
-                mobileCalender.insertAdjacentText("beforeend", reservation)
             }
 
             if (dayReservationsText.innerText === '') {
@@ -165,6 +164,58 @@ window.addEventListener('DOMContentLoaded', async function () {
                 calenderBreak.classList.add('calenderBreak');
                 calender.insertAdjacentElement('beforeend', calenderBreak);
             }
+        }
+
+        let addedCard = false;
+        for (const reservation of reservations) {
+            if (reservation.year === year && reservation.month === month) {
+                addedCard = true;
+                const card = document.createElement('div');
+                card.classList.add('mobileCalenderCard');
+                mobileCalender.insertAdjacentElement('beforeend', card);
+
+                const dateText = document.createElement('p');
+                dateText.classList.add('mobileCalenderCardDateText');
+                card.insertAdjacentElement('afterbegin', dateText);
+                dateText.innerText = new Date(year, month - 1, reservation.day).toLocaleDateString(undefined, {
+                    weekday: 'long',
+                    day: 'numeric'
+                });
+
+                {
+                    // SOURCE: https://stackoverflow.com/questions/15397372/javascript-new-date-ordinal-st-nd-rd-th
+                    const nth = (d) => {
+                        if (d > 3 && d < 21) return 'th';
+                        switch (d % 10) {
+                            case 1:
+                                return 'st';
+                            case 2:
+                                return 'nd';
+                            case 3:
+                                return 'rd';
+                            default:
+                                return 'th';
+                        }
+                    };
+                    const day = dateText.innerText.split(' ')[0];
+                    const weekday = dateText.innerText.split(' ')[1];
+                    dateText.innerText = `${day}${nth(parseInt(day))} - ${weekday}`;
+                }
+
+                const reservationsText = document.createElement('p');
+                reservationsText.classList.add('mobileCalenderCardReservationsText');
+                card.insertAdjacentElement('beforeend', reservationsText);
+                reservationsText.innerHTML = reservation.times
+                    .map((time) => `• ${time.timeStart} - ${time.timeEnd}`)
+                    .join('<br>');
+            }
+        }
+
+        if (!addedCard) {
+            const card = document.createElement('div');
+            card.classList.add('mobileCalenderCard');
+            mobileCalender.insertAdjacentElement('beforeend', card);
+            card.innerText = 'No reservations found for this month.';
         }
     }
 

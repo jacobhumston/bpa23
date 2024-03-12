@@ -169,10 +169,44 @@
     max-width: 95%;
     margin-right: auto;
     margin-left: auto;
+    padding: 0px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #mobileCalenderControls {
+    flex-basis: 100%;
+}
+
+.mobileCalenderCard {
+    background-color: var(--background);
+    max-width: 200px;
     width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    position: relative;
+    display: inline-block;
+    border: solid 2px var(--text);
+    margin-right: 5px;
+}
+
+.mobileCalenderCardDateText {
+    color: var(--accent);
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: larger;
+    border-bottom: solid 2px var(--accent);
+    padding-bottom: 3px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    text-align: center;
+}
+
+.mobileCalenderCardReservationsText {
+    margin: 0px;
 }
 
 @media screen and (width < 890px) {
