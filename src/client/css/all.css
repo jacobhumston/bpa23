@@ -111,7 +111,7 @@ a:hover {
 #loadingDiv {
     background-color: var(--secondaryBackground);
     width: 100%;
-    height: 100vh;
+    height: 1000vh;
     position: absolute;
     z-index: 999;
     top: 0;
@@ -119,7 +119,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     column-gap: 10px;
     font-family: var(--font);
 }
@@ -141,6 +141,7 @@ a:hover {
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-delay: 100ms;
+    margin-top: 30%;
 }
 
 #loadingDiv p {
