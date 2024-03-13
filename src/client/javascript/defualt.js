@@ -121,21 +121,11 @@ function attachLoadingAnimation() {
             } else {
                 insertLoadingDivider(true, function () {
                     document.location.href = `${destination}?l`;
-                    setTimeout(() => {
-                        hideLoadingDivider();
-                    }, 10 * 1000);
+                    setTimeout(hideLoadingDivider, 500);
                 });
             }
         });
     }
-}
-
-const shouldDisplayLoadingScreen = new URLSearchParams(window.location.search).has('l');
-
-if (shouldDisplayLoadingScreen) {
-    insertLoadingDivider();
-} else {
-    document.body.removeAttribute('style');
 }
 
 changeTitle(document, document.title, 'Game Day Grill');
@@ -146,6 +136,14 @@ libs.include.includeHeadCSS(document, '/css/footer.css', 'end');
 waitForElement('menuBar').then(updateMenuBar);
 
 window.addEventListener('load', async function () {
+    const shouldDisplayLoadingScreen = new URLSearchParams(window.location.search).has('l');
+
+    if (shouldDisplayLoadingScreen) {
+        insertLoadingDivider();
+    } else {
+        document.body.removeAttribute('style');
+    }
+
     if (shouldDisplayLoadingScreen) {
         await wait(500);
         hideLoadingDivider(attachLoadingAnimation);

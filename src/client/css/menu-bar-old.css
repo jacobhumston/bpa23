@@ -1,46 +1,16 @@
 /* includes/menuBar.html */
-
-#menuBarContainer {
+#menuBar,
+#menuBarMobile {
     display: block;
     width: 100%;
+    height: 50px;
     background-color: var(--secondaryBackground);
     color: var(--accent);
     font-family: var(--header-font);
-    padding: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
-    box-sizing: border-box;
 }
 
-#menuBar {
-    display: block;
-    height: 50px;
-    background-color: var(--tertiaryBackground);
-    color: var(--accent);
-    font-family: var(--header-font);
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 15px;
-    box-sizing: border-box;
-    text-align: center;
-    max-width: 850px;
-    margin-left: auto;
-    z-index: 3;
-    position: relative;
-}
-
-#menuBarLine {
-    width: 100%;
-    position: absolute;
-    background-color: var(--tertiaryBackground);
-    height: 30px;
-    margin-top: 10px;
-    left: 0px;
-    z-index: 2;
-
-}
-
-#menuBar a {
+#menuBar a,
+#menuBarMobile a {
     font: var(--header-font);
     display: inline-block;
     color: var(--accent);
@@ -53,7 +23,8 @@
     transition-property: color, border-width;
 }
 
-#menuBar a svg {
+#menuBar a svg,
+#menuBarMobile a svg {
     display: inline;
     height: 29px;
     width: 29px;
@@ -70,16 +41,24 @@
     border-bottom-color: var(--secondaryAccent);
 }
 
-#menuBar .menuBarIcon {
+#menuBarMobile .menuBarNormal:hover,
+#menuBarMobile .menuBarNormalCurrent {
+    color: var(--secondaryAccent);
+}
+
+#menuBar .menuBarIcon,
+#menuBarMobile .menuBarIcon {
     float: right;
     margin-right: 10px;
 }
 
-#menuBar .menuBarIcon:hover {
+#menuBar .menuBarIcon:hover,
+#menuBarMobile .menuBarIcon:hover {
     color: var(--secondaryAccent);
 }
 
-#menuBar .menuBarIconMain img {
+#menuBar .menuBarIconMain img,
+#menuBarMobile .menuBarIconMain img {
     display: inline-block;
     height: 80px;
     width: 80px;
@@ -95,6 +74,17 @@
     margin-top: -8px;
 }
 
+#menuBarMobile .menuBarIconMainIcon {
+    margin-top: -16px;
+}
+
+#menuBarMobile {
+    display: none;
+}
+
+#menuBarMobile #index {
+    display: none;
+}
 
 @media screen and (max-width: 650px) {
     #menuBar {
