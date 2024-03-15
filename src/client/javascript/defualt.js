@@ -43,12 +43,13 @@ function updateMenuBar() {
     }
 
     {
-        const menubar = document.getElementById('menuBarMobile');
+        const menubar = document.getElementById('mobileLinksSideBar');
         const anchors = menubar.getElementsByClassName('menuBarNormal');
         for (let i = 0; i !== anchors.length; i++) {
             const item = anchors.item(i);
             if (item.href.replace('?l', '') === window.location.href.replace('?l', '')) {
                 item.classList.add('menuBarNormalCurrent');
+                //item.innerText = `➤ ${item.innerText}`
             }
         }
     }
@@ -121,11 +122,36 @@ function attachLoadingAnimation() {
             } else {
                 insertLoadingDivider(true, function () {
                     document.location.href = `${destination}?l`;
-                    setTimeout(hideLoadingDivider, 500);
+                    setTimeout(hideLoadingDivider, 2000);
                 });
             }
         });
     }
+}
+
+/**
+ * Function that handles the mobile menu bar.
+ */
+function mobileMenuBarListeners() {
+    const mobileCloseButton = document.getElementById('mobileCloseButton');
+    const menuMobileButton = document.getElementById('menuMobileButton');
+    const mobileLinksSideBarBackground = document.getElementById('mobileLinksSideBarBackground');
+    const mobileLinksSideBar = document.getElementById('mobileLinksSideBar');
+
+    menuMobileButton.addEventListener('click', function () {
+        mobileLinksSideBar.style.display = 'block';
+        mobileLinksSideBarBackground.style.display = 'block';
+        mobileLinksSideBar.style.maxWidth = '200px';
+        mobileLinksSideBarBackground.style.width = '100%';
+        window.scrollTo(0, 0);
+        document.documentElement.style.overflow = 'hidden';
+    });
+
+    mobileCloseButton.addEventListener('click', function () {
+        mobileLinksSideBar.removeAttribute('style');
+        mobileLinksSideBarBackground.removeAttribute('style');
+        document.documentElement.style.overflow = 'auto';
+    });
 }
 
 changeTitle(document, document.title, 'Game Day Grill');
@@ -150,4 +176,6 @@ window.addEventListener('load', async function () {
     } else {
         attachLoadingAnimation();
     }
+
+    mobileMenuBarListeners();
 });

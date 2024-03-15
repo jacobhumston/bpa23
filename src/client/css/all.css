@@ -22,8 +22,10 @@
     --background: rgb(238, 238, 238);
     --backgroundPop: rgb(210, 210, 210);
     --backgroundPop2: rgb(216, 215, 215);
+    --backgroundPop3: rgb(190, 190, 190);
     --secondaryBackground: rgb(34, 40, 49);
     --tertiaryBackground: rgb(10, 12, 15);
+    --tertiaryBackgroundTransparent: rgba(10, 12, 15, 0.6);
     --tertiaryAccent: rgb(57, 62, 79);
     --accent: rgb(214, 90, 49);
     --accentDarken: rgb(179, 71, 35);
