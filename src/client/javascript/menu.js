@@ -442,13 +442,13 @@ async function main() {
                         "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#FFFFFF'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/></svg>";
 
                     const button = document.createElement('button');
-                    button.innerHTML = `${bagIcon}<span class="text">Add to Bag<span>`;
+                    button.innerHTML = `${bagIcon}<span class="text">Add to Cart<span>`;
                     button.classList.add('lastButton');
 
                     // Check if the item can be a meal or is a drink.
                     if (item.canBeMeal || item.isDrink) {
                         // If it is one of those two, the add to bag button changes to a show options button.
-                        button.innerHTML = `${optionsIcon}<span class="text">Show Options</span>`;
+                        button.innerHTML = `${optionsIcon}<span class="text">Add to Cart</span>`;
 
                         // Listen for clicks on the button.
                         button.addEventListener('click', async () => {
