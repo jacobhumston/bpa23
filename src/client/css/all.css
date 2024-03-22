@@ -58,6 +58,10 @@ body {
     color: var(--text);
     padding: 0;
     margin: 0;
+    background-image: url('/assets/images/fire.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
 }
 
 body,
