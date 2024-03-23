@@ -12,22 +12,6 @@ function changeTitle(document, title, name) {
 }
 
 /**
- * Wait for an element to be present/loaded via it's ID.
- * @param {string} id ID of the element to wait for.
- * @returns {Promise.<void>}
- */
-function waitForElement(id) {
-    return new Promise(function (resolve) {
-        const interval = setInterval(function () {
-            if (document.getElementById(id) !== null) {
-                clearInterval(interval);
-                resolve();
-            }
-        });
-    });
-}
-
-/**
  * Update the menu bar to the correct state.
  */
 function updateMenuBar() {
@@ -159,7 +143,10 @@ libs.include.includeBody(document, '/includes/menu-bar.html', 'start');
 libs.include.includeBody(document, '/includes/footer.html', 'end');
 libs.include.includeHeadCSS(document, '/css/menu-bar.css', 'end');
 libs.include.includeHeadCSS(document, '/css/footer.css', 'end');
-waitForElement('menuBar').then(updateMenuBar);
+waitForElement('menuBarContainer').then(function () {
+    updateMenuBar();
+    mobileMenuBarListeners();
+});
 
 window.addEventListener('load', async function () {
     const shouldDisplayLoadingScreen = new URLSearchParams(window.location.search).has('l');
@@ -172,10 +159,9 @@ window.addEventListener('load', async function () {
 
     if (shouldDisplayLoadingScreen) {
         await wait(500);
-        hideLoadingDivider(attachLoadingAnimation);
+        // hideLoadingDivider(attachLoadingAnimation);
+        hideLoadingDivider();
     } else {
-        attachLoadingAnimation();
+        // attachLoadingAnimation();
     }
-
-    mobileMenuBarListeners();
 });

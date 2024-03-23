@@ -2,6 +2,52 @@
 const libs = {};
 const storage = localStorage;
 
+/**
+ * Wait for an element to be present/loaded via it's ID.
+ * @param {string} id ID of the element to wait for.
+ * @returns {Promise.<void>}
+ */
+function waitForElement(id) {
+    return new Promise(function (resolve) {
+        const interval = setInterval(function () {
+            if (document.getElementById(id) !== null) {
+                clearInterval(interval);
+                resolve();
+            }
+        });
+    });
+}
+
+/**
+ * Wait for the body to be present.
+ * @returns {Promise.<void>}
+ */
+function waitForBody() {
+    return new Promise(function (resolve) {
+        const interval = setInterval(function () {
+            if (document.body !== null) {
+                clearInterval(interval);
+                resolve();
+            }
+        });
+    });
+}
+
+/**
+ * Wait for the head to be present.
+ * @returns {Promise.<void>}
+ */
+function waitForHead() {
+    return new Promise(function (resolve) {
+        const interval = setInterval(function () {
+            if (document.head !== null) {
+                clearInterval(interval);
+                resolve();
+            }
+        });
+    });
+}
+
 // Library which helps with the insertion of HTML documents.
 libs.include = {
     /**
@@ -14,8 +60,10 @@ libs.include = {
         let finalPlace = place;
         if (place === 'start') finalPlace = 'afterbegin';
         if (place === 'end') finalPlace = 'beforeend';
-        fetch(url).then(async function (response) {
-            document.body.insertAdjacentHTML(finalPlace, await response.text());
+        waitForBody().then(() => {
+            fetch(url).then(async function (response) {
+                document.body.insertAdjacentHTML(finalPlace, await response.text());
+            });
         });
     },
 
@@ -32,7 +80,9 @@ libs.include = {
         const rel = document.createElement('link');
         rel.rel = 'stylesheet';
         rel.href = url;
-        document.head.insertAdjacentElement(finalPlace, rel);
+        waitForHead().then(() => {
+            document.head.insertAdjacentElement(finalPlace, rel);
+        });
     }
 };
 

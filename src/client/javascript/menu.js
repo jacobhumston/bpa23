@@ -352,7 +352,7 @@ async function main() {
                     }
 
                     // Wait a few milliseconds then wipe the items divider.
-                    await wait(500);
+                    // await wait(200);
                 }
                 itemsDiv.innerHTML = '';
 
@@ -780,7 +780,7 @@ async function main() {
                     itemsDiv.insertAdjacentElement('beforeend', div);
 
                     // We will skip the animation if skipAnimation is true.
-                    if (!skipAnimation) {
+                    if (!skipAnimation && true == false) {
                         div.style.transform = 'scale(0)';
                         if (isElementInViewport(div)) {
                             // If the divider is in the viewport, we animate it in.
@@ -788,7 +788,7 @@ async function main() {
                                 () => {
                                     div.style.transform = 'scale(1)';
                                 },
-                                100 + currentIndex * 100
+                                currentIndex * 50
                             );
                         } else {
                             // If it isn't then we wait for it to be before we animate it in.
@@ -819,7 +819,7 @@ async function main() {
                 }
 
                 // Debounce!
-                await wait(1000);
+                await wait(500);
 
                 // We are done now, debounce over! :)
                 displayItemsDebounce = false;
